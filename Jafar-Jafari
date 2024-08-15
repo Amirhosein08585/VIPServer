@@ -54,16 +54,12 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.97.3",
-        "188.114.96.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
-        "104.17.147.22",
+        "104.21.69.44",
+        "172.67.204.84",
+        "2606:4700:3031::ac43:cc54",
+        "2606:4700:3032::6815:452c",
         "104.17.148.22",
-        "188.114.96.3",
-        "188.114.97.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3"
+        "104.17.147.22"
       ]
     },
     "independent_cache": true
@@ -104,8 +100,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇩🇪@Hiddify_nexttt VIP § 0",
-        "🇩🇪@Hiddify_nexttt VIP § 1"
+        "@Hiddify_Nexttt Ta 17:00§ 0",
+        "@Hiddify_Nexttt Ta 17:00§ 1"
       ],
       "default": "auto"
     },
@@ -113,8 +109,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇩🇪@Hiddify_nexttt VIP § 0",
-        "🇩🇪@Hiddify_nexttt VIP § 1"
+        "@Hiddify_Nexttt Ta 17:00§ 0",
+        "@Hiddify_Nexttt Ta 17:00§ 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -122,10 +118,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪@Hiddify_nexttt VIP § 0",
+      "tag": "@Hiddify_Nexttt Ta 17:00§ 0",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "39f52a46-c7d1-43a2-98c3-748d87e6596b",
+      "uuid": "e3d3ec98-c8d3-4ee0-9693-5b8fc1837b65",
       "transport": {
         "type": "ws",
         "path": "/telegram-@Shh_Proxy-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy",
@@ -139,10 +135,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪@Hiddify_nexttt VIP § 1",
+      "tag": "@Hiddify_Nexttt Ta 17:00§ 1",
       "server": "www.parspack.com",
       "server_port": 8880,
-      "uuid": "cb4f6a04-3e3b-414c-bd7d-c38a23487a0e",
+      "uuid": "3e7507fe-21f4-4e19-a4e2-80d739d9b24b",
       "transport": {
         "type": "httpupgrade",
         "path": "/SHHPROXY?ed=2048",
@@ -166,7 +162,7 @@
       "tls_fragment": {
         "enabled": true,
         "size": "1-500",
-        "sleep": "0-500"
+"sleep": "0-500"
       }
     },
     {
@@ -220,7 +216,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "L88CBf5wBAa0ux4U"
+      "secret": "bGvBSMH9rpfyt1iO"
     }
   }
 }
