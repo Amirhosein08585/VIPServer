@@ -54,14 +54,14 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.96.3",
         "188.114.97.3",
-        "2a06:98c1:3121::3",
+        "188.114.96.3",
         "2a06:98c1:3120::3",
-        "104.17.148.22",
+        "2a06:98c1:3121::3",
         "104.17.147.22",
-        "188.114.96.3",
+        "104.17.148.22",
         "188.114.97.3",
+        "188.114.96.3",
         "2a06:98c1:3120::3",
         "2a06:98c1:3121::3"
       ]
@@ -104,8 +104,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇩🇪@Hiddify_Nexttt Ta 17:00 § 0",
-        "🇩🇪@Hiddify_nexttt Ta 17:00 § 1"
+        "🇩🇪@Hiddify_Nexttt § 0",
+        "🇩🇪@Hiddify_Nexttt § 1"
       ],
       "default": "auto"
     },
@@ -113,8 +113,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇩🇪@Hiddify_Nexttt Ta 17:00 § 0",
-        "🇩🇪@Hiddify_nexttt Ta 17:00 § 1"
+        "🇩🇪@Hiddify_Nexttt § 0",
+        "🇩🇪@Hiddify_Nexttt § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -122,10 +122,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪@Hiddify_Nexttt Ta 17:00 § 0",
+      "tag": "🇩🇪@Hiddify_Nexttt § 0",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "5bc30385-0b73-421d-9608-7bf9274b8b80",
+      "uuid": "c88bc657-f88b-4520-ae2c-83b02fedd7fc",
       "transport": {
         "type": "ws",
         "path": "/telegram-@Shh_Proxy-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy",
@@ -139,10 +139,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪@Hiddify_nexttt Ta 17:00 § 1",
+      "tag": "🇩🇪@Hiddify_Nexttt § 1",
       "server": "www.parspack.com",
       "server_port": 8880,
-      "uuid": "14f55df1-c543-4790-99cf-984ac5d1f7da",
+      "uuid": "a23aea50-2698-4cb7-8ffe-03a730bb84bf",
       "transport": {
         "type": "httpupgrade",
         "path": "/SHHPROXY?ed=2048",
@@ -220,7 +220,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "hTKGhGWgKOszd7Od"
+      "secret": "teCObzvc4pvoiKie"
     }
   }
 }
