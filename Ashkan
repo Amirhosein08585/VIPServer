@@ -54,16 +54,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.97.3",
-        "188.114.96.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
+        "188.114.99.0",
+        "188.114.98.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
         "104.17.148.22",
         "104.17.147.22",
-        "104.21.83.62",
-        "172.67.214.246",
-        "2606:4700:3030::6815:533e",
-        "2606:4700:3030::ac43:d6f6"
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3"
       ]
     },
     "independent_cache": true
@@ -105,7 +105,7 @@
       "outbounds": [
         "auto",
         "🇷🇺@Hiddify_nexttt  § 0",
-        "🇷🇺@Hiddify_nexttt § 1"
+        "🇷🇺@Hiddify_nexttt  § 1"
       ],
       "default": "auto"
     },
@@ -114,7 +114,7 @@
       "tag": "auto",
       "outbounds": [
         "🇷🇺@Hiddify_nexttt  § 0",
-        "🇷🇺@Hiddify_nexttt § 1"
+        "🇷🇺@Hiddify_nexttt  § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -125,7 +125,7 @@
       "tag": "🇷🇺@Hiddify_nexttt  § 0",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "5be32dbf-273f-4986-bef6-4f7e14eaf0e7",
+      "uuid": "6a41c619-2096-41e8-90c9-3b500a769c6f",
       "transport": {
         "type": "ws",
         "path": "/telegram-@Shh_Proxy-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy",
@@ -139,10 +139,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇷🇺@Hiddify_nexttt § 1",
+      "tag": "🇷🇺@Hiddify_nexttt  § 1",
       "server": "www.parspack.com",
       "server_port": 8880,
-      "uuid": "bcedb115-db1a-417a-b15a-492b0bcefa63",
+      "uuid": "fdeb1920-2627-49e4-8eb0-d28a50f573ea",
       "transport": {
         "type": "httpupgrade",
         "path": "/SHHPROXY?ed=2048",
@@ -220,7 +220,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "PvCjgrinJECZLcO8"
+      "secret": "fTKkqxszwniG2D4t"
     }
   }
 }
