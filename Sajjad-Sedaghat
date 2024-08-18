@@ -34,6 +34,13 @@
     ],
     "rules": [
       {
+        "domain": [
+          "www.speedtest.net",
+          "www.parspack.com"
+        ],
+        "server": "dns-direct"
+      },
+      {
         "domain_suffix": ".ir",
         "geosite": "ir",
         "server": "dns-direct"
@@ -47,10 +54,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "172.67.204.84",
         "104.21.69.44",
+        "172.67.204.84",
+        "2606:4700:3032::6815:452c",
         "2606:4700:3031::ac43:cc54",
-        "2606:4700:3032::6815:452c"
+        "104.17.148.22",
+        "104.17.147.22",
+        "172.67.214.246",
+        "104.21.83.62",
+        "2606:4700:3030::ac43:d6f6",
+        "2606:4700:3030::6815:533e"
       ]
     },
     "independent_cache": true
@@ -92,7 +105,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "Hiddify_nexttt § 0"
+        "🇷🇺@Hiddify_Nexttt § 0",
+        "🇷🇺@Hiddify_Nexttt § 1"
       ],
       "default": "auto"
     },
@@ -100,7 +114,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "Hiddify_nexttt § 0"
+        "🇷🇺@Hiddify_Nexttt § 0",
+        "🇷🇺@Hiddify_Nexttt § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -108,10 +123,34 @@
     },
     {
       "type": "vless",
-      "tag": "Hiddify_nexttt § 0",
-      "server": "2a01:4f8:c17:2cda::1",
-      "server_port": 45075,
-      "uuid": "TELEGRAM-ServerNett",
+      "tag": "🇷🇺@Hiddify_Nexttt § 0",
+      "server": "www.speedtest.net",
+      "server_port": 80,
+      "uuid": "8f13c297-e135-4017-a033-fbc3307f2d75",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-@Shh_Proxy-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy",
+        "headers": {
+          "Host": "shhproxy.com.www.speedtest.net.www.zula.ir.cloudflare.com.mozdfree.bUzz."
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇷🇺@Hiddify_Nexttt § 1",
+      "server": "www.parspack.com",
+      "server_port": 8880,
+      "uuid": "b64cd59a-d6ec-4bbd-961e-dfc679ecf1d1",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/SHHPROXY?ed=2048",
+        "headers": {
+          "Host": "SHHproxy--shhPROXY--SHHproxy.PlusFood.org."
+        }
+      },
       "packet_encoding": ""
     },
     {
@@ -120,7 +159,7 @@
     },
     {
       "type": "direct",
-      "tag": "direct"
+"tag": "direct"
     },
     {
       "type": "direct",
@@ -182,7 +221,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "lJ5Pm92nO45zK1Gp"
+      "secret": "cr-7e3jnwCI2Hsqg"
     }
   }
 }
