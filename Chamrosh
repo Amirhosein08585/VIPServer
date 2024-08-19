@@ -35,8 +35,8 @@
     "rules": [
       {
         "domain": [
-          "www.parspack.com",
-          "www.speedtest.net"
+          "www.speedtest.net",
+          "www.parspack.com"
         ],
         "server": "dns-direct"
       },
@@ -55,10 +55,14 @@
       "sky.rethinkdns.com": [
         "104.21.69.44",
         "172.67.204.84",
-        "2606:4700:3032::6815:452c",
         "2606:4700:3031::ac43:cc54",
+        "2606:4700:3032::6815:452c",
+        "104.17.147.22",
         "104.17.148.22",
-        "104.17.147.22"
+        "172.67.214.246",
+        "104.21.83.62",
+        "2606:4700:3030::ac43:d6f6",
+        "2606:4700:3030::6815:533e"
       ]
     },
     "independent_cache": true
@@ -121,7 +125,7 @@
       "tag": "🇷🇺@Hiddify_nexttt  § 0",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "498944dd-edb6-4600-ad10-c326e1132185",
+      "uuid": "37ccd76e-7aef-43cd-8f42-309b0aaf82e2",
       "transport": {
         "type": "ws",
         "path": "/telegram-@Shh_Proxy-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy",
@@ -138,7 +142,7 @@
       "tag": "🇷🇺@Hiddify_nexttt  § 1",
       "server": "www.parspack.com",
       "server_port": 8880,
-      "uuid": "93916b4a-b1e9-447d-b8c9-dcfaf02ed393",
+      "uuid": "b636e1a1-94b6-4ab8-b956-871e222105a3",
       "transport": {
         "type": "httpupgrade",
         "path": "/SHHPROXY?ed=2048",
@@ -161,7 +165,7 @@
       "tag": "direct-fragment",
       "tls_fragment": {
         "enabled": true,
-"size": "1-500",
+        "size": "1-500",
         "sleep": "0-500"
       }
     },
@@ -215,7 +219,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "MP9-d-0XsYSqyIMr"
+      "secret": "2l9d2pJnfWIn6SNQ"
     }
   }
 }
