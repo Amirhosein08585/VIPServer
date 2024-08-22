@@ -54,16 +54,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "2606:4700:3032::6815:452c",
-        "2606:4700:3031::ac43:cc54",
-        "188.114.96.6",
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::",
         "188.114.97.6",
-        "104.17.147.22",
+        "188.114.96.6",
         "104.17.148.22",
-        "2a06:98c1:3120::3",
+        "104.17.147.22",
         "2a06:98c1:3121::3",
-        "188.114.96.3",
-        "188.114.97.3"
+        "2a06:98c1:3120::3",
+        "188.114.97.3",
+        "188.114.96.3"
       ]
     },
     "independent_cache": true
@@ -105,7 +105,7 @@
       "outbounds": [
         "auto",
         "🇷🇺@Hiddify_nexttt  § 0",
-        "🇷🇺@Hiddify_nexttt § 1"
+        "🇷🇺@Hiddify_nexttt  § 1"
       ],
       "default": "auto"
     },
@@ -114,7 +114,7 @@
       "tag": "auto",
       "outbounds": [
         "🇷🇺@Hiddify_nexttt  § 0",
-        "🇷🇺@Hiddify_nexttt § 1"
+        "🇷🇺@Hiddify_nexttt  § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -125,7 +125,7 @@
       "tag": "🇷🇺@Hiddify_nexttt  § 0",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "51fe448d-a2c0-4d21-af42-9b228539450a",
+      "uuid": "e9ae53bf-369a-4b28-995f-3ea65024b2cf",
       "transport": {
         "type": "ws",
         "path": "/telegram-@Shh_Proxy-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy",
@@ -139,10 +139,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇷🇺@Hiddify_nexttt § 1",
+      "tag": "🇷🇺@Hiddify_nexttt  § 1",
       "server": "www.parspack.com",
       "server_port": 8880,
-      "uuid": "bdc10e1d-7a11-408f-a30d-fafd0687e13f",
+      "uuid": "caada8b9-313a-47e4-ad37-4e246fc716df",
       "transport": {
         "type": "httpupgrade",
         "path": "/SHHPROXY?ed=2048",
@@ -220,7 +220,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "WX9GS9nZpolO1pPy"
+      "secret": "FWtynNCQ3FlgwDCB"
     }
   }
 }
