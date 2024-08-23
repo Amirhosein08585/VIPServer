@@ -54,16 +54,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "2606:4700:3031::ac43:cc54",
-        "2606:4700:3032::6815:452c",
-        "172.67.204.84",
-        "104.21.69.44",
-        "104.17.148.22",
+        "2a06:98c1:3120::1",
+        "2a06:98c1:3121::1",
+        "188.114.97.1",
+        "188.114.96.1",
         "104.17.147.22",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
-        "188.114.96.3",
-        "188.114.97.3"
+        "104.17.148.22",
+        "2a06:98c1:3121::1",
+        "2a06:98c1:3120::1",
+        "188.114.96.1",
+        "188.114.97.1"
       ]
     },
     "independent_cache": true
@@ -104,8 +104,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇳🇱@Hiddify_nexttt  § 0",
-        "🇳🇱@Hiddify_nexttt  § 1"
+        "🇷🇺@Hiddify_nexttt  § 0",
+        "🇷🇺@Hiddify_nexttt  § 1"
       ],
       "default": "auto"
     },
@@ -113,8 +113,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇳🇱@Hiddify_nexttt  § 0",
-        "🇳🇱@Hiddify_nexttt  § 1"
+        "🇷🇺@Hiddify_nexttt  § 0",
+        "🇷🇺@Hiddify_nexttt  § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -122,10 +122,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱@Hiddify_nexttt  § 0",
+      "tag": "🇷🇺@Hiddify_nexttt  § 0",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "e45d9352-3204-42c8-bcba-f719cf7952ac",
+      "uuid": "6cc32231-5a1e-499c-8005-399733ce6420",
       "transport": {
         "type": "ws",
         "path": "/telegram-@Shh_Proxy-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy",
@@ -139,10 +139,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱@Hiddify_nexttt  § 1",
+      "tag": "🇷🇺@Hiddify_nexttt  § 1",
       "server": "www.parspack.com",
       "server_port": 8880,
-      "uuid": "02a282ef-8027-4fe7-95a0-7de093c92894",
+      "uuid": "0ca81a17-6dd6-485f-9957-8fc691248f29",
       "transport": {
         "type": "httpupgrade",
         "path": "/SHHPROXY?ed=2048",
@@ -220,7 +220,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "8K1vyzx7jVqrI0ic"
+      "secret": "_xNiiJ0AhkDLATUk"
     }
   }
 }
