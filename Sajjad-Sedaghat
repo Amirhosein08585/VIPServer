@@ -1,234 +1,47 @@
-
-{
-  "log": {
-    "level": "warn",
-    "output": "box.log",
-    "timestamp": true
-  },
-  "dns": {
-    "servers": [
-      {
-        "tag": "dns-remote",
-        "address": "udp://1.1.1.1",
-        "address_resolver": "dns-direct"
-      },
-      {
-        "tag": "dns-trick-direct",
-        "address": "https://sky.rethinkdns.com/",
-        "detour": "direct-fragment"
-      },
-      {
-        "tag": "dns-direct",
-        "address": "1.1.1.1",
-        "address_resolver": "dns-local",
-        "detour": "direct"
-      },
-      {
-        "tag": "dns-local",
-        "address": "local",
-        "detour": "direct"
-      },
-      {
-        "tag": "dns-block",
-        "address": "rcode://success"
-      }
-    ],
-    "rules": [
-      {
-        "domain": [
-          "speedtest.net",
-          "www.speedtest.net"
-        ],
-        "server": "dns-direct"
-      },
-      {
-        "domain_suffix": ".ir",
-        "geosite": "ir",
-        "server": "dns-direct"
-      },
-      {
-        "domain": "cp.cloudflare.com",
-        "server": "dns-remote",
-        "rewrite_ttl": 3000
-      }
-    ],
-    "final": "dns-remote",
-    "static_ips": {
-      "sky.rethinkdns.com": [
-        "188.114.96.3",
-        "188.114.97.3",
-        "2a06:98c1:3121::3",
-        "2a06:98c1:3120::3",
-        "104.17.147.22",
-        "104.17.148.22",
-        "104.21.83.62",
-        "172.67.214.246"
-      ]
-    },
-    "independent_cache": true
-  },
-  "inbounds": [
-    {
-      "type": "tun",
-      "tag": "tun-in",
-      "mtu": 9000,
-      "inet4_address": "172.19.0.1/28",
-      "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true,
-      "stack": "mixed",
-      "sniff": true,
-      "sniff_override_destination": true
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2334,
-      "sniff": true,
-      "sniff_override_destination": true
-    },
-    {
-      "type": "direct",
-      "tag": "dns-in",
-      "listen": "127.0.0.1",
-      "listen_port": 6450,
-      "override_address": "1.1.1.1",
-      "override_port": 53
-    }
-  ],
-  "outbounds": [
-    {
-      "type": "selector",
-      "tag": "select",
-      "outbounds": [
-        "auto",
-        "🇫🇮@Hiddify_nexttt § 0",
-        "🇫🇮@Hiddify_nexttt § 1"
-      ],
-      "default": "auto"
-    },
-    {
-      "type": "urltest",
-      "tag": "auto",
-      "outbounds": [
-        "🇫🇮@Hiddify_nexttt § 0",
-        "🇫🇮@Hiddify_nexttt § 1"
-      ],
-      "url": "http://cp.cloudflare.com/",
-      "interval": "10m0s",
-      "idle_timeout": "1h40m0s"
-    },
-    {
-      "type": "vless",
-      "tag": "🇫🇮@Hiddify_nexttt § 0",
-      "server": "SpEeDtEsT.NeT",
-      "server_port": 443,
-      "uuid": "TELEGRAM-NUFiLTER",
-      "tls": {
-        "enabled": true,
-        "server_name": "SpEeDtEsT.NeT",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
-        "headers": {
-          "Host": "Bs.net"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "🇫🇮@Hiddify_nexttt § 1",
-      "server": "www.speedtest.net",
-      "server_port": 2095,
-      "uuid": "telegram-id-ArV2ray",
-      "transport": {
-        "type": "ws",
-        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
-        "headers": {
-          "Host": "3.V.V2.www.speedtest.net.k.www.speedtest.net.bahrane.iR."
-        },
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "dns",
-      "tag": "dns-out"
-    },
-    {
-      "type": "direct",
-      "tag": "direct"
-    },
-    {
-      "type": "direct",
-      "tag": "direct-fragment",
-      "tls_fragment": {
-        "enabled": true,
-        "size": "1-500",
-        "sleep": "0-500"
-      }
-    },
-    {
-      "type": "direct",
-      "tag": "bypass"
-    },
-    {
-      "type": "block",
-      "tag": "block"
-    }
-  ],
-  "route": {
-    "geoip": {
-      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
-    },
-    "geosite": {
-      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
-    },
-    "rules": [
-      {
-        "inbound": "dns-in",
-        "outbound": "dns-out"
-      },
-      {
-        "port": 53,
-        "outbound": "dns-out"
-      },
-      {
-        "clash_mode": "Direct",
-        "outbound": "direct"
-      },
-      {
-        "clash_mode": "Global",
-        "outbound": "select"
-      },
-      {
-        "domain_suffix": ".ir",
-        "geosite": "ir",
-        "geoip": "ir",
-        "outbound": "bypass"
-      }
-    ],
-    "final": "select",
-    "auto_detect_interface": true,
-    "override_android_vpn": true
-  },
-  "experimental": {
-    "cache_file": {
-      "enabled": true,
-      "path": "clash.db"
-    },
-    "clash_api": {
-      "external_controller": "127.0.0.1:6756",
-      "secret": "JrKGTAKaefyQUiQr"
-    }
-  }
-}
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@SpeeDTeST.OrG:80?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V15.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V24.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V04.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V08.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V18.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V15.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V14.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V11.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=www.speedtest.net.whiteber.insistom.d6625996.v30.simansanat.ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V22.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@SpeeDTeST.OrG:80?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V20.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V25.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@SpeeDTeST.OrG:80?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V13.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V25.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@SpeeDTeST.OrG:80?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V12.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V07.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@SpeeDTeST.OrG:80?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V10.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@SpeeDTeST.OrG:80?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V25.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@SpeeDTeST.OrG:80?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V04.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://74b26212-3b66-465a-bc46-c6bfc36254dc@104.25.0.86:8080?security=none&type=ws&headerType=&path=&host=WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V09.SiMansaNaT.Ir.#@Hiddify_Nexttt تلگرام
+vless://4ebfc469-670b-4676-b82c-d1a20d573ddf@www.parsvds.ir:80?security=&type=ws&path=/Telegram:@vmessorg-Telegram:@vmessorg-Telegram:@vmessorg?ed%3D80&host=join-to.vmessorg.Community.&encryption=none#@Hiddify_Nexttt تلگرام
+vless://Join--%5aED%4d%4fDE%4f%4e@speedtest.net:443?path=%2F%40%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%40%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-TEL-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%40%5aED%4d%4fDE%4f%4e%3Fed%3D2048&security=tls&TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPNencryption=none&host=snapp.express&type=ws&sni=speedtest.net#@Hiddify_Nexttt تلگرام
+vless://tel--%5aED%4d%4fDE%4f%4e@speedtest.net:443?path=%2F%40%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%40%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-TEL-%5aED%4d%4fDE%4f%4e-%40%5aED%4d%4fDE%4f%4e%3Fed%3D2048&security=tls&TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPNencryption=none&host=snappshop.ir&type=ws&sni=speedtest.net#@Hiddify_Nexttt تلگرام
+vless://bia--%5aED%4d%4fDE%4f%4e@speedtest.net:443?path=%2F%40%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%40%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-TEL-%5aED%4d%4fDE%4f%4e-%40%5aED%4d%4fDE%4f%4e%3Fed%3D2048&security=tls&TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPNencryption=none&host=snapptrip.com&type=ws&sni=speedtest.net#all+3%e2%ad%95%e1%ad%84%ea%af%ad%e2%9c%93@Hiddify_Nexttt تلگرام
+vless://biatoo--%5aED%4d%4fDE%4f%4e@speedtest.net:443?path=%2F%40%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%40%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-TEL-%5aED%4d%4fDE%4f%4e-%40%5aED%4d%4fDE%4f%4e%3Fed%3D2048&security=tls&TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPNencryption=none&host=snapp.taxi&type=ws&sni=speedtest.net#all+4%e2%ad%95%e1%ad%84%ea%af%ad%e2%9c%93@Hiddify_Nexttt تلگرام
+vless://tel--%5aED%4d%4fDE%4f%4e@188.114.98.45:8080?path=%2F%40%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%40%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-TEL-%5aED%4d%4fDE%4f%4e-%40%5aED%4d%4fDE%4f%4e%3Fed%3D2048&security=none&TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPNencryption=none&host=www.speedtest.net.main.zedmodeon.LAT&type=httpupgrade#@Hiddify_Nexttt تلگرام
+vless://Join--%5aED%4d%4fDE%4f%4e@www.speedtest.net:8080?path=%2F%40%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-%40%5aED%4d%4fDE%4f%4e-%5aED%4d%4fDE%4f%4e-TEL-%5aED%4d%4fDE%4f%4e-%40%5aED%4d%4fDE%4f%4e%3Fed%3D8880&security=none&TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPN+۰+TELEGRAM+-+@JOKERRVPNencryption=none&host=www.speedtest.net.main2.zedmodeon.LAT&type=httpupgrade#@Hiddify_Nexttt تلگرام
+vless://4ebfc469-670b-4676-b82c-d1a20d573ddf@66.235.200.44:80?security=&type=ws&path=/Telegram:@vmessorg-Telegram:@vmessorg-Telegram:@vmessorg?ed%3D80&host=join-to.vmessorg.Community.&encryption=none#@Hiddify_Nexttt تلگرام
+vless://4ebfc469-670b-4676-b82c-d1a20d573ddf@66.235.200.124:80?security=&type=ws&path=/Telegram:@vmessorg-Telegram:@vmessorg-Telegram:@vmessorg?ed%3D80&host=join-to.vmessorg.Community.&encryption=none#@Hiddify_Nexttt تلگرام
+vless://TELEGRAM-N%55FiLT%45R@speedtest.net:443?path=%2Ftelegram-N%55FiLTER%2Ctelegram-N%55FiLTER%2Ctelegram-N%55FiLTER%2Ctelegram-N%55FiLTER%3Fed%3D2048&security=tls&encryption=none&alpn=@TEHRANARGO,@TEHRANARGO&alpn=h2,http/1.1&host=DOSIBPLUS.net&fp=chrome&type=ws&sni=speedtest.net#@Hiddify_Nexttt تلگرام
+vless://TELEGRAM-N%55FiLTER@speedtest.net:443?path=%2Ftelegram-N%55FiLTER%2Ctelegram-N%55FiLTER%2Ctelegram-N%55FiLTER%2Ctelegram-N%55FiLTER%3Fed%3D2048&security=tls&encryption=none&alpn=@TEHRANARGO,@TEHRANARGO&alpn=h2,http/1.1&host=DOSIBPLUS.net&fp=chrome&type=ws&sni=speedtest.net#%40#@Hiddify_Nexttt تلگرام
+vless://b950ea30-86e9-4a52-82d7-cc1cbba0437d@190.93.247.56:8080?security=&type=ws&path=/telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers?ed%3D2560&host=legendaryking.ir.www.speedtest.net.www.zula.ir.cloudflare.com.tr.mozdozari.bUzz.&encryption=none#@Hiddify_Nexttt تلگرام
+vless://6184806b-414f-4e56-8fb7-5c3ea9ebb9a7@190.93.247.56:8080?security=&type=ws&path=/telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers?ed%3D2560&host=legendaryking.ir.www.speedtest.net.www.zula.ir.cloudflare.com.de2.mozdozari.bUzz.&encryption=none#@Hiddify_Nexttt تلگرام
+vless://5275957f-01c6-46b9-a066-98e56b387dac@www.speedtest.net:8880?path=/-LiV2ry@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6%3Fed%3D2056&security=none&encryption=none&host=www.speedtest.net.A.lightning-6.LiVE.&type=ws#@Hiddify_Nexttt تلگرام
+vless://telegram-id-ArV2ray@www.speedtest.net:2095?path=%2Ftelegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry%3Fed%3D2095&security=none&encryption=none&host=6.www.speedtest.net.H.bahrane.iR.&type=ws#@Hiddify_Nexttt تلگرام
+vless://telegram-id-ArV2ray@www.speedtest.net:2095?path=%2Ftelegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry%3Fed%3D2095&security=none&encryption=none&host=8.V.V2.www.speedtest.net.q.debian.org.bahrane.iR.&type=ws#@Hiddify_Nexttt تلگرام
+vless://telegram-id-ArV2ray@www.speedtest.net:2095?path=%2Ftelegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry%3Fed%3D2095&security=none&encryption=none&host=6.V2.j.www.speedtest.net.dnschecker.tecH.&type=ws#@Hiddify_Nexttt تلگرام
+vless://416f18ec-11f3-4648-9693-8c6480d0662d@172.67.199.19:2082?path=%2F&security=none&encryption=none&host=VtFzLlVc167.SaMaDzAdE.CoM&type=ws#%40@Hiddify_Nexttt تلگرام
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpNREpoWkdFNQ==@95.164.35.90:8388#%40@Hiddify_Nexttt تلگرام
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp1MTdUM0J2cFlhYWl1VzJj@api.namasha.co:443#%40@Hiddify_Nexttt تلگرام
+vless://TELEGRAM-EXPRESSVPN_420@SpEeDtEsT.NeT:443?path=%2FJoin--EXPRESSVPN_420--Join--EXPRESSVPN_420--Join--EXPRESSVPN_420--Join--EXPRESSVPN_420--Join--EXPRESSVPN_420--Join--EXPRESSVPN_420--Join--EXPRESSVPN_420--Join--EXPRESSVPN_420--Join--EXPRESSVPN_420--Join--EXPRESSVPN_420--Join--EXPRESSVPN_420--Join--EXPRESSVPN_420--Join--EXPRESSVPN_420--%3Fed%3D2048&security=tls&encryption=none&alpn=h2,http/1.1&host=MnMKpo.com&fp=chrome&type=ws&sni=SpEeDtEsT.NeT#%40@Hiddify_Nexttt تلگرام+%F0%9F%87%A9%F0%9F%87%AA
+vless://4ebfc469-670b-4676-b82c-d1a20d573ddf@66.235.200.44:80?security=&type=ws&path=/Telegram:@vmessorg-Telegram:@vmessorg-Telegram:@vmessorg?ed%3D80&host=join-to.vmessorg.Community.&encryption=none#@Hiddify_Nexttt تلگرام
+vless://4ebfc469-670b-4676-b82c-d1a20d573ddf@66.235.200.124:80?security=&type=ws&path=/Telegram:@vmessorg-Telegram:@vmessorg-Telegram:@vmessorg?ed%3D80&host=join-to.vmessorg.Community.&encryption=none#@Hiddify_Nexttt تلگرام
+vless://4ebfc469-670b-4676-b82c-d1a20d573ddf@www.parsvds.ir:80?security=&type=ws&path=/Telegram:@vmessorg-Telegram:@vmessorg-Telegram:@vmessorg?ed%3D80&host=join-to.vmessorg.Community.&encryption=none#@Hiddify_Nexttt تلگرام
+vless://38f33af0-1a12-4a28-9271-4744e1c44cac@www.speedtest.net:2095?path=%2FJoin--ACADEMI_VPN--Join--ACADEMI_VPN--Join--ACADEMI_VPN--Join--ACADEMI_VPN--Join--ACADEMI_VPN--Join--ACADEMI_VPN--Join--ACADEMI_VPN--Join--ACADEMI_VPN--Join--ACADEMI_VPN--Join--ACADEMI_VPN--Join--ACADEMI_VPN--Join--ACADEMI_VPN--Join--ACADEMI_VPN--%3Fed%3D2048&security=none&encryption=none&host=Academi-82.com.www.speedtest.net.www.zula.ir.cloudflare.com.AcadeMigroup.IR.&type=ws#@Hiddify_Nexttt تلگرام
+vless://%74%65%6c%65%67%72%61%6d%2d%69%64%2d%41%72%56%32%72%61%79@www.speedtest.net:2095?path=%2Ftelegram-%41%72%56%32%72%79,telegram-%41%72%56%32%72%79,telegram-%41%72%56%32%72%79,telegram-%41%72%56%32%72%79,telegram-%41%72%56%32%72%79,telegram-%41%72%56%32%72%79,telegram-%41%72%56%32%72%79,telegram-%41%72%56%32%72%79,telegram-%41%72%56%32%72%79,telegram-%41%72%56%32%72%79,telegram-%41%72%56%32%72%79%3Fed%3D2095&security=none&encryption=none&host=6.V2.j.www.speedtest.net.dnschecker.tecH.&type=ws#@Hiddify_Nexttt تلگرام
+trojan://aRh4GRxYO6@38.180.70.206:2096?type=tcp&security=none#@Hiddify_Nexttt تلگرام
