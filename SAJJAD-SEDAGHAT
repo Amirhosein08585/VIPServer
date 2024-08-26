@@ -54,14 +54,14 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "172.67.204.84",
-        "104.21.69.44",
-        "2606:4700:3031::ac43:cc54",
-        "2606:4700:3032::6815:452c",
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
         "104.17.148.22",
         "104.17.147.22",
-        "104.21.83.62",
         "172.67.214.246",
+        "104.21.83.62",
         "2606:4700:3030::ac43:d6f6",
         "2606:4700:3030::6815:533e"
       ]
@@ -125,7 +125,7 @@
       "tag": "🇷🇺@Hiddify_nexttt  § 0",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "177a5f59-2308-4aba-9961-8f756a7854a3",
+      "uuid": "45962ff2-ba4b-4dfc-b77a-67d561b0d183",
       "transport": {
         "type": "ws",
         "path": "/telegram-@Shh_Proxy-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy",
@@ -142,7 +142,7 @@
       "tag": "🇷🇺@Hiddify_nexttt  § 1",
       "server": "www.parspack.com",
       "server_port": 8880,
-      "uuid": "d69dffa2-f97e-4942-acd3-3412549c542e",
+      "uuid": "6dbef829-7ae9-43e1-aff0-83a9d39da022",
       "transport": {
         "type": "httpupgrade",
         "path": "/SHHPROXY?ed=2048",
@@ -220,7 +220,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "G0QmAcDMFxpOu-sH"
+      "secret": "q9EcoaLiuYKafm9h"
     }
   }
 }
