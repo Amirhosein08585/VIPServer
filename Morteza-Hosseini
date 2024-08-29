@@ -54,10 +54,10 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.97.3",
-        "188.114.96.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
+        "104.21.69.44",
+        "172.67.204.84",
+        "2606:4700:3031::ac43:cc54",
+        "2606:4700:3032::6815:452c",
         "104.17.148.22",
         "104.17.147.22",
         "104.21.83.62",
@@ -104,8 +104,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇷🇺@Hiddify_nexttt § 0",
-        "🇷🇺@Hiddify_nexttt § 1"
+        "🇷🇺@Hiddify_nexttt  § 0",
+        "🇷🇺@Hiddify_nexttt  § 1"
       ],
       "default": "auto"
     },
@@ -113,8 +113,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇷🇺@Hiddify_nexttt § 0",
-        "🇷🇺@Hiddify_nexttt § 1"
+        "🇷🇺@Hiddify_nexttt  § 0",
+        "🇷🇺@Hiddify_nexttt  § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -122,10 +122,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇷🇺@Hiddify_nexttt § 0",
+      "tag": "🇷🇺@Hiddify_nexttt  § 0",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "02fc10dc-6ba8-4c52-b063-785703934775",
+      "uuid": "451dd6c3-5cad-4cc0-9f5a-8b6c12721dd2",
       "transport": {
         "type": "ws",
         "path": "/telegram-@Shh_Proxy-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy",
@@ -139,10 +139,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇷🇺@Hiddify_nexttt § 1",
+      "tag": "🇷🇺@Hiddify_nexttt  § 1",
       "server": "www.parspack.com",
       "server_port": 8880,
-      "uuid": "7318c852-ab9e-4c95-8d4d-1728945e55bc",
+      "uuid": "ab7e8891-97de-4807-be40-43dd41d577ee",
       "transport": {
         "type": "httpupgrade",
         "path": "/SHHPROXY?ed=2048",
@@ -220,7 +220,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "ys-61PtgjhHXkj1M"
+      "secret": "6vReJiKCH7FBw6dg"
     }
   }
 }
