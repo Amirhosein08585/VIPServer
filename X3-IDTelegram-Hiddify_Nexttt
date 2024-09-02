@@ -1,0 +1,493 @@
+{
+  "log": {
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "",
+          "speedtest.org"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-",
+          "geosite-"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".",
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "104.17.148.22",
+        "104.17.147.22",
+        "188.114.96.3",
+        "188.114.97.3"
+      ]
+    }
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1"
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify_Nexttt کانال § 0",
+        "@Hiddify_Nexttt کانال § 1",
+        "@Hiddify_Nexttt کانال § 2",
+        "@Hiddify_Nexttt کانال § 3",
+        "@Hiddify_Nexttt کانال § 4",
+        "@Hiddify_Nexttt کانال § 5",
+        "@Hiddify_Nexttt کانال § 6",
+        "@Hiddify_Nexttt کانال § 7",
+        "@Hiddify_Nexttt کانال § 8",
+        "@Hiddify_Nexttt کانال § 9",
+        "@Hiddify_Nexttt کانال § 10",
+        "@Hiddify_Nexttt کانال § 11",
+        "@Hiddify_Nexttt کانال § 12",
+        "@Hiddify_Nexttt کانال § 13",
+        "@Hiddify_Nexttt کانال § 14",
+        "@Hiddify_Nexttt کانال § 15",
+        "@Hiddify_Nexttt کانال § 16",
+        "@Hiddify_Nexttt کانال § 17",
+        "@Hiddify_Nexttt کانال § 18",
+        "@Hiddify_Nexttt کانال § 19"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify_Nexttt کانال § 0",
+        "@Hiddify_Nexttt کانال § 1",
+        "@Hiddify_Nexttt کانال § 2",
+        "@Hiddify_Nexttt کانال § 3",
+        "@Hiddify_Nexttt کانال § 4",
+        "@Hiddify_Nexttt کانال § 5",
+        "@Hiddify_Nexttt کانال § 6",
+        "@Hiddify_Nexttt کانال § 7",
+        "@Hiddify_Nexttt کانال § 8",
+        "@Hiddify_Nexttt کانال § 9",
+        "@Hiddify_Nexttt کانال § 10",
+        "@Hiddify_Nexttt کانال § 11",
+        "@Hiddify_Nexttt کانال § 12",
+        "@Hiddify_Nexttt کانال § 13",
+        "@Hiddify_Nexttt کانال § 14",
+        "@Hiddify_Nexttt کانال § 15",
+        "@Hiddify_Nexttt کانال § 16",
+        "@Hiddify_Nexttt کانال § 17",
+        "@Hiddify_Nexttt کانال § 18",
+        "@Hiddify_Nexttt کانال § 19"
+      ],
+      "tolerance": 1
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 0",
+      "server": "SpeeDTeST.OrG",
+      "server_port": 80,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V19.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 1",
+      "server": "SpeeDTeST.OrG",
+      "server_port": 80,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V03.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 2",
+      "server": "104.25.0.86",
+      "server_port": 8080,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V29.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 3",
+      "server": "SpeeDTeST.OrG",
+      "server_port": 80,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V21.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 4",
+      "server": "104.25.0.86",
+      "server_port": 8080,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V04.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 5",
+      "server": "104.25.0.86",
+      "server_port": 8080,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V23.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 6",
+      "server": "104.25.0.86",
+      "server_port": 8080,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V21.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 7",
+      "server": "104.25.0.86",
+      "server_port": 8080,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V10.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 8",
+      "server": "104.25.0.86",
+      "server_port": 8080,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V26.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 9",
+      "server": "104.25.0.86",
+      "server_port": 8080,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V07.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 10",
+      "server": "SpeeDTeST.OrG",
+      "server_port": 80,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V07.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 11",
+      "server": "SpeeDTeST.OrG",
+      "server_port": 80,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V13.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 12",
+      "server": "104.25.0.86",
+      "server_port": 8080,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V27.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 13",
+      "server": "SpeeDTeST.OrG",
+      "server_port": 80,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V24.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 14",
+      "server": "104.25.0.86",
+      "server_port": 8080,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V08.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 15",
+      "server": "104.25.0.86",
+      "server_port": 8080,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V17.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 16",
+      "server": "SpeeDTeST.OrG",
+      "server_port": 80,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V11.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 17",
+      "server": "104.25.0.86",
+      "server_port": 8080,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V03.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 18",
+      "server": "SpeeDTeST.OrG",
+      "server_port": 80,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V06.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 19",
+      "server": "SpeeDTeST.OrG",
+      "server_port": 80,
+      "uuid": "a0657d88-f2d9-4378-b28f-6f5a314f9238",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "WwW.SpeedTest.Net.WhiteBer.InsisTom.D6625996.V15.ThEpHp.Ir."
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "domain": ".",
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geoip-",
+          "geosite-"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  }
+}
