@@ -1,0 +1,486 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": "speedtest.net",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "connectivitycheck.gstatic.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".ir",
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.97.3",
+        "188.114.96.3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 12334,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "set_system_proxy": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 16450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify_Nexttt کانال § 0",
+        "@Hiddify_Nexttt کانال § 1",
+        "@Hiddify_Nexttt کانال § 2",
+        "@Hiddify_Nexttt کانال § 3",
+        "@Hiddify_Nexttt کانال § 4",
+        "@Hiddify_Nexttt کانال § 5",
+        "@Hiddify_Nexttt کانال § 6",
+        "@Hiddify_Nexttt کانال § 7",
+        "@Hiddify_Nexttt کانال § 8",
+        "@Hiddify_Nexttt کانال § 9",
+        "@Hiddify_Nexttt کانال § 10",
+        "@Hiddify_Nexttt کانال§ 11"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify_Nexttt کانال § 0",
+        "@Hiddify_Nexttt کانال § 1",
+        "@Hiddify_Nexttt کانال § 2",
+        "@Hiddify_Nexttt کانال § 3",
+        "@Hiddify_Nexttt کانال § 4",
+        "@Hiddify_Nexttt کانال § 5",
+        "@Hiddify_Nexttt کانال § 6",
+        "@Hiddify_Nexttt کانال § 7",
+        "@Hiddify_Nexttt کانال § 8",
+        "@Hiddify_Nexttt کانال § 9",
+        "@Hiddify_Nexttt کانال § 10",
+        "@Hiddify_Nexttt کانال§ 11"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "tolerance": 1,
+      "idle_timeout": "30m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 0",
+      "server": "185.234.64.35",
+      "server_port": 8443,
+      "uuid": "d392f564-29df-4515-aaba-f64cf0b8a7c3",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "198.41.193.45",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "9_hNyoPG96fNIMh4IBQ3gs88n86vwCjp53tL_X_2dy4",
+          "short_id": "0cfbfab0b04ca069"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 1",
+      "server": "212.22.94.177",
+      "server_port": 21844,
+      "uuid": "58f90ed5-3dce-4023-ad0b-af42d20cf895",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.alibabagroup.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "LHUss13swfFwTaV0GhNPBkbKRyt91pnVxBCdWhxBrwk",
+          "short_id": "b41b108d926677"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 2",
+      "server": "45.140.167.94",
+      "server_port": 8443,
+      "uuid": "e1017ed0-cd20-4bf6-8d96-b2a052e19f0c",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "104.20.68.118",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "IqnFESYrPnkV7KUaekX8cL8TSRwDZHuUIKmD0N99Fxc",
+          "short_id": "2880ee24bb417d46"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 3",
+      "server": "80.253.255.10",
+      "server_port": 443,
+      "uuid": "7c7af2de-bb97-429f-ac3c-8ef849717491",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.upci.org",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "jSuIvIWLecUXhjia1bHBwo5sHiYkKsdtdy0x6N-4A1s",
+          "short_id": "ee46"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 4",
+      "server": "85.159.229.88",
+      "server_port": 2087,
+      "uuid": "e4527384-4f20-4378-95dc-403996f12588",
+      "tls": {
+        "enabled": true,
+        "server_name": "dash.cloudflare.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "GicA8fPbS9LksttApqa8gzOstomRFncKNoYGLCOqQF8",
+          "short_id": "fc805835"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 5",
+      "server": "185.234.64.35",
+      "server_port": 8443,
+      "uuid": "d392f564-29df-4515-aaba-f64cf0b8a7c3",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "198.41.193.45",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "9_hNyoPG96fNIMh4IBQ3gs88n86vwCjp53tL_X_2dy4",
+          "short_id": "0cfbfab0b04ca069"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 6",
+      "server": "212.22.94.177",
+      "server_port": 21844,
+      "uuid": "58f90ed5-3dce-4023-ad0b-af42d20cf895",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.alibabagroup.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "LHUss13swfFwTaV0GhNPBkbKRyt91pnVxBCdWhxBrwk",
+          "short_id": "b41b108d926677"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 7",
+      "server": "45.140.167.94",
+      "server_port": 8443,
+      "uuid": "e1017ed0-cd20-4bf6-8d96-b2a052e19f0c",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "104.20.68.118",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "IqnFESYrPnkV7KUaekX8cL8TSRwDZHuUIKmD0N99Fxc",
+          "short_id": "2880ee24bb417d46"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 8",
+      "server": "80.253.255.10",
+      "server_port": 443,
+      "uuid": "7c7af2de-bb97-429f-ac3c-8ef849717491",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.upci.org",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "jSuIvIWLecUXhjia1bHBwo5sHiYkKsdtdy0x6N-4A1s",
+          "short_id": "ee46"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 9",
+      "server": "85.159.229.88",
+      "server_port": 2087,
+      "uuid": "e4527384-4f20-4378-95dc-403996f12588",
+      "tls": {
+        "enabled": true,
+        "server_name": "dash.cloudflare.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "GicA8fPbS9LksttApqa8gzOstomRFncKNoYGLCOqQF8",
+          "short_id": "fc805835"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 10",
+      "server": "speedtest.net",
+      "server_port": 443,
+      "uuid": "04b1f4fe-06ba-4441-a984-93bc0e8cc9e3",
+      "tls": {
+        "enabled": true,
+        "server_name": "speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@custom_config",
+        "headers": {
+          "Host": "tody.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال§ 11",
+      "server": "speedtest.net",
+      "server_port": 80,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "oyp1.ir"
+        },
+        "max_early_data": 80,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-30",
+        "sleep": "2-8"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "domain": ".ir",
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:16756",
+      "secret": "dPnulUWNyZjgaD3z"
+    }
+  }
+}
