@@ -1,0 +1,456 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "www.speedtest.net",
+          "speedtest.net",
+          "turk.458ziliao.com",
+          "speedtest.net"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "connectivitycheck.gstatic.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".ir",
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.97.3",
+        "188.114.96.3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 12334,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "set_system_proxy": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 16450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify_Nexttt کانال § 0",
+        "@Hiddify_Nexttt کانال § 1",
+        "@Hiddify_Nexttt کانال § 2",
+        "@Hiddify_Nexttt کانال § 3",
+        "@Hiddify_Nexttt کانال§ 4",
+        "@Hiddify_Nexttt کانال§ 5",
+        "@Hiddify_Nexttt کانال§ 6",
+        "@Hiddify_Nexttt کانال§ 7",
+        "@Hiddify_Nexttt کانال§ 8",
+        "@Hiddify_Nexttt کانال § 9",
+        "@Hiddify_Nexttt کانال§ 10",
+        "@Hiddify_Nexttt کانال § 11"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify_Nexttt کانال § 0",
+        "@Hiddify_Nexttt کانال § 1",
+        "@Hiddify_Nexttt کانال § 2",
+        "@Hiddify_Nexttt کانال § 3",
+        "@Hiddify_Nexttt کانال§ 4",
+        "@Hiddify_Nexttt کانال§ 5",
+        "@Hiddify_Nexttt کانال§ 6",
+        "@Hiddify_Nexttt کانال§ 7",
+        "@Hiddify_Nexttt کانال§ 8",
+        "@Hiddify_Nexttt کانال § 9",
+        "@Hiddify_Nexttt کانال§ 10",
+        "@Hiddify_Nexttt کانال § 11"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "tolerance": 1,
+      "idle_timeout": "30m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 0",
+      "server": "www.speedtest.net",
+      "server_port": 80,
+      "uuid": "236df2c7-545d-4c7e-9c60-1a0e7d4b3192",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-@Shh_Proxy-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy",
+        "headers": {
+          "Host": "shhproxy.com.www.speedtest.net.www.zula.ir.cloudflare.com.mozdfree.bUzz."
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 1",
+      "server": "speedtest.net",
+      "server_port": 80,
+      "uuid": "telegram-id-PcV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-PcV2ry,telegram-PcV2ry,telegram-PcV2ry,telegram-PcV2ry,telegram-PcV2ry,telegram-PcV2ry,telegram-PcV2ry,telegram-PcV2ry",
+        "headers": {
+          "Host": "edoh1.ir"
+        },
+        "max_early_data": 80,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 2",
+      "server": "speedtest.net",
+      "server_port": 443,
+      "uuid": "telegram-id-PcV2ray",
+      "tls": {
+        "enabled": true,
+        "server_name": "speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-PcV2ray,telegram-PcV2ray,telegram-PcV2ray,telegram-PcV2ray,telegram-PcV2ray,telegram-PcV2ray,telegram-PcV2ray,telegram-PcV2ray",
+        "headers": {
+          "Host": "hwdrt1.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 3",
+      "server": "104.17.147.22",
+      "server_port": 80,
+      "uuid": "3b0593ed-59b3-5ba0-b3c8-f9c325dc7bf5",
+      "transport": {
+        "type": "ws",
+        "path": "/JoinTelegram-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "Rubika.ir.Join--ELiV2ry.com.fr2.vless.Sitespeedtest.net."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال§ 4",
+      "server": "www.speedtest.net",
+      "server_port": 80,
+      "uuid": "3b0593ed-59b3-5ba0-b3c8-f9c325dc7bf5",
+      "transport": {
+        "type": "ws",
+        "path": "/JoinTelegram-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "Rubika.ir.Join--ELiV2ry.com.fr2.vless.Sitespeedtest.net."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال§ 5",
+      "server": "46.245.72.13",
+      "server_port": 30692,
+      "uuid": "2bdc65de-29d1-42df-bfdb-08f0275ca330",
+      "transport": {
+        "type": "http",
+        "host": "Webmail.yjc.ir",
+        "path": "/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray",
+        "method": "GET"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال§ 6",
+      "server": "46.245.72.13",
+      "server_port": 20589,
+      "uuid": "4c63b81f-24cc-4419-b050-7cee37a393b0",
+      "transport": {
+        "type": "http",
+        "host": "Webmail.yjc.ir",
+        "path": "/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray/ViraV2ray",
+        "method": "GET"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال§ 7",
+      "server": "Turk.458ziliao.com",
+      "server_port": 7796,
+      "uuid": "e642111f-b37f-4dac-96e7-8a5b40d6e2fa",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.stackoverflow.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "YWfCdTnr4FAOMYTY2dLrMtQUokyxOGpPhYEEszPj20E",
+          "short_id": "ea1058117be12087"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال§ 8",
+      "server": "speedtest.net",
+      "server_port": 443,
+      "uuid": "XPNTEAM-XPNTEAM-XPNTEAM",
+      "tls": {
+        "enabled": true,
+        "server_name": "speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "Freedomweb.ir"
+        },
+        "max_early_data": 443,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 9",
+      "server": "Speedtest.net",
+      "server_port": 443,
+      "uuid": "07f8b28b-53ef-4228-ac67-72e44cbe3450",
+      "tls": {
+        "enabled": true,
+        "server_name": "Speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-EXPRESSVPN_420,telegram-EXPRESSVPN_420,telegram-EXPRESSVPN_420,telegram-EXPRESSVPN_420",
+        "headers": {
+          "Host": "nj8.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال§ 10",
+      "server": "Speedtest.net",
+      "server_port": 443,
+      "uuid": "1fcccd7f-6fd9-4218-a3c3-8d7aa0911009",
+      "tls": {
+        "enabled": true,
+        "server_name": "Speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-EXPRESSVPN_420,telegram-EXPRESSVPN_420,telegram-EXPRESSVPN_420,telegram-EXPRESSVPN_420",
+        "headers": {
+          "Host": "Ag8.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt کانال § 11",
+      "server": "speedtest.net",
+      "server_port": 80,
+      "uuid": "1fcccd7f-6fd9-4218-a3c3-8d7aa0911009",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-EXPRESSVPN_420,telegram-EXPRESSVPN_420,telegram-EXPRESSVPN_420,telegram-EXPRESSVPN_420",
+        "headers": {
+          "Host": "Ag8.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-30",
+        "sleep": "2-8"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "domain": ".ir",
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:16756",
+      "secret": "mooSjvu_VKyR1iLB"
+    }
+  }
+}
