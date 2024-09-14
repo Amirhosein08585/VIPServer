@@ -1,0 +1,699 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": "connectivitycheck.gstatic.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".ir",
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.96.3",
+        "188.114.97.3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 12334,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "set_system_proxy": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 16450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "🇫🇮@Hiddify_Nexttt کانال § 0",
+        "🇫🇮@Hiddify_Nexttt کانال § 1",
+        "🇫🇮@Hiddify_Nexttt کانال § 2",
+        "🇫🇮@Hiddify_Nexttt کانال § 3",
+        "🇫🇮@Hiddify_Nexttt کانال § 4",
+        "🇫🇮@Hiddify_Nexttt کانال § 5",
+        "🇳🇴@Hiddify_Nexttt کانال § 6",
+        "🇳🇴@ELargo_vpnn کانال § 7",
+        "🇳🇴@Hiddify_Nexttt کانال § 8",
+        "🇳🇴@Hiddify_Nexttt کانال § 9",
+        "🇳🇴@Hiddify_Nexttt کانال § 10",
+        "🇳🇴@Hiddify_Nexttt کانال § 11",
+        "🇵🇱@Hiddify_Nexttt کانال § 12",
+        "🇵🇱@ELargo_vpnn کانال § 13",
+        "🇵🇱@ELargo_vpnn کانال § 14",
+        "🇵🇱@ELargo_vpnn کانال § 15",
+        "🇵🇱@Hiddify_Nexttt کانال § 16",
+        "🇵🇱@ELargo_vpnn کانال § 17",
+        "🇵🇱@ELargo_vpnn کانال § 18",
+        "🇵🇱@ELargo_vpnn کانال § 19",
+        "🇵🇱@iVargo_vpnn کانال § 20",
+        "🇵🇱@Hiddify_Nexttt کانال § 21",
+        "🇵🇱@Hiddify_Nexttt کانال § 22",
+        "🇵🇱@Hiddify_Nexttt کانال § 23",
+        "🇵🇱@Hiddify_Nexttt کانال § 24",
+        "🇵🇱@ELargo_vpnn کانال § 25",
+        "🇵🇱@Hiddify_Nexttt کانال § 26"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "🇫🇮@Hiddify_Nexttt کانال § 0",
+        "🇫🇮@Hiddify_Nexttt کانال § 1",
+        "🇫🇮@Hiddify_Nexttt کانال § 2",
+        "🇫🇮@Hiddify_Nexttt کانال § 3",
+        "🇫🇮@Hiddify_Nexttt کانال § 4",
+        "🇫🇮@Hiddify_Nexttt کانال § 5",
+        "🇳🇴@Hiddify_Nexttt کانال § 6",
+        "🇳🇴@ELargo_vpnn کانال § 7",
+        "🇳🇴@Hiddify_Nexttt کانال § 8",
+        "🇳🇴@Hiddify_Nexttt کانال § 9",
+        "🇳🇴@Hiddify_Nexttt کانال § 10",
+        "🇳🇴@Hiddify_Nexttt کانال § 11",
+        "🇵🇱@Hiddify_Nexttt کانال § 12",
+        "🇵🇱@ELargo_vpnn کانال § 13",
+        "🇵🇱@ELargo_vpnn کانال § 14",
+        "🇵🇱@ELargo_vpnn کانال § 15",
+        "🇵🇱@Hiddify_Nexttt کانال § 16",
+        "🇵🇱@ELargo_vpnn کانال § 17",
+        "🇵🇱@ELargo_vpnn کانال § 18",
+        "🇵🇱@ELargo_vpnn کانال § 19",
+        "🇵🇱@iVargo_vpnn کانال § 20",
+        "🇵🇱@Hiddify_Nexttt کانال § 21",
+        "🇵🇱@Hiddify_Nexttt کانال § 22",
+        "🇵🇱@Hiddify_Nexttt کانال § 23",
+        "🇵🇱@Hiddify_Nexttt کانال § 24",
+        "🇵🇱@ELargo_vpnn کانال § 25",
+        "🇵🇱@Hiddify_Nexttt کانال § 26"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "tolerance": 1,
+      "idle_timeout": "30m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮@Hiddify_Nexttt کانال § 0",
+      "server": "104.17.147.254",
+      "server_port": 2095,
+      "uuid": "2f79c9d1-6c9c-58da-933d-3732fa723739",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.fi2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮@Hiddify_Nexttt کانال § 1",
+      "server": "104.17.147.255",
+      "server_port": 2095,
+      "uuid": "2f79c9d1-6c9c-58da-933d-3732fa723739",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.fi2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮@Hiddify_Nexttt کانال § 2",
+      "server": "104.17.147.254",
+      "server_port": 2095,
+      "uuid": "2f79c9d1-6c9c-58da-933d-3732fa723739",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.fi2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮@Hiddify_Nexttt کانال § 3",
+      "server": "104.17.147.253",
+      "server_port": 2095,
+      "uuid": "2f79c9d1-6c9c-58da-933d-3732fa723739",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.fi2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮@Hiddify_Nexttt کانال § 4",
+      "server": "104.17.147.252",
+      "server_port": 2095,
+      "uuid": "2f79c9d1-6c9c-58da-933d-3732fa723739",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.fi2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮@Hiddify_Nexttt کانال § 5",
+      "server": "104.17.147.251",
+      "server_port": 2095,
+      "uuid": "2f79c9d1-6c9c-58da-933d-3732fa723739",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.fi2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇴@Hiddify_Nexttt کانال § 6",
+      "server": "172.64.32.213",
+      "server_port": 2095,
+      "uuid": "89d8187c-5dc6-5a42-9c7a-510de4560254",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.no1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇴@ELargo_vpnn کانال § 7",
+      "server": "172.64.32.212",
+      "server_port": 2095,
+      "uuid": "89d8187c-5dc6-5a42-9c7a-510de4560254",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.no1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇴@Hiddify_Nexttt کانال § 8",
+      "server": "172.64.32.211",
+      "server_port": 2095,
+      "uuid": "89d8187c-5dc6-5a42-9c7a-510de4560254",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.no1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇴@Hiddify_Nexttt کانال § 9",
+      "server": "172.64.32.210",
+      "server_port": 2095,
+      "uuid": "89d8187c-5dc6-5a42-9c7a-510de4560254",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.no1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇴@Hiddify_Nexttt کانال § 10",
+      "server": "172.64.32.209",
+      "server_port": 2095,
+      "uuid": "89d8187c-5dc6-5a42-9c7a-510de4560254",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.no1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇴@Hiddify_Nexttt کانال § 11",
+      "server": "172.64.32.208",
+      "server_port": 2095,
+      "uuid": "89d8187c-5dc6-5a42-9c7a-510de4560254",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.no1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@Hiddify_Nexttt کانال § 12",
+      "server": "172.64.32.238",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@ELargo_vpnn کانال § 13",
+      "server": "172.64.32.237",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@ELargo_vpnn کانال § 14",
+      "server": "172.64.32.236",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@ELargo_vpnn کانال § 15",
+      "server": "172.64.32.235",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@Hiddify_Nexttt کانال § 16",
+      "server": "172.64.32.234",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@ELargo_vpnn کانال § 17",
+      "server": "172.64.32.233",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@ELargo_vpnn کانال § 18",
+      "server": "172.64.32.232",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@ELargo_vpnn کانال § 19",
+      "server": "172.64.32.231",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@iVargo_vpnn کانال § 20",
+      "server": "172.64.32.230",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@Hiddify_Nexttt کانال § 21",
+      "server": "172.64.32.229",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@Hiddify_Nexttt کانال § 22",
+      "server": "172.64.32.228",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@Hiddify_Nexttt کانال § 23",
+      "server": "172.64.32.227",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@Hiddify_Nexttt کانال § 24",
+      "server": "172.64.32.226",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@ELargo_vpnn کانال § 25",
+      "server": "172.64.32.225",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱@Hiddify_Nexttt کانال § 26",
+      "server": "172.64.32.224",
+      "server_port": 2095,
+      "uuid": "c900a7f9-e1d0-5cef-b34c-f1ba63eb07be",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ry-@ELiV2ry-@ELiV2ry",
+        "headers": {
+          "Host": "6.www.abrha.com.xn--joinBede-ELiV2ry.click.abrarvan.ir.pl2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-30",
+        "sleep": "2-8"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "domain": ".ir",
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:16756",
+      "secret": "EAjR2xqY7KXBCTr0"
+    }
+  }
+}
