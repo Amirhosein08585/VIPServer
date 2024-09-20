@@ -1,0 +1,830 @@
+پ{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.97.3",
+        "188.114.96.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "104.17.148.22",
+        "104.17.147.22",
+        "188.114.97.3",
+        "188.114.96.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450,
+      "override_address": "1.1.1.1",
+      "override_port": 53
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "🇧🇪@Hiddify_Nexttt  § 0",
+        "🇧🇪@Hiddify_Nexttt  § 1",
+        "🇧🇪@Hiddify_Nexttt  § 2",
+        "🇧🇪@Hiddify_Nexttt  § 3",
+        "🇧🇪@Hiddify_Nexttt  § 4",
+        "🇧🇪@Hiddify_Nexttt  § 5",
+        "🇧🇪@Hiddify_Nexttt  § 6",
+        "🇧🇪@Hiddify_Nexttt  § 7",
+        "🇧🇪@Hiddify_Nexttt  § 8",
+        "🇧🇪@Hiddify_Nexttt  § 9",
+        "🇧🇪@Hiddify_Nexttt  § 10",
+        "🇧🇪@Hiddify_Nexttt  § 11",
+        "🇧🇪@Hiddify_Nexttt  § 12",
+        "🇧🇪@Hiddify_Nexttt  § 13",
+        "🇧🇪@Hiddify_Nexttt  § 14",
+        "🇧🇪@Hiddify_Nexttt  § 15",
+        "🇧🇪@Hiddify_Nexttt  § 16",
+        "🇧🇪@Hiddify_Nexttt  § 17",
+        "🇨🇭@Hiddify_Nexttt  § 18",
+        "🇨🇭@Hiddify_Nexttt  § 19",
+        "🇨🇭@Hiddify_Nexttt  § 20",
+        "🇨🇭@Hiddify_Nexttt  § 21",
+        "🇨🇭@Hiddify_Nexttt  § 22",
+        "🇨🇭@Hiddify_Nexttt  § 23",
+        "🇨🇭@Hiddify_Nexttt  § 24",
+        "🇨🇭@Hiddify_Nexttt  § 25",
+        "🇨🇭@Hiddify_Nexttt  § 26",
+        "🇨🇭@Hiddify_Nexttt  § 27",
+        "🇨🇭@Hiddify_Nexttt  § 28",
+        "🇨🇭@Hiddify_Nexttt  § 29",
+        "🇨🇭@Hiddify_Nexttt  § 30",
+        "🇨🇭@Hiddify_Nexttt  § 31",
+        "🇨🇭@Hiddify_Nexttt  § 32",
+        "🇨🇭@Hiddify_Nexttt  § 33"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "🇧🇪@Hiddify_Nexttt  § 0",
+        "🇧🇪@Hiddify_Nexttt  § 1",
+        "🇧🇪@Hiddify_Nexttt  § 2",
+        "🇧🇪@Hiddify_Nexttt  § 3",
+        "🇧🇪@Hiddify_Nexttt  § 4",
+        "🇧🇪@Hiddify_Nexttt  § 5",
+        "🇧🇪@Hiddify_Nexttt  § 6",
+        "🇧🇪@Hiddify_Nexttt  § 7",
+        "🇧🇪@Hiddify_Nexttt  § 8",
+        "🇧🇪@Hiddify_Nexttt  § 9",
+        "🇧🇪@Hiddify_Nexttt  § 10",
+        "🇧🇪@Hiddify_Nexttt  § 11",
+        "🇧🇪@Hiddify_Nexttt  § 12",
+        "🇧🇪@Hiddify_Nexttt  § 13",
+        "🇧🇪@Hiddify_Nexttt  § 14",
+        "🇧🇪@Hiddify_Nexttt  § 15",
+        "🇧🇪@Hiddify_Nexttt  § 16",
+        "🇧🇪@Hiddify_Nexttt  § 17",
+        "🇨🇭@Hiddify_Nexttt  § 18",
+        "🇨🇭@Hiddify_Nexttt  § 19",
+        "🇨🇭@Hiddify_Nexttt  § 20",
+        "🇨🇭@Hiddify_Nexttt  § 21",
+        "🇨🇭@Hiddify_Nexttt  § 22",
+        "🇨🇭@Hiddify_Nexttt  § 23",
+        "🇨🇭@Hiddify_Nexttt  § 24",
+        "🇨🇭@Hiddify_Nexttt  § 25",
+        "🇨🇭@Hiddify_Nexttt  § 26",
+        "🇨🇭@Hiddify_Nexttt  § 27",
+        "🇨🇭@Hiddify_Nexttt  § 28",
+        "🇨🇭@Hiddify_Nexttt  § 29",
+        "🇨🇭@Hiddify_Nexttt  § 30",
+        "🇨🇭@Hiddify_Nexttt  § 31",
+        "🇨🇭@Hiddify_Nexttt  § 32",
+        "🇨🇭@Hiddify_Nexttt  § 33"
+      ],
+      "url": "http://cp.cloudflare.com/",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 0",
+      "server": "104.16.16.23",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 1",
+      "server": "104.16.16.24",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 2",
+      "server": "104.16.16.25",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 3",
+      "server": "104.16.16.26",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 4",
+      "server": "104.16.16.27",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 5",
+      "server": "104.16.16.28",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 6",
+      "server": "104.16.16.32",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 7",
+      "server": "104.16.16.33",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 8",
+      "server": "104.16.16.34",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 9",
+      "server": "104.16.16.35",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 10",
+      "server": "104.16.16.36",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 11",
+      "server": "104.16.16.37",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 12",
+      "server": "104.16.16.38",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 13",
+      "server": "104.16.16.39",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 14",
+      "server": "104.16.16.40",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 15",
+      "server": "104.16.16.61",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 16",
+      "server": "104.16.16.62",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪@Hiddify_Nexttt  § 17",
+      "server": "104.16.16.63",
+      "server_port": 2095,
+      "uuid": "0fca6851-457c-50e0-b8af-fc1ef830626c",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELeNa-TheGreatDictator",
+        "headers": {
+          "Host": "www.speedtest.net.xn--join-eliv2ry.com.be2.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 18",
+      "server": "188.114.96.216",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 19",
+      "server": "188.114.96.217",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 20",
+      "server": "188.114.96.218",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 21",
+      "server": "188.114.96.219",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 22",
+      "server": "188.114.96.220",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 23",
+      "server": "188.114.96.221",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 24",
+      "server": "188.114.96.222",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 25",
+      "server": "188.114.96.223",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 26",
+      "server": "188.114.96.216",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 27",
+      "server": "188.114.96.217",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 28",
+      "server": "188.114.96.218",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 29",
+      "server": "188.114.96.219",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 30",
+      "server": "188.114.96.220",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 31",
+      "server": "188.114.96.221",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 32",
+      "server": "188.114.96.222",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭@Hiddify_Nexttt  § 33",
+      "server": "188.114.96.223",
+      "server_port": 2052,
+      "uuid": "1b9b7c77-2f12-5d04-8f57-e01112305ad6",
+      "transport": {
+        "type": "ws",
+        "path": "/-ELENA-TheGreatDictator",
+        "headers": {
+          "Host": "www.abrha.com.abrha.net.www.speedtest.net.join.ELiV2ry.io.ch1.vless.Sitespeedtest.net."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
+    "rules": [
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "XlOeArCbBK0gHhB0"
+    }
+  }
+}
