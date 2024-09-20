@@ -34,7 +34,10 @@
     ],
     "rules": [
       {
-        "domain": "speedtest.net",
+        "domain": [
+          "speedtest.net",
+          "iranserver.com"
+        ],
         "server": "dns-direct"
       },
       {
@@ -51,16 +54,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.96.3",
-        "188.114.97.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
+        "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
         "104.17.148.22",
         "104.17.147.22",
-        "172.67.214.246",
-        "104.21.83.62",
-        "2606:4700:3030::ac43:d6f6",
-        "2606:4700:3030::6815:533e"
+        "188.114.96.6",
+        "188.114.97.6",
+        "2a06:98c1:3120::6",
+        "2a06:98c1:3121::6"
       ]
     },
     "independent_cache": true
@@ -102,7 +105,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇫🇮@Hiddify_nexttt § 0"
+        "@Hiddify_nexttt  § 0",
+        "@Hiddify_nexttt § 1"
       ],
       "default": "auto"
     },
@@ -110,7 +114,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇫🇮@Hiddify_nexttt § 0"
+        "@Hiddify_nexttt  § 0",
+        "@Hiddify_nexttt § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -118,10 +123,10 @@
     },
     {
       "type": "vless",
-      "tag": "🇫🇮@Hiddify_nexttt § 0",
+      "tag": "@Hiddify_nexttt  § 0",
       "server": "speedtest.net",
       "server_port": 443,
-      "uuid": "8ae2c48b-35fa-4d46-8bc2-b446930bfef9",
+      "uuid": "7f64b6ea-a0ee-477f-8322-bc4d73c324b9",
       "tls": {
         "enabled": true,
         "server_name": "speedtest.net",
@@ -135,6 +140,23 @@
         "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
         "headers": {
           "Host": "TEL.UNLIMITEDDEV.http.www.speedtest.net.fast.com.unlimiteddev.ir."
+        },
+        "max_early_data": 8880,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt § 1",
+      "server": "iranserver.com",
+      "server_port": 80,
+      "uuid": "7f64b6ea-a0ee-477f-8322-bc4d73c324b9",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "join-to.unlimiteddev.Community."
         },
         "max_early_data": 8880,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -209,7 +231,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "ED53uXLqlI3ksGV0"
+      "secret": "9ltzrYZuAy4VrnyF"
     }
   }
 }
