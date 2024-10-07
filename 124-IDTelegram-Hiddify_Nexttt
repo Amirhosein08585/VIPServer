@@ -1,0 +1,637 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "[2606:4700:310c::ac42:2fac]",
+          "channel-id-eliv2ry.pages.dev",
+          "www.speedtest.net",
+          "[2606:4700:310c::ac42:2c54]"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.97.3",
+        "188.114.96.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
+        "104.17.147.22",
+        "104.17.148.22"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450,
+      "override_address": "1.1.1.1",
+      "override_port": 53
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "💦 1 - VLESS F - Domain : 8443",
+        "💦 2 - VLESS F - Domain : 8443",
+        "💦 3 - VLESS F - IPv4 : 8443",
+        "💦 4 - VLESS F - IPv4 : 8443",
+        "💦 5 - VLESS F - IPv6 : 8443",
+        "💦 6 - VLESS F - IPv6 : 8443",
+        "💦 7 - VLESS F - Clean IP : 8443",
+        "💦 8 - VLESS F - Domain : 2053",
+        "💦 9 - VLESS F - Domain : 2053",
+        "💦 10 - VLESS F - IPv4 : 2053",
+        "💦 11 - VLESS F - IPv4 : 2053",
+        "💦 12 - VLESS F - IPv6 : 2053",
+        "💦 13 - VLESS F - IPv6 : 2053",
+        "💦 14 - VLESS F - Clean IP : 2053"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "💦 1 - VLESS F - Domain : 8443",
+        "💦 2 - VLESS F - Domain : 8443",
+        "💦 3 - VLESS F - IPv4 : 8443",
+        "💦 4 - VLESS F - IPv4 : 8443",
+        "💦 5 - VLESS F - IPv6 : 8443",
+        "💦 6 - VLESS F - IPv6 : 8443",
+        "💦 7 - VLESS F - Clean IP : 8443",
+        "💦 8 - VLESS F - Domain : 2053",
+        "💦 9 - VLESS F - Domain : 2053",
+        "💦 10 - VLESS F - IPv4 : 2053",
+        "💦 11 - VLESS F - IPv4 : 2053",
+        "💦 12 - VLESS F - IPv6 : 2053",
+        "💦 13 - VLESS F - IPv6 : 2053",
+        "💦 14 - VLESS F - Clean IP : 2053"
+      ],
+      "url": "http://cp.cloudflare.com/",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "💦 1 - VLESS F - Domain : 8443",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "channel-id-eliv2ry.pages.dev",
+      "server_port": 8443,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "chAnneL-Id-eliv2rY.PAgEs.Dev",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/NlIm3a37P3qJB0A9",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 2 - VLESS F - Domain : 8443",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "www.speedtest.net",
+      "server_port": 8443,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "channEL-ID-eLIV2rY.PageS.DEV",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/s2TxhDa1PPgxquVn",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 3 - VLESS F - IPv4 : 8443",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "172.66.47.172",
+      "server_port": 8443,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "chAnnEL-iD-elIv2rY.pages.DEV",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Z5hI0Llggi14pMCd",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 4 - VLESS F - IPv4 : 8443",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "172.66.44.84",
+      "server_port": 8443,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "cHANnel-Id-eLIV2RY.PAGeS.DEV",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/7GPrcg3mrzoB7v6w",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 5 - VLESS F - IPv6 : 8443",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "[2606:4700:310c::ac42:2c54]",
+      "server_port": 8443,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "chANNel-iD-ELIv2ry.pAgES.dev",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/YEEQGnI1HzAonhjw",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 6 - VLESS F - IPv6 : 8443",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "[2606:4700:310c::ac42:2fac]",
+      "server_port": 8443,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "CHAnNEl-id-elIv2ry.pAGes.dev",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/2pJ3zSBBLGDcQCZx",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 7 - VLESS F - Clean IP : 8443",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "104.18.68.168",
+      "server_port": 8443,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "CHaNnEL-ID-eLIv2RY.paGES.dev",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Q5TdEWn46t9Sszc8",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 8 - VLESS F - Domain : 2053",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "channel-id-eliv2ry.pages.dev",
+      "server_port": 2053,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "chANNEL-id-elIV2RY.Pages.dEV",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/GMQnUEi6kXk1ErKx",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 9 - VLESS F - Domain : 2053",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "www.speedtest.net",
+      "server_port": 2053,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "cHaNNeL-ID-ElIv2Ry.pAGeS.DEv",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/T9QIFvocq0gkHRwU",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 10 - VLESS F - IPv4 : 2053",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "172.66.47.172",
+      "server_port": 2053,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "ChaNnEL-Id-eLiV2RY.pagEs.dev",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/PP3c61jBafZ7WYXg",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 11 - VLESS F - IPv4 : 2053",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "172.66.44.84",
+      "server_port": 2053,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "ChAnNeL-Id-elIv2ry.pAGeS.dEV",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/X6Gf0SVrP5lzyj4R",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 12 - VLESS F - IPv6 : 2053",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "[2606:4700:310c::ac42:2c54]",
+      "server_port": 2053,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "cHanNEL-id-ELIV2RY.pagEs.DEV",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/lwSFHkdFYOD3x3Fq",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 13 - VLESS F - IPv6 : 2053",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "[2606:4700:310c::ac42:2fac]",
+      "server_port": 2053,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "chAnnEL-iD-ELiV2ry.pAGes.Dev",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tCw3K7DjywQyWDw8",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "💦 14 - VLESS F - Clean IP : 2053",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-20",
+        "sleep": "1-1"
+      },
+      "server": "104.18.68.168",
+      "server_port": 2053,
+      "uuid": "d5fa712f-5e1d-48c2-bb15-f90e2488c209",
+      "tls": {
+        "enabled": true,
+        "server_name": "cHanNEL-iD-ELiv2ry.pAGeS.DEv",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/2aSZuxMgPFN3noGy",
+        "headers": {
+          "Host": "channel-id-eliv2ry.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
+    "rules": [
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "HeRwhENJEE1Sm-eG"
+    }
+  }
+}
