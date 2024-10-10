@@ -1,0 +1,474 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "hajlab.ucdavis.edu",
+          "www.speedtest.net",
+          "www.parsvds.ir"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.97.3",
+        "188.114.96.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450,
+      "override_address": "1.1.1.1",
+      "override_port": 53
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify_nexttt کانال § 0",
+        "@Hiddify_nexttt کانال § 1",
+        "@Hiddify_nexttt کانال § 2",
+        "@Hiddify_nexttt کانال § 3",
+        "@Hiddify_nexttt کانال § 4",
+        "@Hiddify_nexttt کانال § 5",
+        "@Hiddify_nexttt کانال § 6",
+        "@Hiddify_nexttt کانال § 7",
+        "@Hiddify_nexttt کانال § 8",
+        "@Hiddify_nexttt کانال § 9",
+        "@Hiddify_nexttt کانال § 10",
+        "@Hiddify_nexttt کانال § 11",
+        "@Hiddify_nexttt کانال § 12",
+        "@Hiddify_nexttt کانال § 13",
+        "@Hiddify_nexttt کانال § 14"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify_nexttt کانال § 0",
+        "@Hiddify_nexttt کانال § 1",
+        "@Hiddify_nexttt کانال § 2",
+        "@Hiddify_nexttt کانال § 3",
+        "@Hiddify_nexttt کانال § 4",
+        "@Hiddify_nexttt کانال § 5",
+        "@Hiddify_nexttt کانال § 6",
+        "@Hiddify_nexttt کانال § 7",
+        "@Hiddify_nexttt کانال § 8",
+        "@Hiddify_nexttt کانال § 9",
+        "@Hiddify_nexttt کانال § 10",
+        "@Hiddify_nexttt کانال § 11",
+        "@Hiddify_nexttt کانال § 12",
+        "@Hiddify_nexttt کانال § 13",
+        "@Hiddify_nexttt کانال § 14"
+      ],
+      "url": "http://cp.cloudflare.com/",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 0",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "3a695ef0-5a70-4c29-b244-e7bb82db7f68",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "wWw.SpEeDtEsT.NeT.ZuLa.Ir.IkCoSaLeS.iR.D662599.v02.drlimitemergency.net"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 1",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 80,
+      "uuid": "3a695ef0-5a70-4c29-b244-e7bb82db7f68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "wWw.SpEeDtEsT.NeT.ZuLa.Ir.IkCoSaLeS.iR.D662599.v26.drlimitemergency.net"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 2",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 80,
+      "uuid": "3a695ef0-5a70-4c29-b244-e7bb82db7f68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "wWw.SpEeDtEsT.NeT.ZuLa.Ir.IkCoSaLeS.iR.D662599.v14.drlimitemergency.net"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 3",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 80,
+      "uuid": "3a695ef0-5a70-4c29-b244-e7bb82db7f68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "wWw.SpEeDtEsT.NeT.ZuLa.Ir.IkCoSaLeS.iR.D662599.v31.drlimitemergency.net"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 4",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "3a695ef0-5a70-4c29-b244-e7bb82db7f68",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "wWw.SpEeDtEsT.NeT.ZuLa.Ir.IkCoSaLeS.iR.D662599.v29.drlimitemergency.net"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 5",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 80,
+      "uuid": "3a695ef0-5a70-4c29-b244-e7bb82db7f68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "wWw.SpEeDtEsT.NeT.ZuLa.Ir.IkCoSaLeS.iR.D662599.v29.drlimitemergency.net"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 6",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 80,
+      "uuid": "3a695ef0-5a70-4c29-b244-e7bb82db7f68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "wWw.SpEeDtEsT.NeT.ZuLa.Ir.IkCoSaLeS.iR.D662599.v17.drlimitemergency.net"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 7",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "3a695ef0-5a70-4c29-b244-e7bb82db7f68",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "wWw.SpEeDtEsT.NeT.ZuLa.Ir.IkCoSaLeS.iR.D662599.v15.drlimitemergency.net"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 8",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 80,
+      "uuid": "3a695ef0-5a70-4c29-b244-e7bb82db7f68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "wWw.SpEeDtEsT.NeT.ZuLa.Ir.IkCoSaLeS.iR.D662599.v04.drlimitemergency.net"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 9",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 80,
+      "uuid": "3a695ef0-5a70-4c29-b244-e7bb82db7f68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "wWw.SpEeDtEsT.NeT.ZuLa.Ir.IkCoSaLeS.iR.D662599.v22.drlimitemergency.net"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 10",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 80,
+      "uuid": "3a695ef0-5a70-4c29-b244-e7bb82db7f68",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "wWw.SpEeDtEsT.NeT.ZuLa.Ir.IkCoSaLeS.iR.D662599.v01.drlimitemergency.net"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 11",
+      "server": "www.speedtest.net",
+      "server_port": 8880,
+      "uuid": "437897f8-d4e6-4474-a8a4-ce1e4964bd85",
+      "transport": {
+        "type": "ws",
+        "path": "/@Maznet--@Maznet--@Maznet--@Maznet--@Maznet--@Maznet--@Maznet--@Maznet--@Maznet--@Maznet",
+        "headers": {
+          "Host": "ftp.debian.org.www.digikala.com.www.speedtest.net.SnappFoodSuppOrt.ShoP."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 12",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "9cf157d3-72a9-4a23-8715-31fdf78b00d1",
+      "transport": {
+        "type": "ws",
+        "path": "/@Maznet--@MAZNET--@Maznet--@MAZNET--@Maznet--@MAZNET--@Maznet--@MAZNET--@Maznet--@MAZNET",
+        "headers": {
+          "Host": "maznet---_-_---maznet2.iMamhussaIn.sbs."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 13",
+      "server": "172.66.46.213",
+      "server_port": 443,
+      "uuid": "f5edeac8-f720-4bd3-9e09-05d34b740801",
+      "tls": {
+        "enabled": true,
+        "server_name": "speedtest.svgspeedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy",
+        "headers": {
+          "Host": "speedtest.svgspeedtest.net"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt کانال § 14",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "dc410ee3-3ee1-4da2-bbbd-87d8194e7f72",
+      "transport": {
+        "type": "ws",
+        "path": "/@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy",
+        "headers": {
+          "Host": "www.speedtest.net.www.zula.ir.cloudflare.com.www.zula.ir.svgspeedtest.net"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
+    "rules": [
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "zKl4_IDrF1D6HNwp"
+    }
+  }
+}
