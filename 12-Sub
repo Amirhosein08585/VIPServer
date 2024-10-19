@@ -1,7 +1,6 @@
 {
   "log": {
     "level": "warn",
-    "output": "box.log",
     "timestamp": true
   },
   "dns": {
@@ -34,31 +33,23 @@
     ],
     "rules": [
       {
-        "domain_suffix": ".ir",
-        "geosite": "ir",
-        "server": "dns-direct"
-      },
-      {
         "domain": "cp.cloudflare.com",
         "server": "dns-remote",
         "rewrite_ttl": 3000
+      },
+      {
+        "domain_suffix": ".ir",
+        "server": "dns-direct"
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
       }
     ],
     "final": "dns-remote",
-    "static_ips": {
-      "sky.rethinkdns.com": [
-        "188.114.96.3",
-        "188.114.97.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
-        "104.17.148.22",
-        "104.17.147.22",
-        "188.114.96.3",
-        "188.114.97.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3"
-      ]
-    },
     "independent_cache": true
   },
   "inbounds": [
@@ -71,15 +62,14 @@
       "auto_route": true,
       "strict_route": true,
       "endpoint_independent_nat": true,
-      "stack": "mixed",
-      "sniff": true,
-      "sniff_override_destination": true
+      "stack": "gvisor",
+      "sniff": true
     },
     {
       "type": "mixed",
       "tag": "mixed-in",
       "listen": "127.0.0.1",
-      "listen_port": 2334,
+      "listen_port": 12334,
       "sniff": true,
       "sniff_override_destination": true
     },
@@ -87,9 +77,7 @@
       "type": "direct",
       "tag": "dns-in",
       "listen": "127.0.0.1",
-      "listen_port": 6450,
-      "override_address": "1.1.1.1",
-      "override_port": 53
+      "listen_port": 16450
     }
   ],
   "outbounds": [
@@ -111,9 +99,14 @@
         "[🇳🇱]+➠+@Hiddify_Nexttt+|+32267 § 10",
         "[🇳🇱]+➠+@Hiddify_Nexttt+|+32268 § 11",
         "[🇬🇧]+➠+@Hiddify_Nexttt+|+32269 § 12",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32270 § 13"
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32270 § 13",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32272 § 14",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32273 § 15",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32279 § 16",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32280 § 17"
       ],
-      "default": "auto"
+      "default": "auto",
+      "interrupt_exist_connections": true
     },
     {
       "type": "urltest",
@@ -132,11 +125,17 @@
         "[🇳🇱]+➠+@Hiddify_Nexttt+|+32267 § 10",
         "[🇳🇱]+➠+@Hiddify_Nexttt+|+32268 § 11",
         "[🇬🇧]+➠+@Hiddify_Nexttt+|+32269 § 12",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32270 § 13"
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32270 § 13",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32272 § 14",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32273 § 15",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32279 § 16",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32280 § 17"
       ],
-      "url": "http://cp.cloudflare.com/",
+      "url": "http://cp.cloudflare.com",
       "interval": "10m0s",
-      "idle_timeout": "1h40m0s"
+      "tolerance": 1,
+      "idle_timeout": "30m0s",
+      "interrupt_exist_connections": true
     },
     {
       "type": "vless",
@@ -151,7 +150,7 @@
           "Host": "Search.DigiKala.CYoU."
         }
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -176,7 +175,7 @@
         "max_early_data": 2560,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -184,7 +183,7 @@
       "server": "2a01:4f8:1c1b:26eb::1",
       "server_port": 8888,
       "uuid": "Parsashonam-80",
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -201,7 +200,7 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -218,7 +217,7 @@
         "max_early_data": 8080,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -243,7 +242,7 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -268,7 +267,7 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -293,7 +292,7 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -318,7 +317,7 @@
         "max_early_data": 2052,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -343,7 +342,7 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -368,7 +367,7 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -393,7 +392,7 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -418,7 +417,7 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "vless",
@@ -435,7 +434,99 @@
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32272 § 14",
+      "server": "104.17.234.114",
+      "server_port": 8443,
+      "uuid": "ad2cba08-4547-48f8-a71f-11f57b42d974",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.bede.VPNCUSTOMIZE.www.speedtest.net.nl.Powerfullserver.de",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.bede.VPNCUSTOMIZE.www.speedtest.net.nl.Powerfullserver.de"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32273 § 15",
+      "server": "104.17.234.128",
+      "server_port": 443,
+      "uuid": "ad2cba08-4547-48f8-a71f-11f57b42d974",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.VPNCUSTOMIZE.www.speedtest.net.ovh.Powerfullserver.de",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.VPNCUSTOMIZE.www.speedtest.net.ovh.Powerfullserver.de"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32279 § 16",
+      "server": "151.101.3.8",
+      "server_port": 80,
+      "uuid": "4be3cc7b-2d3d-46c4-b0c5-7a30a80ae7c1",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "Awawaw.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32280 § 17",
+      "server": "151.101.2.133",
+      "server_port": 443,
+      "uuid": "telegram-id-ArV2ray",
+      "tls": {
+        "enabled": true,
+        "server_name": "busbud.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "dweinsskw4.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
     },
     {
       "type": "dns",
@@ -450,8 +541,8 @@
       "tag": "direct-fragment",
       "tls_fragment": {
         "enabled": true,
-        "size": "1-500",
-        "sleep": "0-500"
+        "size": "10-30",
+        "sleep": "2-8"
       }
     },
     {
@@ -464,13 +555,12 @@
     }
   ],
   "route": {
-    "geoip": {
-      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
-    },
-    "geosite": {
-      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
-    },
     "rules": [
+      {
+        "inbound": "tun-in",
+        "package_name": "app.hiddify.com",
+        "outbound": "bypass"
+      },
       {
         "inbound": "dns-in",
         "outbound": "dns-out"
@@ -480,18 +570,31 @@
         "outbound": "dns-out"
       },
       {
-        "clash_mode": "Direct",
+        "domain_suffix": ".ir",
         "outbound": "direct"
       },
       {
-        "clash_mode": "Global",
-        "outbound": "select"
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
       },
       {
-        "domain_suffix": ".ir",
-        "geosite": "ir",
-        "geoip": "ir",
-        "outbound": "bypass"
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
       }
     ],
     "final": "select",
@@ -504,8 +607,8 @@
       "path": "clash.db"
     },
     "clash_api": {
-      "external_controller": "127.0.0.1:6756",
-      "secret": "FzbvscS_CJd3BqiS"
+      "external_controller": "127.0.0.1:16756",
+      "secret": "y9hxGT_uCZHIZKwi"
     }
   }
 }
