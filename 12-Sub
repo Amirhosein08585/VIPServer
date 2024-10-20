@@ -108,7 +108,10 @@
         "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 11",
         "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 12",
         "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 13",
-        "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 14"
+        "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 14",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 15",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 16",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 17"
       ],
       "default": "auto",
       "interrupt_exist_connections": true
@@ -131,7 +134,10 @@
         "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 11",
         "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 12",
         "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 13",
-        "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 14"
+        "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 14",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 15",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 16",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 17"
       ],
       "url": "http://cp.cloudflare.com",
       "interval": "10m0s",
@@ -499,6 +505,79 @@
       "packet_encoding": "xudp"
     },
     {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 15",
+      "server": "104.17.147.22",
+      "server_port": 2087,
+      "uuid": "TELEGRAM-NUFiLTER",
+      "tls": {
+        "enabled": true,
+        "server_name": "Ba34.ddigicyber.click.",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "Ba34.ddigicyber.click."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 16",
+      "server": "185.238.228.6",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "403b3611-99bc-43b7-88D7-26Ed5D0825a9-3.PAgeS.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/trLb1imnrxPEhfzfwk?ed",
+        "headers": {
+          "Host": "403b3611-99bc-43b7-88d7-26ed5d0825a9-3.pages.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat ☠️ § 17",
+      "server": "151.101.38.228",
+      "server_port": 443,
+      "uuid": "telegram-id-ArV2ray",
+      "tls": {
+        "enabled": true,
+        "server_name": "Zmaoz.Faculty.Ucdavis.Edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "fer3sowk.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
       "type": "dns",
       "tag": "dns-out"
     },
@@ -578,7 +657,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:16756",
-      "secret": "wosTDBgARWJPCZQ_"
+      "secret": "esagOfBP8oN9pDTl"
     }
   }
 }
