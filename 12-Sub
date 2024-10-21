@@ -58,6 +58,16 @@
       }
     ],
     "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.97.6",
+        "188.114.96.6",
+        "2a06:98c1:3121::6",
+        "2a06:98c1:3120::6"
+      ]
+    },
     "independent_cache": true
   },
   "inbounds": [
@@ -99,7 +109,10 @@
         "@Hiddify-Nexttt\nPowered by MrBlackHat+4 § 2",
         "@Hiddify-Nexttt\nPowered by MrBlackHat+5 § 3",
         "@Hiddify-Nexttt\nPowered by MrBlackHat+9 § 4",
-        "@Hiddify-Nexttt\nPowered by MrBlackHat+16 § 5"
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+16 § 5",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+43 § 6",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+41 § 7",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+40 § 8"
       ],
       "default": "auto",
       "interrupt_exist_connections": true
@@ -113,7 +126,10 @@
         "@Hiddify-Nexttt\nPowered by MrBlackHat+4 § 2",
         "@Hiddify-Nexttt\nPowered by MrBlackHat+5 § 3",
         "@Hiddify-Nexttt\nPowered by MrBlackHat+9 § 4",
-        "@Hiddify-Nexttt\nPowered by MrBlackHat+16 § 5"
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+16 § 5",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+43 § 6",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+41 § 7",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+40 § 8"
       ],
       "url": "http://cp.cloudflare.com",
       "interval": "10m0s",
@@ -245,6 +261,81 @@
       "packet_encoding": "xudp"
     },
     {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+43 § 6",
+      "server": "www.speedtest.net",
+      "server_port": 8443,
+      "uuid": "94aa7030-2292-453d-b6ff-7f26ca3e7b56",
+      "tls": {
+        "enabled": true,
+        "server_name": "Join.VPNCUSTOMIZE.www.speedtest.net.Naziitness.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "Join.VPNCUSTOMIZE.www.speedtest.net.Naziitness.com"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+41 § 7",
+      "server": "104.18.165.38",
+      "server_port": 8443,
+      "uuid": "94aa7030-2292-453d-b6ff-7f26ca3e7b56",
+      "tls": {
+        "enabled": true,
+        "server_name": "Join.VPNCUSTOMIZE.speedtest.net.Naziitness.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "Join.VPNCUSTOMIZE.speedtest.net.Naziitness.com"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+40 § 8",
+      "server": "104.17.234.128",
+      "server_port": 443,
+      "uuid": "94aa7030-2292-453d-b6ff-7f26ca3e7b56",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.bede.VPNCUSTOMIZE.www.speedtest.net.Abrha.co.za",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.bede.vpncustomize.www.speedtest.net.Abrha.co.za"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
       "type": "dns",
       "tag": "dns-out"
     },
@@ -324,7 +415,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:16756",
-      "secret": "KRWZzEKGndCZNj6u"
+      "secret": "_mAd2c_VIwxN3S14"
     }
   }
 }
