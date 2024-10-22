@@ -1,0 +1,1077 @@
+{
+  "log": {
+    "level": "warn",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "connectcarolina.sites.unc.edu",
+          "live.skornorth.com",
+          "ergwork.web.unc.edu",
+          "live.wkrq.com",
+          "funnelytics.io",
+          "hajlab.ucdavis.edu",
+          "zmaoz.faculty.ucdavis.edu"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "domain_suffix": ".ir",
+        "server": "dns-direct"
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "gvisor",
+      "sniff": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 12334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 16450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+1 § 0",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+2 § 1",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+3 § 2",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+4 § 3",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+5 § 4",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+6 § 5",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+7 § 6",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+8 § 6",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+9 § 7",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+10 § 8",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+11 § 10",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+12 § 20",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+13 § 21",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+14 § 22",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+15 § 23",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+16 § 24",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+17 § 25",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+18 § 28",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+19 § 29",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+20§ 32",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+21§ 33",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+22§ 34",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+23§ 35",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+24§ 36",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+25§ 37",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+26§ 38",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+27§ 39",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+28§ 40",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+29§ 41",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+30§ 42",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+31 § 43",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+32§ 44",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+35§ 45",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+34§ 46"
+      ],
+      "default": "auto",
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+1 § 0",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+2 § 1",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+3 § 2",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+4 § 3",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+5 § 4",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+6 § 5",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+7 § 6",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+8 § 6",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+9 § 7",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+10 § 8",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+11 § 10",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+12 § 20",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+13 § 21",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+14 § 22",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+15 § 23",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+16 § 24",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+17 § 25",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+18 § 28",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+19 § 29",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+20§ 32",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+21§ 33",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+22§ 34",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+23§ 35",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+24§ 36",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+25§ 37",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+26§ 38",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+27§ 39",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+28§ 40",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+29§ 41",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+30§ 42",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+31 § 43",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+32§ 44",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+35§ 45",
+        "@Hiddify-Nexttt\nPowered by MrBlackHat+34§ 46"
+      ],
+      "url": "http://cp.cloudflare.com",
+      "interval": "10m0s",
+      "tolerance": 1,
+      "idle_timeout": "30m0s",
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+1 § 0",
+      "server": "151.101.38.228",
+      "server_port": 443,
+      "uuid": "Joinbede--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapp.express"
+        },
+        "max_early_data": 2052,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+2 § 1",
+      "server": "151.101.38.133",
+      "server_port": 443,
+      "uuid": "Join--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "ergwork.web.unc.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapp.taxi"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+3 § 2",
+      "server": "151.101.38.228",
+      "server_port": 443,
+      "uuid": "tell--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snappshop.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+4 § 3",
+      "server": "151.101.3.8",
+      "server_port": 80,
+      "uuid": "6bc409cc-1e8a-4889-8620-627c22bdc518",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "Morchechi.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+5 § 4",
+      "server": "151.101.2.165",
+      "server_port": 80,
+      "uuid": "bffc110a-55a4-49cf-be0d-d65bcc08a02a",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "A49.v2rayn.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+6 § 5",
+      "server": "151.101.2.165",
+      "server_port": 80,
+      "uuid": "bffc110a-55a4-49cf-be0d-d65bcc08a02a",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "A49.v2rayn.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+7 § 6",
+      "server": "151.101.38.228",
+      "server_port": 443,
+      "uuid": "telegram-id-ArV2ray",
+      "tls": {
+        "enabled": true,
+        "server_name": "Zmaoz.Faculty.Ucdavis.Edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "fer4sowk.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+8 § 6",
+      "server": "104.17.148.22",
+      "server_port": 8443,
+      "uuid": "94aa7030-2292-453d-b6ff-7f26ca3e7b56",
+      "tls": {
+        "enabled": true,
+        "server_name": "Join.VPNCUSTOMIZE.www.speedtest.net.Naziitness.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "Join.VPNCUSTOMIZE.www.speedtest.net.Naziitness.com"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+9 § 7",
+      "server": "104.18.165.38",
+      "server_port": 8443,
+      "uuid": "94aa7030-2292-453d-b6ff-7f26ca3e7b56",
+      "tls": {
+        "enabled": true,
+        "server_name": "Join.VPNCUSTOMIZE.speedtest.net.Naziitness.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "Join.VPNCUSTOMIZE.speedtest.net.Naziitness.com"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+10 § 8",
+      "server": "104.17.234.128",
+      "server_port": 443,
+      "uuid": "94aa7030-2292-453d-b6ff-7f26ca3e7b56",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.bede.VPNCUSTOMIZE.www.speedtest.net.Abrha.co.za",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.bede.vpncustomize.www.speedtest.net.Abrha.co.za"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+11 § 10",
+      "server": "151.101.38.228",
+      "server_port": 443,
+      "uuid": "Parsashonam-82",
+      "tls": {
+        "enabled": true,
+        "server_name": "Zmaoz.Faculty.Ucdavis.Edu.",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Parsashonam/ws",
+        "headers": {
+          "Host": "Parsashonam0.com"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+12 § 20",
+      "server": "151.101.66.133",
+      "server_port": 443,
+      "uuid": "telegram-id-ArV2ray",
+      "tls": {
+        "enabled": true,
+        "server_name": "busbud.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "dweinsskw6.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+13 § 21",
+      "server": "151.101.38.228",
+      "server_port": 443,
+      "uuid": "Joinbede--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapp.express"
+        },
+        "max_early_data": 2052,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+14 § 22",
+      "server": "151.101.38.133",
+      "server_port": 443,
+      "uuid": "Joinin--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "connectcarolina.sites.unc.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapptrip.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+15 § 23",
+      "server": "151.101.38.228",
+      "server_port": 443,
+      "uuid": "tell--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snappshop.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+16 § 24",
+      "server": "151.101.38.133",
+      "server_port": 443,
+      "uuid": "tel--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "live.skornorth.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON",
+        "headers": {
+          "Host": "okala.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+17 § 25",
+      "server": "151.101.38.133",
+      "server_port": 443,
+      "uuid": "Join--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "ergwork.web.unc.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapp.taxi"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+18 § 28",
+      "server": "151.101.3.8",
+      "server_port": 80,
+      "uuid": "c61e4071-ba2b-4d0d-ba3c-ce69bdcb7132",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "Abdarchiejahanam.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+19 § 29",
+      "server": "162.159.135.42",
+      "server_port": 8443,
+      "uuid": "110ef14f-276f-451f-9fe5-65b4c1898d55",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.bede.VPNCUSTOMIZE.www.speedtest.net.Powerfullserver.de",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.bede.VPNCUSTOMIZE.www.speedtest.net.Powerfullserver.de"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+20§ 32",
+      "server": "funnelytics.io",
+      "server_port": 8443,
+      "uuid": "110ef14f-276f-451f-9fe5-65b4c1898d55",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.bede.VPNCUSTOMIZE.www.speedtest.net.Powerfullserver.de",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.bede.VPNCUSTOMIZE.www.speedtest.net.Powerfullserver.de"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+21§ 33",
+      "server": "104.17.234.114",
+      "server_port": 8443,
+      "uuid": "110ef14f-276f-451f-9fe5-65b4c1898d55",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.bede.VPNCUSTOMIZE.www.speedtest.net.nl.Powerfullserver.de",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.bede.VPNCUSTOMIZE.www.speedtest.net.nl.Powerfullserver.de"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+22§ 34",
+      "server": "104.17.234.128",
+      "server_port": 443,
+      "uuid": "110ef14f-276f-451f-9fe5-65b4c1898d55",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.VPNCUSTOMIZE.www.speedtest.net.ovh.Powerfullserver.de",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.VPNCUSTOMIZE.www.speedtest.net.ovh.Powerfullserver.de"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+23§ 35",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "a4254fe4-14b7-4620-8b20-f352dc10483c",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+24§ 36",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "97a2ea42-d3ad-4935-9efd-08cb043194cb",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+25§ 37",
+      "server": "172.66.47.169",
+      "server_port": 443,
+      "uuid": "ac8321ba-1bba-47b2-b768-a2a7586bfa4d",
+      "tls": {
+        "enabled": true,
+        "server_name": "CHANnEL-ELiV2RaY.pAgEs.dEV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/1iY8b6FB0mAmfsTk",
+        "headers": {
+          "Host": "Channel-ELiV2RaY.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+26§ 38",
+      "server": "172.66.44.58",
+      "server_port": 443,
+      "uuid": "ac8321ba-1bba-47b2-b768-a2a7586bfa4d",
+      "tls": {
+        "enabled": true,
+        "server_name": "CHANnEL-EliV2RaY.pAgEs.dEV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/1iY8b6FB0mAmfsTk",
+        "headers": {
+          "Host": "Channel-ELiV2RaY.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+27§ 39",
+      "server": "zmaoz.faculty.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "Joinbede--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapp.express"
+        },
+        "max_early_data": 2052,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+28§ 40",
+      "server": "connectcarolina.sites.unc.edu",
+      "server_port": 443,
+      "uuid": "Joinin--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "connectcarolina.sites.unc.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapptrip.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+29§ 41",
+      "server": "zmaoz.faculty.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "tell--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snappshop.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+30§ 42",
+      "server": "live.skornorth.com",
+      "server_port": 443,
+      "uuid": "tel--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "live.skornorth.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON",
+        "headers": {
+          "Host": "okala.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+31 § 43",
+      "server": "ergwork.web.unc.edu",
+      "server_port": 443,
+      "uuid": "Join--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "ergwork.web.unc.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapp.taxi"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+32§ 44",
+      "server": "live.wkrq.com",
+      "server_port": 443,
+      "uuid": "8121ac0d-ea5a-4bf4-890d-182d8216d9ff",
+      "tls": {
+        "enabled": true,
+        "server_name": "live.wkrq.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
+        "headers": {
+          "Host": "UNLIMITEDDEV.zr.ir"
+        },
+        "max_early_data": 8880,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+35§ 45",
+      "server": "104.17.234.114",
+      "server_port": 443,
+      "uuid": "2f700c8e-856d-42bc-8655-55b3c7305a7d",
+      "tls": {
+        "enabled": true,
+        "server_name": "UNLIMITEDDEV.unlimiteddev-vpn.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
+        "headers": {
+          "Host": "UNLIMITEDDEV.unlimiteddev-vpn.com"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt\nPowered by MrBlackHat+34§ 46",
+      "server": "151.101.3.8",
+      "server_port": 80,
+      "uuid": "a33100b4-3517-4cb5-b26d-bf3f0a54f3d7",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "A224.v2rayn.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-30",
+        "sleep": "2-8"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "inbound": "tun-in",
+        "package_name": "app.hiddify.com",
+        "outbound": "bypass"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "domain_suffix": ".ir",
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:16756",
+      "secret": "yWh_yryAwSlqU8od"
+    }
+  }
+}
