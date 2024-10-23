@@ -33,7 +33,7 @@
     ],
     "rules": [
       {
-        "domain": "live.wkrq.com",
+        "domain": "funnelytics.io",
         "server": "dns-direct"
       },
       {
@@ -54,6 +54,16 @@
       }
     ],
     "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.97.6",
+        "188.114.96.6",
+        "2a06:98c1:3120::6",
+        "2a06:98c1:3121::6"
+      ]
+    },
     "independent_cache": true
   },
   "inbounds": [
@@ -90,8 +100,11 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇫🇮@Hiddify_nexttt  § 0",
-        "🇫🇮@Hiddify_Nexttt § 1"
+        "@Hiddify_nexttt  § 0",
+        "@Hiddify_nexttt  § 1",
+        "@Hiddify_nexttt  § 2",
+        "@Hiddify_nexttt  § 3",
+        "@Hiddify_nexttt  § 4"
       ],
       "default": "auto",
       "interrupt_exist_connections": true
@@ -100,8 +113,11 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇫🇮@Hiddify_nexttt  § 0",
-        "🇫🇮@Hiddify_Nexttt § 1"
+        "@Hiddify_nexttt  § 0",
+        "@Hiddify_nexttt  § 1",
+        "@Hiddify_nexttt  § 2",
+        "@Hiddify_nexttt  § 3",
+        "@Hiddify_nexttt  § 4"
       ],
       "url": "http://cp.cloudflare.com",
       "interval": "10m0s",
@@ -111,13 +127,13 @@
     },
     {
       "type": "vless",
-      "tag": "🇫🇮@Hiddify_nexttt  § 0",
-      "server": "live.wkrq.com",
-      "server_port": 443,
-      "uuid": "7333ed44-4a4e-42f4-b90d-286f6d12e841",
+      "tag": "@Hiddify_nexttt  § 0",
+      "server": "funnelytics.io",
+      "server_port": 8443,
+      "uuid": "110ef14f-276f-451f-9fe5-65b4c1898d55",
       "tls": {
         "enabled": true,
-        "server_name": "live.wkrq.com",
+        "server_name": "join.bede.VPNCUSTOMIZE.www.speedtest.net.Powerfullserver.de",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -125,24 +141,24 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
+        "path": "/Telegram,VPNCUSTOMIZE",
         "headers": {
-          "Host": "UNLIMITEDDEV.zr.ir"
+          "Host": "join.bede.VPNCUSTOMIZE.www.speedtest.net.Powerfullserver.de"
         },
-        "max_early_data": 8880,
+        "max_early_data": 2480,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": "xudp"
     },
     {
       "type": "vless",
-      "tag": "🇫🇮@Hiddify_Nexttt § 1",
+      "tag": "@Hiddify_nexttt  § 1",
       "server": "104.17.234.114",
-      "server_port": 443,
-      "uuid": "707acaea-2ea6-44db-ad00-b195badd1aae",
+      "server_port": 8443,
+      "uuid": "110ef14f-276f-451f-9fe5-65b4c1898d55",
       "tls": {
         "enabled": true,
-        "server_name": "UNLIMITEDDEV.unlimiteddev-vpn.com",
+        "server_name": "join.bede.VPNCUSTOMIZE.www.speedtest.net.nl.Powerfullserver.de",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -150,11 +166,86 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
+        "path": "/Telegram,VPNCUSTOMIZE",
         "headers": {
-          "Host": "UNLIMITEDDEV.unlimiteddev-vpn.com"
+          "Host": "join.bede.VPNCUSTOMIZE.www.speedtest.net.nl.Powerfullserver.de"
         },
         "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt  § 2",
+      "server": "104.17.234.128",
+      "server_port": 443,
+      "uuid": "110ef14f-276f-451f-9fe5-65b4c1898d55",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.VPNCUSTOMIZE.www.speedtest.net.ovh.Powerfullserver.de",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.VPNCUSTOMIZE.www.speedtest.net.ovh.Powerfullserver.de"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt  § 3",
+      "server": "104.19.58.3",
+      "server_port": 8443,
+      "uuid": "0e9b2690-e6ef-406c-acb9-d163c478d977",
+      "tls": {
+        "enabled": true,
+        "server_name": "Join-EliV2rAY-Join-ELiV2RaY.paGEs.dEV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "join-ELiV2RaY-join-ELiV2RaY.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt  § 4",
+      "server": "172.66.47.169",
+      "server_port": 443,
+      "uuid": "45daf2cf-f27b-429c-92ad-186abe5a3e04",
+      "tls": {
+        "enabled": true,
+        "server_name": "ChAnNel-EliV2rAY.paGEs.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "Channel-EliV2rAY.pages.dev"
+        },
+        "max_early_data": 2560,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": "xudp"
@@ -239,7 +330,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:16756",
-      "secret": "ujsGrfo-0JSsbsiS"
+      "secret": "MkWMl81Swezi-UtK"
     }
   }
 }
