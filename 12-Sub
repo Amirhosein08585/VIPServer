@@ -49,14 +49,12 @@
       "sky.rethinkdns.com": [
         "172.67.204.84",
         "104.21.69.44",
-        "2606:4700:3032::6815:452c",
         "2606:4700:3031::ac43:cc54",
-        "104.17.148.22",
-        "104.17.147.22",
-        "188.114.97.3",
+        "2606:4700:3032::6815:452c",
         "188.114.96.3",
-        "2a06:98c1:3121::3",
-        "2a06:98c1:3120::3"
+        "188.114.97.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3"
       ]
     },
     "independent_cache": true
@@ -97,8 +95,10 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_Nexttt  § 0",
-        "@Hiddify_Nexttt  § 1"
+        "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 0",
+        "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 1",
+        "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 2",
+        "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 3"
       ],
       "default": "auto"
     },
@@ -106,8 +106,10 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_Nexttt  § 0",
-        "@Hiddify_Nexttt  § 1"
+        "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 0",
+        "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 1",
+        "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 2",
+        "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 3"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -115,7 +117,7 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_Nexttt  § 0",
+      "tag": "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 0",
       "server": "151.101.2.216",
       "server_port": 80,
       "uuid": "TELEGRAM-NUFiLTER",
@@ -132,7 +134,7 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_Nexttt  § 1",
+      "tag": "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 1",
       "server": "151.101.2.216",
       "server_port": 80,
       "uuid": "TELEGRAM-NUFiLTER",
@@ -141,6 +143,40 @@
         "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
           "Host": "Trown2mikhamtk.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 2",
+      "server": "151.101.2.216",
+      "server_port": 80,
+      "uuid": "683b0730-ad32-4d0e-96fc-4c60bafbcf17",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "Dadachib4odoberim.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 3",
+      "server": "151.101.2.216",
+      "server_port": 80,
+      "uuid": "TELEGRAM-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "tron2walt.net"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -215,7 +251,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "7bOZcTrJNFJS9uVr"
+      "secret": "VNjkCdHtAgf3cHh0"
     }
   }
 }
