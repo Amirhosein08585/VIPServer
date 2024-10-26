@@ -47,14 +47,12 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "172.67.204.84",
-        "104.21.69.44",
-        "2606:4700:3031::ac43:cc54",
-        "2606:4700:3032::6815:452c",
+        "104.17.147.22",
+        "104.17.148.22",
         "188.114.96.3",
         "188.114.97.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3"
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
       ]
     },
     "independent_cache": true
@@ -120,12 +118,12 @@
       "tag": "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 0",
       "server": "151.101.2.216",
       "server_port": 80,
-      "uuid": "TELEGRAM-NUFiLTER",
+      "uuid": "683b0730-ad32-4d0e-96fc-4c60bafbcf17",
       "transport": {
         "type": "ws",
         "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "tron2walt.net"
+          "Host": "Dadachib4odoberim.net"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -142,7 +140,7 @@
         "type": "ws",
         "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "Trown2mikhamtk.net"
+          "Host": "Anqad3sarmas.net"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -154,12 +152,12 @@
       "tag": "🇩🇪 @Hiddify_Nexttt 🇩🇪 § 2",
       "server": "151.101.2.216",
       "server_port": 80,
-      "uuid": "683b0730-ad32-4d0e-96fc-4c60bafbcf17",
+      "uuid": "3c965664-4cfb-44ae-a887-d92c0765dea0",
       "transport": {
         "type": "ws",
         "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "Dadachib4odoberim.net"
+          "Host": "tron2walt.net"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -176,7 +174,7 @@
         "type": "ws",
         "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "tron2walt.net"
+          "Host": "Kheyli2sarde.net"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -251,7 +249,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "VNjkCdHtAgf3cHh0"
+      "secret": "qqKPhBJdaN3LnC0Q"
     }
   }
 }
