@@ -47,10 +47,10 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.97.3",
-        "188.114.96.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
+        "172.67.204.84",
+        "104.21.69.44",
+        "2606:4700:3032::6815:452c",
+        "2606:4700:3031::ac43:cc54",
         "104.17.148.22",
         "104.17.147.22",
         "188.114.97.3",
@@ -97,10 +97,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32435 § 0",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32436 § 1",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32437 § 2",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32438 § 3"
+        "@Hiddify_Nexttt  § 0",
+        "@Hiddify_Nexttt  § 1"
       ],
       "default": "auto"
     },
@@ -108,10 +106,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32435 § 0",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32436 § 1",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32437 § 2",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32438 § 3"
+        "@Hiddify_Nexttt  § 0",
+        "@Hiddify_Nexttt  § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -119,24 +115,7 @@
     },
     {
       "type": "vless",
-      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32435 § 0",
-      "server": "151.101.2.216",
-      "server_port": 80,
-      "uuid": "d810c650-c337-499c-831a-9dfe4c041469",
-      "transport": {
-        "type": "ws",
-        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
-        "headers": {
-          "Host": "Ojolat2boqol.net"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32436 § 1",
+      "tag": "@Hiddify_Nexttt  § 0",
       "server": "151.101.2.216",
       "server_port": 80,
       "uuid": "TELEGRAM-NUFiLTER",
@@ -144,7 +123,7 @@
         "type": "ws",
         "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "Dadachib4odoberim.net"
+          "Host": "tron2walt.net"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -153,7 +132,7 @@
     },
     {
       "type": "vless",
-      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32437 § 2",
+      "tag": "@Hiddify_Nexttt  § 1",
       "server": "151.101.2.216",
       "server_port": 80,
       "uuid": "TELEGRAM-NUFiLTER",
@@ -164,23 +143,6 @@
           "Host": "Trown2mikhamtk.net"
         },
         "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32438 § 3",
-      "server": "151.101.2.216",
-      "server_port": 80,
-      "uuid": "telegram-ArV2ray",
-      "transport": {
-        "type": "ws",
-        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
-        "headers": {
-          "Host": "Cdiuw12.net"
-        },
-        "max_early_data": 80,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -253,7 +215,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "HhtxAyL20uoWmiSY"
+      "secret": "7bOZcTrJNFJS9uVr"
     }
   }
 }
