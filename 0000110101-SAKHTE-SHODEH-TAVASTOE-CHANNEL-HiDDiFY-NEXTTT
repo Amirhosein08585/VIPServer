@@ -1,0 +1,444 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "42-join.v2raytzz.sbs",
+          "44-join.v2raytzz.sbs",
+          "46-join.v2raytzz.sbs",
+          "48-join.v2raytzz.sbs",
+          "43-join.v2raytzz.sbs",
+          "45-join.v2raytzz.sbs",
+          "47-join.v2raytzz.sbs",
+          "49-join.v2raytzz.sbs",
+          "50-join.v2raytzz.sbs",
+          "61-join.v2raytzz.sbs"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.97.3",
+        "188.114.96.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450,
+      "override_address": "1.1.1.1",
+      "override_port": 53
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32510 § 0",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32511 § 1",
+        "[🇳🇱]+➠+@Hiddify_Nexttt+|+32512 § 2",
+        "[🇬🇧]+➠+@Hiddify_Nexttt+|+32513 § 3",
+        "[🇳🇱]+➠+@Hiddify_Nexttt+|+32514 § 4",
+        "[🇳🇱]+➠+@Hiddify_Nexttt+|+32515 § 5",
+        "[🇳🇱]+➠+@Hiddify_Nexttt+|+32516 § 6",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32517 § 7",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32518 § 8",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32519 § 9"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32510 § 0",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32511 § 1",
+        "[🇳🇱]+➠+@Hiddify_Nexttt+|+32512 § 2",
+        "[🇬🇧]+➠+@Hiddify_Nexttt+|+32513 § 3",
+        "[🇳🇱]+➠+@Hiddify_Nexttt+|+32514 § 4",
+        "[🇳🇱]+➠+@Hiddify_Nexttt+|+32515 § 5",
+        "[🇳🇱]+➠+@Hiddify_Nexttt+|+32516 § 6",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32517 § 7",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32518 § 8",
+        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32519 § 9"
+      ],
+      "url": "http://cp.cloudflare.com/",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32510 § 0",
+      "server": "42-Join.V2RayTzz.sbs",
+      "server_port": 80,
+      "uuid": "TELEGRAM-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "Nahar2nakhordim.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32511 § 1",
+      "server": "43-Join.V2RayTzz.sbs",
+      "server_port": 80,
+      "uuid": "TELEGRAM-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "Goshi3lamsi.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "[🇳🇱]+➠+@Hiddify_Nexttt+|+32512 § 2",
+      "server": "44-Join.V2RayTzz.sbs",
+      "server_port": 443,
+      "uuid": "Joinin--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapp.express"
+        },
+        "max_early_data": 2052,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "[🇬🇧]+➠+@Hiddify_Nexttt+|+32513 § 3",
+      "server": "45-Join.V2RayTzz.sbs",
+      "server_port": 443,
+      "uuid": "Joinin--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "connectcarolina.sites.unc.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapptrip.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "[🇳🇱]+➠+@Hiddify_Nexttt+|+32514 § 4",
+      "server": "46-Join.V2RayTzz.sbs",
+      "server_port": 443,
+      "uuid": "tell--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snappshop.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "[🇳🇱]+➠+@Hiddify_Nexttt+|+32515 § 5",
+      "server": "47-Join.V2RayTzz.sbs",
+      "server_port": 443,
+      "uuid": "tel--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "live.skornorth.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON",
+        "headers": {
+          "Host": "okala.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "[🇳🇱]+➠+@Hiddify_Nexttt+|+32516 § 6",
+      "server": "48-Join.V2RayTzz.sbs",
+      "server_port": 443,
+      "uuid": "Join--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "ergwork.web.unc.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapp.taxi"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32517 § 7",
+      "server": "49-Join.V2RayTzz.sbs",
+      "server_port": 443,
+      "uuid": "39ed1080-cd8c-4503-99a2-d6ef3f5d18ec",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32518 § 8",
+      "server": "50-Join.V2RayTzz.sbs",
+      "server_port": 443,
+      "uuid": "5c1670b0-94b2-4118-8646-3c07a4bcc64b",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32519 § 9",
+      "server": "61-Join.V2RayTzz.sbs",
+      "server_port": 80,
+      "uuid": "TELEGRAM-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "Bashe8tokhobi.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
+    "rules": [
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "vZux5Z6MdhG9EBvN"
+    }
+  }
+}
