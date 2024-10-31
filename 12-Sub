@@ -34,6 +34,13 @@
     ],
     "rules": [
       {
+        "domain": [
+          "speedtest.net",
+          "199.232.2.00"
+        ],
+        "server": "dns-direct"
+      },
+      {
         "domain_suffix": ".ir",
         "geosite": "ir",
         "server": "dns-direct"
@@ -49,12 +56,12 @@
       "sky.rethinkdns.com": [
         "188.114.97.3",
         "188.114.96.3",
-        "2a06:98c1:3121::3",
         "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
         "104.17.148.22",
         "104.17.147.22",
-        "188.114.96.3",
         "188.114.97.3",
+        "188.114.96.3",
         "2a06:98c1:3121::3",
         "2a06:98c1:3120::3"
       ]
@@ -97,7 +104,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇩🇪 تمامی اپراتورها § 0"
+        "Irancell-@Hiddify_nexttt  § 0",
+        "Hamrah-Aval-@Hiddify_nexttt § 1"
       ],
       "default": "auto"
     },
@@ -105,20 +113,54 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇩🇪 تمامی اپراتورها § 0"
+        "Irancell-@Hiddify_nexttt  § 0",
+        "Hamrah-Aval-@Hiddify_nexttt § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
-      "type": "vmess",
-      "tag": "🇩🇪 تمامی اپراتورها § 0",
-      "server": "23.158.56.39",
-      "server_port": 22324,
-      "uuid": "04621bae-ab36-11ec-b909-0242ac120002",
-      "security": "auto",
-      "authenticated_length": true
+      "type": "vless",
+      "tag": "Irancell-@Hiddify_nexttt  § 0",
+      "server": "speedtest.net",
+      "server_port": 80,
+      "uuid": "b2adee6b-dbfb-51c0-a588-c4bcda53f342",
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ray-@ELiV2ray",
+        "headers": {
+          "Host": "JOIN-ELiV2RAy.ru"
+        },
+        "max_early_data": 80,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "Hamrah-Aval-@Hiddify_nexttt § 1",
+      "server": "199.232.2.00",
+      "server_port": 443,
+      "uuid": "b2adee6b-dbfb-51c0-a588-c4bcda53f342",
+      "tls": {
+        "enabled": true,
+        "server_name": "Join-ELiV2rAY.rU",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ELiV2ray-@ELiV2ray",
+        "headers": {
+          "Host": "Join-eliv2ray.ru"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
     },
     {
       "type": "dns",
@@ -188,7 +230,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "TRgW81f3_gZBKWPh"
+      "secret": "wKgMP10lWD-PBBfv"
     }
   }
 }
