@@ -35,8 +35,8 @@
     "rules": [
       {
         "domain": [
-          "speedtest.net",
-          "199.232.2.00"
+          "nufilter.fastly80-3.hosting-ip.com",
+          "nufilter.fastly80.hosting-ip.com"
         ],
         "server": "dns-direct"
       },
@@ -56,10 +56,8 @@
       "sky.rethinkdns.com": [
         "188.114.97.3",
         "188.114.96.3",
-        "2a06:98c1:3120::3",
         "2a06:98c1:3121::3",
-        "104.17.148.22",
-        "104.17.147.22",
+        "2a06:98c1:3120::3",
         "188.114.97.3",
         "188.114.96.3",
         "2a06:98c1:3121::3",
@@ -104,8 +102,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "Irancell-@Hiddify_nexttt  § 0",
-        "Hamrah-Aval-@Hiddify_nexttt § 1"
+        "🇩🇪 @Hiddify_Nexttt تلگرام § 0",
+        "🇩🇪 @Hiddify_Nexttt تلگرام § 1"
       ],
       "default": "auto"
     },
@@ -113,8 +111,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "Irancell-@Hiddify_nexttt  § 0",
-        "Hamrah-Aval-@Hiddify_nexttt § 1"
+        "🇩🇪 @Hiddify_Nexttt تلگرام § 0",
+        "🇩🇪 @Hiddify_Nexttt تلگرام § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -122,42 +120,34 @@
     },
     {
       "type": "vless",
-      "tag": "Irancell-@Hiddify_nexttt  § 0",
-      "server": "speedtest.net",
+      "tag": "🇩🇪 @Hiddify_Nexttt تلگرام § 0",
+      "server": "NUFiLTER.fastly80-3.hosting-ip.com",
       "server_port": 80,
-      "uuid": "b2adee6b-dbfb-51c0-a588-c4bcda53f342",
+      "uuid": "TELEGRAM-NUFiLTER",
       "transport": {
         "type": "ws",
-        "path": "/@ELiV2ray-@ELiV2ray",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "JOIN-ELiV2RAy.ru"
+          "Host": "Abdarchiejahanam5.net"
         },
-        "max_early_data": 80,
+        "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
     },
     {
       "type": "vless",
-      "tag": "Hamrah-Aval-@Hiddify_nexttt § 1",
-      "server": "199.232.2.00",
-      "server_port": 443,
-      "uuid": "b2adee6b-dbfb-51c0-a588-c4bcda53f342",
-      "tls": {
-        "enabled": true,
-        "server_name": "Join-ELiV2rAY.rU",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "edge"
-        }
-      },
+      "tag": "🇩🇪 @Hiddify_Nexttt تلگرام § 1",
+      "server": "NUFiLTER.fastly80.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "TELEGRAM-NUFiLTER",
       "transport": {
         "type": "ws",
-        "path": "/@ELiV2ray-@ELiV2ray",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "Join-eliv2ray.ru"
+          "Host": "Trown2mikhamtk.net"
         },
-        "max_early_data": 2560,
+        "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -230,7 +220,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "wKgMP10lWD-PBBfv"
+      "secret": "yqMuCSGSHe9gApB4"
     }
   }
 }
