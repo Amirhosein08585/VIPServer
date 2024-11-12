@@ -34,7 +34,7 @@
     ],
     "rules": [
       {
-        "domain": "www.speedtest.net",
+        "domain": "asdaskjhegjkaghejlgho-98231yuidyhkaghdjklags-9812yiugksdf.vipvipmbl.ir",
         "server": "dns-direct"
       },
       {
@@ -51,12 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
+        "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::",
+        "104.17.147.22",
+        "104.17.148.22",
         "188.114.96.3",
         "188.114.97.3",
-        "2a06:98c1:3121::3",
-        "2a06:98c1:3120::3",
-        "104.17.148.22",
-        "104.17.147.22"
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::"
       ]
     },
     "independent_cache": true
@@ -95,8 +99,7 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@ViP-30DAY § 0",
-        "@ViP-30DAY § 1"
+        "@Hiddify_Nexttt آیدی کانال § 0"
       ],
       "default": "auto"
     },
@@ -104,8 +107,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@ViP-30DAY § 0",
-        "@ViP-30DAY § 1"
+        "@Hiddify_Nexttt آیدی کانال § 0"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -113,45 +115,15 @@
     },
     {
       "type": "vless",
-      "tag": "@ViP-30DAY § 0",
-      "server": "www.speedtest.net",
-      "server_port": 443,
-      "uuid": "ec285422-b661-4336-aef7-61d01f19a103",
-      "tls": {
-        "enabled": true,
-        "server_name": "CHaNNEl-Id-Eliv2RAy.pageS.dev",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "edge"
-        }
-      },
+      "tag": "@Hiddify_Nexttt آیدی کانال § 0",
+      "server": "asdaskjhegjkaghejlgho-98231yuidyhkaghdjklags-9812yiugksdf.vipvipmbl.ir",
+      "server_port": 31251,
+      "uuid": "fade397b-9351-4d85-acb2-1330cec7001a",
       "transport": {
-        "type": "ws",
-        "headers": {
-          "Host": "channel-id-eliv2ray.pages.dev"
-        }
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@ViP-30DAY § 1",
-      "server": "172.66.44.115",
-      "server_port": 443,
-      "uuid": "ec285422-b661-4336-aef7-61d01f19a103",
-      "tls": {
-        "enabled": true,
-        "server_name": "chANneL-ID-eLIV2rAy.pAGeS.DEV",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "randomized"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "headers": {
-          "Host": "channel-id-eliv2ray.pages.dev"
-        }
+        "type": "http",
+        "host": "khabarfarsi.com",
+        "path": "/",
+        "method": "GET"
       },
       "packet_encoding": ""
     },
@@ -223,7 +195,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "d6fGVQlPyr9rxRKr"
+      "secret": "3H3wTkUEzVJu7DNi"
     }
   }
 }
