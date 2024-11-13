@@ -34,7 +34,12 @@
     ],
     "rules": [
       {
-        "domain": "asdaskjhegjkaghejlgho-98231yuidyhkaghdjklags-9812yiugksdf.vipvipmbl.ir",
+        "domain": [
+          "funnelytics.io",
+          "hajlab.ucdavis.edu",
+          "www.visa.com",
+          "asdaskjhegjkaghejlgho-98231yuidyhkaghdjklags-9812yiugksdf.vipvipmbl.ir"
+        ],
         "server": "dns-direct"
       },
       {
@@ -57,8 +62,8 @@
         "2a06:98c1:3123::",
         "104.17.147.22",
         "104.17.148.22",
-        "188.114.96.3",
-        "188.114.97.3",
+        "188.114.98.0",
+        "188.114.99.0",
         "2a06:98c1:3122::",
         "2a06:98c1:3123::"
       ]
@@ -99,7 +104,15 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_Nexttt آیدی کانال § 0"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1",
+        "@Hiddify_nexttt +3 § 2",
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5",
+        "@Hiddify_nexttt +7 § 6",
+        "@Hiddify_nexttt +8 § 7",
+        "@Hiddify_nexttt +9 § 8"
       ],
       "default": "auto"
     },
@@ -107,7 +120,15 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_Nexttt آیدی کانال § 0"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1",
+        "@Hiddify_nexttt +3 § 2",
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5",
+        "@Hiddify_nexttt +7 § 6",
+        "@Hiddify_nexttt +8 § 7",
+        "@Hiddify_nexttt +9 § 8"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -115,7 +136,188 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_Nexttt آیدی کانال § 0",
+      "tag": "@Hiddify_nexttt +1 § 0",
+      "server": "104.18.165.38",
+      "server_port": 80,
+      "uuid": "385cf215-0fe1-4f21-d8d9-1a9e649b3566",
+      "transport": {
+        "type": "ws",
+        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev.unlimiteddev.Community."
+        },
+        "max_early_data": 8880,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +2 § 1",
+      "server": "104.17.234.128",
+      "server_port": 80,
+      "uuid": "385cf215-0fe1-4f21-d8d9-1a9e649b3566",
+      "transport": {
+        "type": "ws",
+        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev.unlimiteddev.Community."
+        },
+        "max_early_data": 8880,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +3 § 2",
+      "server": "funnelytics.io",
+      "server_port": 8443,
+      "uuid": "694bc934-818f-4040-a30d-5642dec7495f",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.bede.VPNCUSTOMIZE.www.speedtest.net.Powerfullserver.de",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.bede.VPNCUSTOMIZE.www.speedtest.net.Powerfullserver.de"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +4 § 3",
+      "server": "104.17.234.114",
+      "server_port": 8443,
+      "uuid": "694bc934-818f-4040-a30d-5642dec7495f",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.bede.VPNCUSTOMIZE.www.speedtest.net.nl.Powerfullserver.de",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.bede.VPNCUSTOMIZE.www.speedtest.net.nl.Powerfullserver.de"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +5 § 4",
+      "server": "104.17.234.128",
+      "server_port": 443,
+      "uuid": "694bc934-818f-4040-a30d-5642dec7495f",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.VPNCUSTOMIZE.www.speedtest.net.ovh.Powerfullserver.de",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.VPNCUSTOMIZE.www.speedtest.net.ovh.Powerfullserver.de"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +6 § 5",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "ace91e6a-d9e9-46a3-8523-feeaaf53a983",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +7 § 6",
+      "server": "www.visa.com",
+      "server_port": 443,
+      "uuid": "7fe2a468-6d2e-40ca-a286-71f29764b31b",
+      "tls": {
+        "enabled": true,
+        "server_name": "CHaNNEl-Id-Eliv2RAy.pageS.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "channel-id-eliv2ray.pages.dev"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +8 § 7",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "ee171046-20ce-4f81-a6cd-c90186035085",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +9 § 8",
       "server": "asdaskjhegjkaghejlgho-98231yuidyhkaghdjklags-9812yiugksdf.vipvipmbl.ir",
       "server_port": 31251,
       "uuid": "fade397b-9351-4d85-acb2-1330cec7001a",
@@ -125,7 +327,7 @@
         "path": "/",
         "method": "GET"
       },
-      "packet_encoding": ""
+      "packet_encoding": "xudp"
     },
     {
       "type": "dns",
@@ -195,7 +397,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "3H3wTkUEzVJu7DNi"
+      "secret": "ttg0rUfIxipL_Vow"
     }
   }
 }
