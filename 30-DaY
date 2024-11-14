@@ -34,6 +34,16 @@
     ],
     "rules": [
       {
+        "domain": [
+          "hajlab.ucdavis.edu",
+          "redbrain.shopping",
+          "nufilter.fastly80.hosting-ip.com",
+          "www.visa.com",
+          "www.speedtest.net"
+        ],
+        "server": "dns-direct"
+      },
+      {
         "domain_suffix": ".ir",
         "geosite": "ir",
         "server": "dns-direct"
@@ -47,14 +57,14 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.98.0",
         "188.114.99.0",
+        "188.114.98.0",
         "2a06:98c1:3123::",
         "2a06:98c1:3122::",
         "104.17.147.22",
         "104.17.148.22",
-        "188.114.98.0",
         "188.114.99.0",
+        "188.114.98.0",
         "2a06:98c1:3122::",
         "2a06:98c1:3123::"
       ]
@@ -95,10 +105,15 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "[🇳🇱]+➠+@Hiddify_Nexttt+|+32925 § 0",
-        "[🇳🇱]+➠+@Hiddify_Nexttt+|+32926 § 1",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32928 § 2",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32929 § 3"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +3 § 1",
+        "@Hiddify_nexttt +4 § 2",
+        "@Hiddify_nexttt +5 § 3",
+        "@Hiddify_nexttt +6 § 4",
+        "@Hiddify_nexttt +7 § 5",
+        "@Hiddify_nexttt +8 § 6",
+        "@Hiddify_nexttt +9 § 7",
+        "@Hiddify_nexttt +10 § 8"
       ],
       "default": "auto"
     },
@@ -106,10 +121,15 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "[🇳🇱]+➠+@Hiddify_Nexttt+|+32925 § 0",
-        "[🇳🇱]+➠+@Hiddify_Nexttt+|+32926 § 1",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32928 § 2",
-        "[🇺🇸]+➠+@Hiddify_Nexttt+|+32929 § 3"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +3 § 1",
+        "@Hiddify_nexttt +4 § 2",
+        "@Hiddify_nexttt +5 § 3",
+        "@Hiddify_nexttt +6 § 4",
+        "@Hiddify_nexttt +7 § 5",
+        "@Hiddify_nexttt +8 § 6",
+        "@Hiddify_nexttt +9 § 7",
+        "@Hiddify_nexttt +10 § 8"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -117,82 +137,204 @@
     },
     {
       "type": "vless",
-      "tag": "[🇳🇱]+➠+@Hiddify_Nexttt+|+32925 § 0",
-      "server": "151.101.38.228",
-      "server_port": 443,
-      "uuid": "Joini--ZEDMODEON",
-      "tls": {
-        "enabled": true,
-        "server_name": "zmaoz.faculty.ucdavis.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
-        "headers": {
-          "Host": "snapp.express"
-        },
-        "max_early_data": 2052,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "[🇳🇱]+➠+@Hiddify_Nexttt+|+32926 § 1",
-      "server": "151.101.38.133",
-      "server_port": 443,
-      "uuid": "Join--ZEDMODEON",
-      "tls": {
-        "enabled": true,
-        "server_name": "connectcarolina.sites.unc.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@ZEDMODEON-ZEDMODEON@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
-        "headers": {
-          "Host": "snapptrip.com"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32928 § 2",
-      "server": "151.101.2.216",
+      "tag": "@Hiddify_nexttt +1 § 0",
+      "server": "104.18.165.38",
       "server_port": 80,
+      "uuid": "ad8b03d6-451d-4699-cd74-47031509fc69",
+      "transport": {
+        "type": "ws",
+        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev.unlimiteddev.Community."
+        },
+        "max_early_data": 8880,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +3 § 1",
+      "server": "redbrain.shopping",
+      "server_port": 443,
       "uuid": "TELEGRAM-NUFiLTER",
-      "transport": {
-        "type": "ws",
-        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
-        "headers": {
-          "Host": "Berim3arekar.net"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
+      "tls": {
+        "enabled": true,
+        "server_name": "redbrain.shopping",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
       },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "[🇺🇸]+➠+@Hiddify_Nexttt+|+32929 § 3",
-      "server": "151.101.3.8",
-      "server_port": 80,
-      "uuid": "8c060486-b013-4881-bd43-72f4ad737d4b",
       "transport": {
         "type": "ws",
         "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
           "Host": "dachibodoberi22m.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +4 § 2",
+      "server": "NUFiLTER.fastly80.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "57fbeb27-344f-4ef4-a098-f8fdb358e6ca",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "Berim3araekar.net"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +5 § 3",
+      "server": "www.visa.com",
+      "server_port": 443,
+      "uuid": "97b31e4e-cae3-406c-8fe1-196ed9afdc02",
+      "tls": {
+        "enabled": true,
+        "server_name": "CHaNNEl-Id-Eliv2RAy.pageS.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "channel-id-eliv2ray.pages.dev"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +6 § 4",
+      "server": "www.speedtest.net",
+      "server_port": 8443,
+      "uuid": "aea54c05-70eb-4711-a940-9b7398c14ca0",
+      "tls": {
+        "enabled": true,
+        "server_name": "Join.VPNCUSTOMIZE.www.speedtest.net.Naziitness.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "Join.VPNCUSTOMIZE.www.speedtest.net.Naziitness.com"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +7 § 5",
+      "server": "104.18.165.38",
+      "server_port": 8443,
+      "uuid": "aea54c05-70eb-4711-a940-9b7398c14ca0",
+      "tls": {
+        "enabled": true,
+        "server_name": "Join.VPNCUSTOMIZE.speedtest.net.Naziitness.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "Join.VPNCUSTOMIZE.speedtest.net.Naziitness.com"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +8 § 6",
+      "server": "104.17.234.128",
+      "server_port": 443,
+      "uuid": "aea54c05-70eb-4711-a940-9b7398c14ca0",
+      "tls": {
+        "enabled": true,
+        "server_name": "join.bede.VPNCUSTOMIZE.www.speedtest.net.Abrha.co.za",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram,VPNCUSTOMIZE",
+        "headers": {
+          "Host": "join.bede.vpncustomize.www.speedtest.net.Abrha.co.za"
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +9 § 7",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "3b4fd23a-1cbb-4f10-ad54-599ef1752f84",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +10 § 8",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "a0b5554b-4caa-4a9d-9543-3886460c31b0",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeeee.ir"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -267,7 +409,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "6on3rX_43avINawg"
+      "secret": "h97B6uE-GBLU68te"
     }
   }
 }
