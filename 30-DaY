@@ -51,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.97.3",
-        "188.114.96.3",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
-        "104.17.147.22",
+        "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::",
         "104.17.148.22",
-        "104.21.83.62",
-        "172.67.214.246",
-        "2606:4700:3030::6815:533e",
-        "2606:4700:3030::ac43:d6f6"
+        "104.17.147.22",
+        "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::"
       ]
     },
     "independent_cache": true
@@ -118,7 +118,7 @@
       "tag": "@Hiddify_nexttt +2 § 0",
       "server": "www.speedtest.net",
       "server_port": 80,
-      "uuid": "029704f4-f54c-435c-b877-3e77dba73095",
+      "uuid": "00710d99-0563-432c-ce25-d64a1c74ff94",
       "transport": {
         "type": "ws",
         "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
@@ -198,7 +198,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "wmv4WWr7SMCL8tzP"
+      "secret": "zhzrr1lVhR0aQPPO"
     }
   }
 }
