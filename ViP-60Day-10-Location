@@ -34,11 +34,7 @@
     ],
     "rules": [
       {
-        "domain": [
-          "channel-id-eliv2ray.pages.dev",
-          "hajlab.ucdavis.edu",
-          "unlimiteddev.fastly80-2.hosting-ip.com"
-        ],
+        "domain": "unlimiteddev.fastly80-2.hosting-ip.com",
         "server": "dns-direct"
       },
       {
@@ -55,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.98.0",
         "188.114.99.0",
+        "188.114.98.0",
         "2a06:98c1:3123::",
         "2a06:98c1:3122::",
-        "104.17.148.22",
         "104.17.147.22",
+        "104.17.148.22",
         "188.114.99.0",
         "188.114.98.0",
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::"
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::"
       ]
     },
     "independent_cache": true
@@ -103,13 +99,9 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +3 § 0",
-        "@Hiddify_nexttt +4 § 1",
-        "🇷🇺@Hiddify_nexttt +5 § 2",
-        "🇩🇪@Hiddify_nexttt +6 § 3",
-        "@Hiddify_nexttt +7 § 4",
-        "@Hiddify_nexttt +8 § 5",
-        "@Hiddify_nexttt +9 § 6"
+        "@Hiddify_nexttt +1 🇫🇮 § 0",
+        "@Hiddify_nexttt 🇫🇮 +2 § 1",
+        "@Hiddify_nexttt 🇫🇮 +3 § 2"
       ],
       "default": "auto"
     },
@@ -117,13 +109,9 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +3 § 0",
-        "@Hiddify_nexttt +4 § 1",
-        "🇷🇺@Hiddify_nexttt +5 § 2",
-        "🇩🇪@Hiddify_nexttt +6 § 3",
-        "@Hiddify_nexttt +7 § 4",
-        "@Hiddify_nexttt +8 § 5",
-        "@Hiddify_nexttt +9 § 6"
+        "@Hiddify_nexttt +1 🇫🇮 § 0",
+        "@Hiddify_nexttt 🇫🇮 +2 § 1",
+        "@Hiddify_nexttt 🇫🇮 +3 § 2"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -131,106 +119,10 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +3 § 0",
-      "server": "channel-id-eliv2ray.pages.dev",
-      "server_port": 443,
-      "uuid": "408c9c01-b1aa-4c8a-9b6b-f048092700ba",
-      "tls": {
-        "enabled": true,
-        "server_name": "ChAnNel-Id-ELiv2Ray.pageS.Dev",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "edge"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "ChAnNel-Id-ELiv2Ray.pageS.Dev"
-        },
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +4 § 1",
-      "server": "172.66.47.141",
-      "server_port": 443,
-      "uuid": "408c9c01-b1aa-4c8a-9b6b-f048092700ba",
-      "tls": {
-        "enabled": true,
-        "server_name": "CHANnEl-iD-EliV2RAY.pAGES.DEv",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "qq"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "headers": {
-          "Host": "channel-id-eliv2ray.pages.dev"
-        }
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "🇷🇺@Hiddify_nexttt +5 § 2",
-      "server": "hajlab.ucdavis.edu",
-      "server_port": 443,
-      "uuid": "6045b47f-f60f-440f-a1af-9eb88b4cda19",
-      "tls": {
-        "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
-        "headers": {
-          "Host": "joinshhproxybedeeeeee.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "🇩🇪@Hiddify_nexttt +6 § 3",
-      "server": "hajlab.ucdavis.edu",
-      "server_port": 443,
-      "uuid": "5e106ef4-3966-44bd-8907-0206e5627a72",
-      "tls": {
-        "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
-        "headers": {
-          "Host": "joinshhproxybedeeeee.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +7 § 4",
+      "tag": "@Hiddify_nexttt +1 🇫🇮 § 0",
       "server": "151.101.3.8",
       "server_port": 80,
-      "uuid": "a96d5002-b59e-4b14-ddf2-0ee0161b1668",
+      "uuid": "188ac7ce-44bc-47a9-f8fa-f7ba12519fa5",
       "transport": {
         "type": "ws",
         "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
@@ -244,10 +136,10 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +8 § 5",
+      "tag": "@Hiddify_nexttt 🇫🇮 +2 § 1",
       "server": "unlimiteddev.fastly80-2.hosting-ip.com",
       "server_port": 80,
-      "uuid": "a96d5002-b59e-4b14-ddf2-0ee0161b1668",
+      "uuid": "188ac7ce-44bc-47a9-f8fa-f7ba12519fa5",
       "transport": {
         "type": "ws",
         "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
@@ -261,10 +153,10 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +9 § 6",
+      "tag": "@Hiddify_nexttt 🇫🇮 +3 § 2",
       "server": "104.17.234.128",
       "server_port": 8080,
-      "uuid": "9dd69116-5a77-4ce3-d99e-48a6f74b1aec",
+      "uuid": "753e1c12-29f4-4438-c369-a15486ec4f04",
       "transport": {
         "type": "ws",
         "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
@@ -344,7 +236,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "3bcSYlTim2yt01kH"
+      "secret": "NkO49XPIm-mF92OR"
     }
   }
 }
