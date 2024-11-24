@@ -35,12 +35,15 @@
     "rules": [
       {
         "domain": [
-          "bhwurhgsr-23yfusdg-4283youifyhsdjklhlkfdsrew432.vipvipmbl.ir",
+          "ergwork.web.unc.edu",
+          "speedtest.net",
           "hajlab.ucdavis.edu",
-          "unlimiteddev.fastly80-3.hosting-ip.com",
           "unlimiteddev.fastly80-2.hosting-ip.com",
-          "apple-carry-relay.cloudflare.com",
-          "phishfilet.cloudflare.com"
+          "connectcarolina.sites.unc.edu",
+          "live.skornorth.com",
+          "unlimiteddev.fastly80-3.hosting-ip.com",
+          "nufilter.fastly80.hosting-ip.com",
+          "nufilter.fastly80-3.hosting-ip.com"
         ],
         "server": "dns-direct"
       },
@@ -58,8 +61,8 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.99.0",
-        "188.114.98.0",
+        "188.114.96.3",
+        "188.114.97.3",
         "2a06:98c1:3123::",
         "2a06:98c1:3122::",
         "104.17.148.22",
@@ -106,12 +109,17 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇩🇪@Hiddify_nexttt +2 § 0",
-        "@Hiddify_nexttt +3 § 1",
-        "@Hiddify_nexttt +4 § 2",
-        "@Hiddify_nexttt +5 § 3",
-        "@Hiddify_nexttt +6 § 4",
-        "@Hiddify_nexttt +7 § 5"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1",
+        "@Hiddify_nexttt +3 § 2",
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5",
+        "@Hiddify_nexttt +7 § 6",
+        "@Hiddify_nexttt +8 § 7",
+        "@Hiddify_nexttt +9 § 8",
+        "@Hiddify_nexttt +10 § 9",
+        "@Hiddify_nexttt +11 § 10"
       ],
       "default": "auto"
     },
@@ -119,12 +127,17 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇩🇪@Hiddify_nexttt +2 § 0",
-        "@Hiddify_nexttt +3 § 1",
-        "@Hiddify_nexttt +4 § 2",
-        "@Hiddify_nexttt +5 § 3",
-        "@Hiddify_nexttt +6 § 4",
-        "@Hiddify_nexttt +7 § 5"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1",
+        "@Hiddify_nexttt +3 § 2",
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5",
+        "@Hiddify_nexttt +7 § 6",
+        "@Hiddify_nexttt +8 § 7",
+        "@Hiddify_nexttt +9 § 8",
+        "@Hiddify_nexttt +10 § 9",
+        "@Hiddify_nexttt +11 § 10"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -132,10 +145,149 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪@Hiddify_nexttt +2 § 0",
+      "tag": "@Hiddify_nexttt +1 § 0",
+      "server": "ergwork.web.unc.edu",
+      "server_port": 443,
+      "uuid": "Joinin--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "ergwork.web.unc.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapp.taxi"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +2 § 1",
+      "server": "connectcarolina.sites.unc.edu",
+      "server_port": 443,
+      "uuid": "tell--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "connectcarolina.sites.unc.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "gamefa.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +3 § 2",
+      "server": "live.skornorth.com",
+      "server_port": 443,
+      "uuid": "Joinbede--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "live.skornorth.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON",
+        "headers": {
+          "Host": "gooshishop.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +4 § 3",
+      "server": "live.skornorth.com",
+      "server_port": 443,
+      "uuid": "tel--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "live.skornorth.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON",
+        "headers": {
+          "Host": "mahex.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +5 § 4",
+      "server": "speedtest.net",
+      "server_port": 80,
+      "uuid": "92c15dc4-6e60-5603-8a13-a760e1e87f3a",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ELiV2RaY-0.cOm"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +6 § 5",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "3a5d6edd-db33-457e-b79d-343b3ce0134a",
+      "uuid": "86ef1902-824c-4b8c-815a-df9396314b7b",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +7 § 6",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "358b49db-a0ef-4b1e-ac80-77673dcadafb",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -157,10 +309,10 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +3 § 1",
+      "tag": "@Hiddify_nexttt +8 § 7",
       "server": "unlimiteddev.fastly80-3.hosting-ip.com",
       "server_port": 80,
-      "uuid": "c3914fad-d88b-4f29-fc16-7823139dcc55",
+      "uuid": "2487c34c-016e-43f3-9460-cb13b1f4c418",
       "transport": {
         "type": "ws",
         "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
@@ -174,10 +326,10 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +4 § 2",
+      "tag": "@Hiddify_nexttt +9 § 8",
       "server": "unlimiteddev.fastly80-2.hosting-ip.com",
       "server_port": 80,
-      "uuid": "c3914fad-d88b-4f29-fc16-7823139dcc55",
+      "uuid": "2487c34c-016e-43f3-9460-cb13b1f4c418",
       "transport": {
         "type": "ws",
         "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
@@ -191,49 +343,35 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +5 § 3",
-      "server": "apple-carry-relay.cloudflare.com",
-      "server_port": 8880,
-      "uuid": "da95ed3b-91b3-4dbc-b74a-cee7745822c6",
+      "tag": "@Hiddify_nexttt +10 § 9",
+      "server": "NUFiLTER.fastly80.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "TELEGRAM-NUFiLTER",
       "transport": {
         "type": "ws",
-        "path": "/www.speedtest.net-www.speedtest.net-www.speedtest.net",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "dahshjhewjqh32-18yiuadshjkdhas321-y8dayliudhsaljk321.vipvipmbl.ir."
+          "Host": "Berim3araekar.net"
         },
-        "max_early_data": 8880,
+        "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +6 § 4",
-      "server": "phishfilet.cloudflare.com",
-      "server_port": 2095,
-      "uuid": "d5b51aa3-a3a7-4896-b710-cd3860b4c94f",
+      "tag": "@Hiddify_nexttt +11 § 10",
+      "server": "NUFiLTER.fastly80-3.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "fffa635a-174a-4d68-b9c6-9b8d87020f47",
       "transport": {
         "type": "ws",
-        "path": "/www.speedtest.net-www.speedtest.net-www.speedtest.net",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "dahshjhewjqh32-18yiuadshjkdhas321-y8dayliudhsaljk321.vipvipmbl.ir."
+          "Host": "Berim3arekar.net"
         },
-        "max_early_data": 2095,
+        "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +7 § 5",
-      "server": "bhwurhgsr-23yfusdg-4283youifyhsdjklhlkfdsrew432.vipvipmbl.ir",
-      "server_port": 32633,
-      "uuid": "7f92a34e-05e2-45e1-8ae6-2208eb106ab1",
-      "transport": {
-        "type": "http",
-        "host": "unhcr.org",
-        "path": "/",
-        "method": "GET"
       },
       "packet_encoding": ""
     },
@@ -305,7 +443,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "wdTI3z7W1JbxOpZu"
+      "secret": "bjDP9aANZUneKBke"
     }
   }
 }
