@@ -35,15 +35,11 @@
     "rules": [
       {
         "domain": [
-          "ergwork.web.unc.edu",
-          "speedtest.net",
-          "hajlab.ucdavis.edu",
           "unlimiteddev.fastly80-2.hosting-ip.com",
-          "connectcarolina.sites.unc.edu",
-          "live.skornorth.com",
-          "unlimiteddev.fastly80-3.hosting-ip.com",
-          "nufilter.fastly80.hosting-ip.com",
-          "nufilter.fastly80-3.hosting-ip.com"
+          "hajlab.ucdavis.edu",
+          "nufilter.fastly80-3.hosting-ip.com",
+          "nufilter.fastly80-2.hosting-ip.com",
+          "unlimiteddev.fastly80-3.hosting-ip.com"
         ],
         "server": "dns-direct"
       },
@@ -61,12 +57,12 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.96.3",
-        "188.114.97.3",
+        "188.114.99.0",
+        "188.114.98.0",
         "2a06:98c1:3123::",
         "2a06:98c1:3122::",
-        "104.17.148.22",
         "104.17.147.22",
+        "104.17.148.22",
         "188.114.99.0",
         "188.114.98.0",
         "2a06:98c1:3123::",
@@ -118,8 +114,7 @@
         "@Hiddify_nexttt +7 § 6",
         "@Hiddify_nexttt +8 § 7",
         "@Hiddify_nexttt +9 § 8",
-        "@Hiddify_nexttt +10 § 9",
-        "@Hiddify_nexttt +11 § 10"
+        "@Hiddify_nexttt +10 § 9"
       ],
       "default": "auto"
     },
@@ -136,8 +131,7 @@
         "@Hiddify_nexttt +7 § 6",
         "@Hiddify_nexttt +8 § 7",
         "@Hiddify_nexttt +9 § 8",
-        "@Hiddify_nexttt +10 § 9",
-        "@Hiddify_nexttt +11 § 10"
+        "@Hiddify_nexttt +10 § 9"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -146,24 +140,16 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "ergwork.web.unc.edu",
-      "server_port": 443,
-      "uuid": "Joinin--ZEDMODEON",
-      "tls": {
-        "enabled": true,
-        "server_name": "ergwork.web.unc.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
+      "server": "unlimiteddev.fastly80-3.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "2487c34c-016e-43f3-9460-cb13b1f4c418",
       "transport": {
         "type": "ws",
-        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
         "headers": {
-          "Host": "snapp.taxi"
+          "Host": "UNLIMITEDDEV.channel-telegram-1.ir"
         },
-        "max_early_data": 2048,
+        "max_early_data": 2480,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -171,24 +157,16 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +2 § 1",
-      "server": "connectcarolina.sites.unc.edu",
-      "server_port": 443,
-      "uuid": "tell--ZEDMODEON",
-      "tls": {
-        "enabled": true,
-        "server_name": "connectcarolina.sites.unc.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
+      "server": "unlimiteddev.fastly80-2.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "2487c34c-016e-43f3-9460-cb13b1f4c418",
       "transport": {
         "type": "ws",
-        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
         "headers": {
-          "Host": "gamefa.com"
+          "Host": "UNLIMITEDDEV.channel-telegram-1.ir"
         },
-        "max_early_data": 2048,
+        "max_early_data": 2480,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -196,24 +174,16 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "live.skornorth.com",
-      "server_port": 443,
-      "uuid": "Joinbede--ZEDMODEON",
-      "tls": {
-        "enabled": true,
-        "server_name": "live.skornorth.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
+      "server": "104.17.234.128",
+      "server_port": 8080,
+      "uuid": "825e491b-ea38-4f77-c7c7-2b678ef03785",
       "transport": {
         "type": "ws",
-        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON",
+        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
         "headers": {
-          "Host": "gooshishop.com"
+          "Host": "join.bede.unlimiteddev.www.speedtest.net.de.abrha.co.unlimiteddev.community."
         },
-        "max_early_data": 2048,
+        "max_early_data": 8880,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -221,24 +191,16 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +4 § 3",
-      "server": "live.skornorth.com",
-      "server_port": 443,
-      "uuid": "tel--ZEDMODEON",
-      "tls": {
-        "enabled": true,
-        "server_name": "live.skornorth.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
+      "server": "104.17.234.128",
+      "server_port": 8080,
+      "uuid": "825e491b-ea38-4f77-c7c7-2b678ef03785",
       "transport": {
         "type": "ws",
-        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON",
+        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
         "headers": {
-          "Host": "mahex.com"
+          "Host": "join.bede.UNLIMITEDDEV.www.speedtest.net.de.Abrha.co.sabadyt.ir"
         },
-        "max_early_data": 2048,
+        "max_early_data": 8880,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -246,23 +208,9 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +5 § 4",
-      "server": "speedtest.net",
-      "server_port": 80,
-      "uuid": "92c15dc4-6e60-5603-8a13-a760e1e87f3a",
-      "transport": {
-        "type": "ws",
-        "headers": {
-          "Host": "ELiV2RaY-0.cOm"
-        }
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +6 § 5",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "86ef1902-824c-4b8c-815a-df9396314b7b",
+      "uuid": "34b56163-5d1d-4653-808d-c29de9e8ff30",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -284,10 +232,10 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +7 § 6",
+      "tag": "@Hiddify_nexttt +6 § 5",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "358b49db-a0ef-4b1e-ac80-77673dcadafb",
+      "uuid": "055ffd1a-156f-4f2d-be38-5d1bfbd609e2",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -309,17 +257,34 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +8 § 7",
-      "server": "unlimiteddev.fastly80-3.hosting-ip.com",
+      "tag": "@Hiddify_nexttt +7 § 6",
+      "server": "NUFiLTER.fastly80-3.hosting-ip.com",
       "server_port": 80,
-      "uuid": "2487c34c-016e-43f3-9460-cb13b1f4c418",
+      "uuid": "TELEGRAM-NUFiLTER",
       "transport": {
         "type": "ws",
-        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "UNLIMITEDDEV.channel-telegram-1.ir"
+          "Host": "Berim3arekar.net"
         },
-        "max_early_data": 2480,
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +8 § 7",
+      "server": "NUFiLTER.fastly80-2.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "TELEGRAM-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "Berim3arazekar.net"
+        },
+        "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -327,24 +292,7 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +9 § 8",
-      "server": "unlimiteddev.fastly80-2.hosting-ip.com",
-      "server_port": 80,
-      "uuid": "2487c34c-016e-43f3-9460-cb13b1f4c418",
-      "transport": {
-        "type": "ws",
-        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
-        "headers": {
-          "Host": "UNLIMITEDDEV.channel-telegram-1.ir"
-        },
-        "max_early_data": 2480,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +10 § 9",
-      "server": "NUFiLTER.fastly80.hosting-ip.com",
+      "server": "NUFiLTER.fastly80-3.hosting-ip.com",
       "server_port": 80,
       "uuid": "TELEGRAM-NUFiLTER",
       "transport": {
@@ -360,15 +308,23 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +11 § 10",
-      "server": "NUFiLTER.fastly80-3.hosting-ip.com",
-      "server_port": 80,
-      "uuid": "fffa635a-174a-4d68-b9c6-9b8d87020f47",
+      "tag": "@Hiddify_nexttt +10 § 9",
+      "server": "151.101.194.133",
+      "server_port": 443,
+      "uuid": "TELEGRAM-NUFiLTER",
+      "tls": {
+        "enabled": true,
+        "server_name": "mio.splashthat.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
       "transport": {
         "type": "ws",
         "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "Berim3arekar.net"
+          "Host": "api.nhl5.iR"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -443,7 +399,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "bjDP9aANZUneKBke"
+      "secret": "pDUNE64pld6pSjlD"
     }
   }
 }
