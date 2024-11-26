@@ -34,10 +34,6 @@
     ],
     "rules": [
       {
-        "domain": "www.speedtest.net",
-        "server": "dns-direct"
-      },
-      {
         "domain_suffix": ".ir",
         "geosite": "ir",
         "server": "dns-direct"
@@ -51,16 +47,12 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::",
-        "188.114.98.0",
-        "188.114.99.0",
-        "104.17.148.22",
+        "172.67.204.84",
+        "104.21.69.44",
         "104.17.147.22",
-        "2a06:98c1:3123::",
-        "2a06:98c1:3122::",
-        "188.114.98.0",
-        "188.114.99.0"
+        "104.17.148.22",
+        "172.67.214.246",
+        "104.21.83.62"
       ]
     },
     "independent_cache": true
@@ -99,9 +91,7 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +0 § 0",
-        "@Hiddify_nexttt +1 § 1",
-        "@Hiddify_nexttt +2 § 2"
+        "@Hiddify_nexttt +1 تلگرام § 0"
       ],
       "default": "auto"
     },
@@ -109,79 +99,28 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +0 § 0",
-        "@Hiddify_nexttt +1 § 1",
-        "@Hiddify_nexttt +2 § 2"
+        "@Hiddify_nexttt +1 تلگرام § 0"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +0 § 0",
-      "server": "www.speedtest.net",
-      "server_port": 2052,
-      "uuid": "DIGIV2RAY",
+      "type": "vmess",
+      "tag": "@Hiddify_nexttt +1 تلگرام § 0",
+      "server": "104.18.20.153",
+      "server_port": 8080,
+      "uuid": "edf45873-7289-4c5c-9947-7ef339499b94",
+      "security": "auto",
+      "authenticated_length": true,
       "transport": {
         "type": "ws",
-        "path": "/tm-Digiv2-__teldIGIv2__-DIGiv",
+        "path": "/V2LINE-TELEGRAM-CHANNEL-VMESS-WS",
         "headers": {
-          "Host": "www.speedtest.net.ftp.debian.org.www.digikala.com.cloudflare.com.harmale.ir."
+          "Host": "21976467982299966176705265209059.v2line.net"
         },
         "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-{
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +1 § 1",
-      "server": "hajlab.ucdavis.edu",
-      "server_port": 443,
-      "uuid": "22ec1bab-8aa2-4b49-b71a-411bb08f00fd",
-      "tls": {
-        "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
-        "headers": {
-          "Host": "joinshhproxybedeeeeee.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +2 § 2",
-      "server": "hajlab.ucdavis.edu",
-      "server_port": 443,
-      "uuid": "c0fe26f4-795e-4e8d-a104-adfdf525fae8",
-      "tls": {
-        "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
-        "headers": {
-          "Host": "joinshhproxybedeeeee.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
+      }
     },
     {
       "type": "dns",
@@ -251,7 +190,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "rVxZCofWPd7AkB1o"
+      "secret": "QFnF-k-Wdto8qFXM"
     }
   }
 }
