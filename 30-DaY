@@ -34,7 +34,7 @@
     ],
     "rules": [
       {
-        "domain": "avianrecruit.com",
+        "domain": "speedtest.net",
         "server": "dns-direct"
       },
       {
@@ -51,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.98.0",
         "188.114.99.0",
-        "2a06:98c1:3123::",
+        "188.114.98.0",
         "2a06:98c1:3122::",
+        "2a06:98c1:3123::",
         "104.17.147.22",
         "104.17.148.22",
         "188.114.99.0",
         "188.114.98.0",
-        "2a06:98c1:3123::",
-        "2a06:98c1:3122::"
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::"
       ]
     },
     "independent_cache": true
@@ -99,7 +99,7 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt کانال تلگرام 🇨🇦 § 0"
+        "@Hiddify_nexttt +1 کانال تلگرام § 0"
       ],
       "default": "auto"
     },
@@ -107,34 +107,28 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt کانال تلگرام 🇨🇦 § 0"
+        "@Hiddify_nexttt +1 کانال تلگرام § 0"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
-      "type": "trojan",
-      "tag": "@Hiddify_nexttt کانال تلگرام 🇨🇦 § 0",
-      "server": "AViAnRecRUIT.com",
-      "server_port": 443,
-      "password": "e8105dfd24414268b6c7652c63731097",
-      "tls": {
-        "enabled": true,
-        "server_name": "AViAnRecRUIT.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +1 کانال تلگرام § 0",
+      "server": "speedtest.net",
+      "server_port": 80,
+      "uuid": "ad9ae42c-6858-4635-b93d-8bec2169e569",
       "transport": {
         "type": "ws",
-        "path": "/6b777a91",
+        "path": "/Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN",
         "headers": {
-          "Host": "AViAnRecRUIT.com"
+          "Host": "snapp.com"
         },
+        "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
+      },
+      "packet_encoding": ""
     },
     {
       "type": "dns",
@@ -204,7 +198,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "gQhu5ThRDcVlk1NT"
+      "secret": "5doP6dUdMkDftttL"
     }
   }
 }
