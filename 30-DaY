@@ -34,11 +34,7 @@
     ],
     "rules": [
       {
-        "domain": [
-          "sg1.ddns-link-b5.uk",
-          "sg2.ddns-link-b5.uk",
-          "sg3.ddns-link-b5.uk"
-        ],
+        "domain": "nufilter.fastly80.hosting-ip.com",
         "server": "dns-direct"
       },
       {
@@ -57,8 +53,8 @@
       "sky.rethinkdns.com": [
         "188.114.98.0",
         "188.114.99.0",
-        "2a06:98c1:3122::",
         "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
         "104.17.147.22",
         "104.17.148.22",
         "188.114.98.0",
@@ -108,9 +104,7 @@
         "@Hiddify_nexttt +3 § 2",
         "@Hiddify_nexttt +4 § 3",
         "@Hiddify_nexttt +5 § 4",
-        "@Hiddify_nexttt +6 § 5",
-        "@Hiddify_nexttt +7 § 6",
-        "@Hiddify_nexttt +8 § 7"
+        "@Hiddify_nexttt +6 § 5"
       ],
       "default": "auto"
     },
@@ -123,101 +117,124 @@
         "@Hiddify_nexttt +3 § 2",
         "@Hiddify_nexttt +4 § 3",
         "@Hiddify_nexttt +5 § 4",
-        "@Hiddify_nexttt +6 § 5",
-        "@Hiddify_nexttt +7 § 6",
-        "@Hiddify_nexttt +8 § 7"
+        "@Hiddify_nexttt +6 § 5"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
-      "type": "hysteria2",
+      "type": "vless",
       "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "116.48.187.68",
-      "server_port": 3882,
-      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "server": "188.245.90.214",
+      "server_port": 1633,
+      "uuid": "4ef45945-6cb5-4e05-a6de-4d2c9d58b45f",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "hk2.ddns-link-b5.uk"
-      }
+        "server_name": "stackoverflow.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
+          "short_id": "9bc0a55a5379c0ed"
+        }
+      },
+      "packet_encoding": ""
     },
     {
-      "type": "hysteria2",
+      "type": "vless",
       "tag": "@Hiddify_nexttt +2 § 1",
-      "server": "58.153.130.172",
-      "server_port": 5110,
-      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
-      "tls": {
-        "enabled": true,
-        "server_name": "hk3.ddns-link-b5.uk"
-      }
+      "server": "140.248.129.207",
+      "server_port": 80,
+      "uuid": "86c50e3a-5b87-49dd-bd20-03c7f2735e40",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "amir55.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
     },
     {
-      "type": "hysteria2",
+      "type": "vless",
       "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "116.48.187.68",
-      "server_port": 3882,
-      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "server": "160.153.0.131",
+      "server_port": 443,
+      "uuid": "2a943112-138b-432d-a3a5-277ea2fd8a2e",
       "tls": {
         "enabled": true,
-        "server_name": "hk2.ddns-link-b5.uk"
-      }
+        "server_name": "Tp050KvBgB.eHsAnDnS10.iR",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
     },
     {
-      "type": "hysteria2",
+      "type": "vless",
       "tag": "@Hiddify_nexttt +4 § 3",
-      "server": "58.153.130.172",
-      "server_port": 5110,
-      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "server": "160.153.0.183",
+      "server_port": 443,
+      "uuid": "2a943112-138b-432d-a3a5-277ea2fd8a2e",
       "tls": {
         "enabled": true,
-        "server_name": "hk3.ddns-link-b5.uk"
-      }
+        "server_name": "Tp050KvBgB.eHsAnDnS10.iR",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
     },
     {
-      "type": "hysteria2",
+      "type": "vless",
       "tag": "@Hiddify_nexttt +5 § 4",
-      "server": "43.199.156.119",
-      "server_port": 9270,
-      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
-      "tls": {
-        "enabled": true,
-        "server_name": "hk5.ddns-link-b5.uk"
-      }
+      "server": "185.146.173.58",
+      "server_port": 80,
+      "uuid": "f151bde4-6981-4ad9-bd01-dd34ad792a3e",
+      "transport": {
+        "type": "ws",
+        "path": "/Omid",
+        "headers": {
+          "Host": "m22.6.site.org.ir.com.site.xn--fhq0la447aac5504dea701axr1g.antishop.sbs."
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
     },
     {
-      "type": "hysteria2",
+      "type": "vless",
       "tag": "@Hiddify_nexttt +6 § 5",
-      "server": "sg1.ddns-link-b5.uk",
-      "server_port": 1548,
-      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
-      "tls": {
-        "enabled": true,
-        "server_name": "sg1.ddns-link-b5.uk"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "@Hiddify_nexttt +7 § 6",
-      "server": "sg2.ddns-link-b5.uk",
-      "server_port": 3531,
-      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
-      "tls": {
-        "enabled": true,
-        "server_name": "sg2.ddns-link-b5.uk"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "@Hiddify_nexttt +8 § 7",
-      "server": "sg3.ddns-link-b5.uk",
-      "server_port": 5475,
-      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
-      "tls": {
-        "enabled": true,
-        "server_name": "sg3.ddns-link-b5.uk"
-      }
+      "server": "nufilter.fastly80.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "1a9829ae-f8f0-4f8e-b404-6ed7f2da02f9",
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-NUFiLTER",
+        "headers": {
+          "Host": "api.nhl9.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
     },
     {
       "type": "dns",
@@ -287,7 +304,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "EgKDFnAhQuLx5vof"
+      "secret": "siZYmvZnloqyKut2"
     }
   }
 }
