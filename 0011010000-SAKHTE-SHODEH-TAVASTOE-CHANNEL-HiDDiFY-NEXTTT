@@ -35,8 +35,8 @@
     "rules": [
       {
         "domain": [
-          "series-a2.samanehha.co",
-          "connectcarolina.sites.unc.edu"
+          "connectcarolina.sites.unc.edu",
+          "series-a2.samanehha.co"
         ],
         "server": "dns-direct"
       },
@@ -377,7 +377,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "0Gka64Fu0QNPqQJU"
+      "secret": "xPE5ZJk0iVAwSuAO"
     }
   }
 }
