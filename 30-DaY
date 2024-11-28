@@ -35,9 +35,9 @@
     "rules": [
       {
         "domain": [
-          "uae.kitten-tube.com",
-          "series-a2-me.varzesh360.co",
-          "www.parsvds.ir"
+          "sg1.ddns-link-b5.uk",
+          "sg2.ddns-link-b5.uk",
+          "sg3.ddns-link-b5.uk"
         ],
         "server": "dns-direct"
       },
@@ -55,10 +55,10 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.99.0",
         "188.114.98.0",
-        "2a06:98c1:3123::",
+        "188.114.99.0",
         "2a06:98c1:3122::",
+        "2a06:98c1:3123::",
         "104.17.147.22",
         "104.17.148.22",
         "188.114.98.0",
@@ -107,7 +107,10 @@
         "@Hiddify_nexttt +2 § 1",
         "@Hiddify_nexttt +3 § 2",
         "@Hiddify_nexttt +4 § 3",
-        "@Hiddify_nexttt +5 § 4"
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5",
+        "@Hiddify_nexttt +7 § 6",
+        "@Hiddify_nexttt +8 § 7"
       ],
       "default": "auto"
     },
@@ -119,95 +122,102 @@
         "@Hiddify_nexttt +2 § 1",
         "@Hiddify_nexttt +3 § 2",
         "@Hiddify_nexttt +4 § 3",
-        "@Hiddify_nexttt +5 § 4"
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5",
+        "@Hiddify_nexttt +7 § 6",
+        "@Hiddify_nexttt +8 § 7"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
-      "type": "vless",
+      "type": "hysteria2",
       "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "62.60.174.99",
-      "server_port": 4910,
-      "uuid": "5a33c57e-18a3-4561-a763-f6207fda2677",
-      "transport": {
-        "type": "http",
-        "host": "speedtest.net",
-        "path": "/",
-        "method": "GET"
-      },
-      "packet_encoding": ""
+      "server": "116.48.187.68",
+      "server_port": 3882,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk2.ddns-link-b5.uk"
+      }
     },
     {
-      "type": "vless",
+      "type": "hysteria2",
       "tag": "@Hiddify_nexttt +2 § 1",
-      "server": "172.66.46.213",
-      "server_port": 443,
-      "uuid": "a3033d88-dc8e-4ebd-81d5-81c03ba3a72a",
+      "server": "58.153.130.172",
+      "server_port": 5110,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
       "tls": {
         "enabled": true,
-        "server_name": "speedtest.svgspeedtest.net",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy",
-        "headers": {
-          "Host": "speedtest.svgspeedtest.net"
-        },
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
+        "server_name": "hk3.ddns-link-b5.uk"
+      }
     },
     {
-      "type": "vless",
+      "type": "hysteria2",
       "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "www.parsvds.ir",
-      "server_port": 8080,
-      "uuid": "40e18e7a-b328-4b85-a452-85de24e60f0a",
-      "transport": {
-        "type": "ws",
-        "path": "/@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy----@XvProxy",
-        "headers": {
-          "Host": "www.speedtest.net.www.zula.ir.cloudflare.com.www.zula.ir.svgspeedtest.net"
-        },
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +4 § 3",
-      "server": "uae.kitten-tube.com",
-      "server_port": 443,
-      "uuid": "414df689-dc19-418b-849c-f0f15967d71e",
-      "flow": "xtls-rprx-vision",
+      "server": "116.48.187.68",
+      "server_port": 3882,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
       "tls": {
         "enabled": true,
-        "server_name": "adobe.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "ljzfoaXVBSNu3tw58-B0WNViso1aA9JSCX9GUcMDu0k",
-          "short_id": "4048A3da"
-        }
-      },
-      "packet_encoding": ""
+        "server_name": "hk2.ddns-link-b5.uk"
+      }
     },
     {
-      "type": "shadowsocks",
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +4 § 3",
+      "server": "58.153.130.172",
+      "server_port": 5110,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk3.ddns-link-b5.uk"
+      }
+    },
+    {
+      "type": "hysteria2",
       "tag": "@Hiddify_nexttt +5 § 4",
-      "server": "series-a2-me.varzesh360.co",
-      "server_port": 443,
-      "method": "chacha20-ietf-poly1305",
-      "password": "Bog0ELmMM9DSxDdQ"
+      "server": "43.199.156.119",
+      "server_port": 9270,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk5.ddns-link-b5.uk"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +6 § 5",
+      "server": "sg1.ddns-link-b5.uk",
+      "server_port": 1548,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg1.ddns-link-b5.uk"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +7 § 6",
+      "server": "sg2.ddns-link-b5.uk",
+      "server_port": 3531,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg2.ddns-link-b5.uk"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +8 § 7",
+      "server": "sg3.ddns-link-b5.uk",
+      "server_port": 5475,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg3.ddns-link-b5.uk"
+      }
     },
     {
       "type": "dns",
@@ -277,7 +287,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "SKVEK1raMG78GbQb"
+      "secret": "EgKDFnAhQuLx5vof"
     }
   }
 }
