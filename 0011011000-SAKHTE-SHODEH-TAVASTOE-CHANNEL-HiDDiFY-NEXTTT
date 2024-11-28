@@ -1,0 +1,280 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "sg1.ddns-link-b5.uk",
+          "sg2.ddns-link-b5.uk",
+          "sg3.ddns-link-b5.uk"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::",
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.99.0",
+        "188.114.98.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify_nexttt +2 § 0",
+        "@Hiddify_nexttt +3 § 1",
+        "@Hiddify_nexttt +4 § 2",
+        "@Hiddify_nexttt +5 § 3",
+        "@Hiddify_nexttt +6 § 4",
+        "@Hiddify_nexttt +7 § 5",
+        "@Hiddify_nexttt +8 § 6"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify_nexttt +2 § 0",
+        "@Hiddify_nexttt +3 § 1",
+        "@Hiddify_nexttt +4 § 2",
+        "@Hiddify_nexttt +5 § 3",
+        "@Hiddify_nexttt +6 § 4",
+        "@Hiddify_nexttt +7 § 5",
+        "@Hiddify_nexttt +8 § 6"
+      ],
+      "url": "http://cp.cloudflare.com/",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +2 § 0",
+      "server": "58.153.130.172",
+      "server_port": 5110,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk3.ddns-link-b5.uk"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +3 § 1",
+      "server": "116.48.187.68",
+      "server_port": 3882,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk2.ddns-link-b5.uk"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +4 § 2",
+      "server": "58.153.130.172",
+      "server_port": 5110,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk3.ddns-link-b5.uk"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +5 § 3",
+      "server": "43.199.156.119",
+      "server_port": 9270,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk5.ddns-link-b5.uk"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +6 § 4",
+      "server": "sg1.ddns-link-b5.uk",
+      "server_port": 1548,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg1.ddns-link-b5.uk"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +7 § 5",
+      "server": "sg2.ddns-link-b5.uk",
+      "server_port": 3531,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg2.ddns-link-b5.uk"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@Hiddify_nexttt +8 § 6",
+      "server": "sg3.ddns-link-b5.uk",
+      "server_port": 5475,
+      "password": "84854B66-8478-4B87-8C0D-CD1699426C41",
+      "tls": {
+        "enabled": true,
+        "server_name": "sg3.ddns-link-b5.uk"
+      }
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
+    "rules": [
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "FMb8dCi75TsZJd1w"
+    }
+  }
+}
