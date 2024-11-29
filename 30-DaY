@@ -60,8 +60,8 @@
         "188.114.98.0",
         "2a06:98c1:3122::",
         "2a06:98c1:3123::",
-        "104.17.148.22",
         "104.17.147.22",
+        "104.17.148.22",
         "188.114.98.0",
         "188.114.99.0",
         "2a06:98c1:3122::",
@@ -106,14 +106,13 @@
         "auto",
         "@Hiddify_nexttt +1 § 0",
         "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2",
-        "@Hiddify_nexttt +4 § 3",
-        "@Hiddify_nexttt +5 § 4",
-        "@Hiddify_nexttt +6 § 5",
-        "@Hiddify_nexttt +7 § 6",
-        "@Hiddify_nexttt +8 § 7",
-        "@Hiddify_nexttt +9 § 8",
-        "@Hiddify_nexttt +10 § 9"
+        "@Hiddify_nexttt +4 § 2",
+        "@Hiddify_nexttt +5 § 3",
+        "@Hiddify_nexttt +6 § 4",
+        "@Hiddify_nexttt +7 § 5",
+        "@Hiddify_nexttt +8 § 6",
+        "@Hiddify_nexttt +9 § 7",
+        "@Hiddify_nexttt +10 § 8"
       ],
       "default": "auto"
     },
@@ -123,14 +122,13 @@
       "outbounds": [
         "@Hiddify_nexttt +1 § 0",
         "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2",
-        "@Hiddify_nexttt +4 § 3",
-        "@Hiddify_nexttt +5 § 4",
-        "@Hiddify_nexttt +6 § 5",
-        "@Hiddify_nexttt +7 § 6",
-        "@Hiddify_nexttt +8 § 7",
-        "@Hiddify_nexttt +9 § 8",
-        "@Hiddify_nexttt +10 § 9"
+        "@Hiddify_nexttt +4 § 2",
+        "@Hiddify_nexttt +5 § 3",
+        "@Hiddify_nexttt +6 § 4",
+        "@Hiddify_nexttt +7 § 5",
+        "@Hiddify_nexttt +8 § 6",
+        "@Hiddify_nexttt +9 § 7",
+        "@Hiddify_nexttt +10 § 8"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -188,23 +186,7 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "140.248.129.207",
-      "server_port": 80,
-      "uuid": "c9cc89e8-ac05-54a9-ac1a-00473190f705",
-      "transport": {
-        "type": "ws",
-        "path": "/@ELiV2RAY--@ELiV2RAY--@ELiV2RAY--@ELiV2RAY--@ELiV2RAY--@ELiV2RAY",
-        "headers": {
-          "Host": "MUSTANG-0.IR"
-        },
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +4 § 3",
+      "tag": "@Hiddify_nexttt +4 § 2",
       "server": "172.66.47.98",
       "server_port": 443,
       "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
@@ -229,7 +211,7 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +5 § 4",
+      "tag": "@Hiddify_nexttt +5 § 3",
       "server": "151.101.194.133",
       "server_port": 443,
       "uuid": "6dec0011-854c-4040-9493-d5adb691e097",
@@ -254,7 +236,7 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +6 § 5",
+      "tag": "@Hiddify_nexttt +6 § 4",
       "server": "connectcarolina.sites.unc.edu",
       "server_port": 443,
       "uuid": "Joinin--ZEDMODEON",
@@ -279,7 +261,7 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +7 § 6",
+      "tag": "@Hiddify_nexttt +7 § 5",
       "server": "connectcarolina.sites.unc.edu",
       "server_port": 443,
       "uuid": "tell--ZEDMODEON",
@@ -304,7 +286,7 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +8 § 7",
+      "tag": "@Hiddify_nexttt +8 § 6",
       "server": "live.skornorth.com",
       "server_port": 443,
       "uuid": "tell--ZEDMODEON",
@@ -329,7 +311,7 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +9 § 8",
+      "tag": "@Hiddify_nexttt +9 § 7",
       "server": "NUFiLTER.fastly80-3.hosting-ip.com",
       "server_port": 80,
       "uuid": "TELEGRAM-NUFiLTER",
@@ -346,7 +328,7 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +10 § 9",
+      "tag": "@Hiddify_nexttt +10 § 8",
       "server": "NUFiLTER.fastly80-3.hosting-ip.com",
       "server_port": 80,
       "uuid": "59a200b8-d967-44b0-96e5-3a4f0984c123",
@@ -429,7 +411,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "Fsng4SJNysntPoLQ"
+      "secret": "-fch5bnqkYrXvstH"
     }
   }
 }
