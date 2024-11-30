@@ -35,10 +35,8 @@
     "rules": [
       {
         "domain": [
-          "hajlab.ucdavis.edu",
-          "connectcarolina.sites.unc.edu",
-          "live.skornorth.com",
-          "join.v2rynng.darkping.net"
+          "series-a2-me.samanehha.co",
+          "api.namasha.co"
         ],
         "server": "dns-direct"
       },
@@ -56,16 +54,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.99.0",
         "188.114.98.0",
+        "188.114.99.0",
         "2a06:98c1:3122::",
         "2a06:98c1:3123::",
         "104.17.148.22",
         "104.17.147.22",
         "188.114.99.0",
         "188.114.98.0",
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::"
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::"
       ]
     },
     "independent_cache": true
@@ -104,12 +102,11 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇷🇺@Hiddify_nexttt +1 § 0",
-        "🇩🇪@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2",
-        "@Hiddify_nexttt +4 § 3",
-        "@Hiddify_nexttt +5 § 4",
-        "@Hiddify_nexttt +6 § 5"
+        "@Hiddify_nexttt  § 0",
+        "@Hiddify_nexttt  § 1",
+        "@Hiddify_nexttt  § 2",
+        "@Hiddify_nexttt  § 3",
+        "@Hiddify_nexttt § 4"
       ],
       "default": "auto"
     },
@@ -117,26 +114,41 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇷🇺@Hiddify_nexttt +1 § 0",
-        "🇩🇪@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2",
-        "@Hiddify_nexttt +4 § 3",
-        "@Hiddify_nexttt +5 § 4",
-        "@Hiddify_nexttt +6 § 5"
+        "@Hiddify_nexttt  § 0",
+        "@Hiddify_nexttt  § 1",
+        "@Hiddify_nexttt  § 2",
+        "@Hiddify_nexttt  § 3",
+        "@Hiddify_nexttt § 4"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
-      "type": "vless",
-      "tag": "🇷🇺@Hiddify_nexttt +1 § 0",
-      "server": "hajlab.ucdavis.edu",
+      "type": "shadowsocks",
+      "tag": "@Hiddify_nexttt  § 0",
+      "server": "38.75.136.108",
+      "server_port": 9101,
+      "method": "aes-256-gcm",
+      "password": "e4FCWrgpkji3QY"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_nexttt  § 1",
+      "server": "series-a2-me.samanehha.co",
       "server_port": 443,
-      "uuid": "39415547-c245-41b5-aa31-3084249a70f0",
+      "method": "chacha20-ietf-poly1305",
+      "password": "Bog0ELmMM9DSxDdQ"
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_nexttt  § 2",
+      "server": "104.17.234.12",
+      "server_port": 443,
+      "password": "Channel-VPNCUSTOMIZE",
       "tls": {
         "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
+        "server_name": "1.2.3.4.5.6.7.8.9.10.www.speedtest.net.VPNCUSTOMIZE.abrha.co.za",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -144,24 +156,22 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "path": "/Telegram,VPNCUSTOMIZE,Telegram,VPNCUSTOMIZE,Telegram,VPNCUSTOMIZE,Telegram,VPNCUSTOMIZE?ed",
         "headers": {
-          "Host": "joinshhproxybedeeeeee.ir"
+          "Host": "1.2.3.4.5.6.7.8.9.10.www.speedtest.net.VPNCUSTOMIZE.abrha.co.za"
         },
-        "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
+      }
     },
     {
-      "type": "vless",
-      "tag": "🇩🇪@Hiddify_nexttt +2 § 1",
-      "server": "hajlab.ucdavis.edu",
+      "type": "trojan",
+      "tag": "@Hiddify_nexttt  § 3",
+      "server": "104.17.234.12",
       "server_port": 443,
-      "uuid": "c4d80437-ffd0-438c-99fb-89210c1b669c",
+      "password": "Channel-VPNCUSTOMIZE",
       "tls": {
         "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
+        "server_name": "1.2.3.4.5.6.7.8.9.10.www.speedtest.net.VPNCUSTOMIZE.abrha.co.za",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -169,111 +179,20 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "path": "/Telegram,VPNCUSTOMIZE,Telegram,VPNCUSTOMIZE,Telegram,VPNCUSTOMIZE,Telegram,VPNCUSTOMIZE?ed",
         "headers": {
-          "Host": "joinshhproxybedeeeee.ir"
+          "Host": "1.2.3.4.5.6.7.8.9.10.www.speedtest.net.VPNCUSTOMIZE.abrha.co.za"
         },
-        "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
+      }
     },
     {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "connectcarolina.sites.unc.edu",
+      "type": "shadowsocks",
+      "tag": "@Hiddify_nexttt § 4",
+      "server": "api.namasha.co",
       "server_port": 443,
-      "uuid": "tel--ZEDMODEON",
-      "tls": {
-        "enabled": true,
-        "server_name": "connectcarolina.sites.unc.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
-        "headers": {
-          "Host": "porsline.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +4 § 3",
-      "server": "connectcarolina.sites.unc.edu",
-      "server_port": 443,
-      "uuid": "Join--ZEDMODEON",
-      "tls": {
-        "enabled": true,
-        "server_name": "connectcarolina.sites.unc.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@ZEDMODEON-ZEDMODEON-@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
-        "headers": {
-          "Host": "mitrarank.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +5 § 4",
-      "server": "live.skornorth.com",
-      "server_port": 443,
-      "uuid": "Joinin--ZEDMODEON",
-      "tls": {
-        "enabled": true,
-        "server_name": "live.skornorth.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON",
-        "headers": {
-          "Host": "gooshishop.com"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +6 § 5",
-      "server": "join.v2rynng.darkping.net",
-      "server_port": 1633,
-      "uuid": "34d4f934-b96d-4308-b272-1cf6472267db",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "stackoverflow.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
-          "short_id": "9bc0a55a5379c0ed"
-        }
-      },
-      "packet_encoding": ""
+      "method": "chacha20-ietf-poly1305",
+      "password": "u17T3BvpYaaiuW2c"
     },
     {
       "type": "dns",
@@ -343,7 +262,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "bWNV_2MER4vytq18"
+      "secret": "1MFyl0ixZmUqecPU"
     }
   }
 }
