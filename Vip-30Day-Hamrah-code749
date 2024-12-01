@@ -35,8 +35,10 @@
     "rules": [
       {
         "domain": [
-          "svnteam-joinchannel.misvn.ir",
-          "hms04.xmivideo.cfd"
+          "hajlab.ucdavis.edu",
+          "join.v2rynng.darkping.net",
+          "nufilter.fastly80-2.hosting-ip.com",
+          "nufilter.fastly80-3.hosting-ip.com"
         ],
         "server": "dns-direct"
       },
@@ -60,8 +62,8 @@
         "188.114.98.0",
         "104.17.148.22",
         "104.17.147.22",
-        "2a06:98c1:3123::",
         "2a06:98c1:3122::",
+        "2a06:98c1:3123::",
         "188.114.99.0",
         "188.114.98.0"
       ]
@@ -105,7 +107,9 @@
         "@Hiddify_nexttt +1 § 0",
         "@Hiddify_nexttt +2 § 1",
         "@Hiddify_nexttt +3 § 2",
-        "@Hiddify_nexttt +4 § 3"
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5"
       ],
       "default": "auto"
     },
@@ -116,7 +120,9 @@
         "@Hiddify_nexttt +1 § 0",
         "@Hiddify_nexttt +2 § 1",
         "@Hiddify_nexttt +3 § 2",
-        "@Hiddify_nexttt +4 § 3"
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -125,14 +131,22 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "svnteam-joinchannel.misvn.ir",
-      "server_port": 80,
-      "uuid": "SVNTEAM",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "cd369898-8c6e-4d5b-9005-123f863ca89e",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
       "transport": {
         "type": "ws",
-        "path": "/@SvnTeam----@SvnTeam----@SvnTeam----@SvnTeam----@SvnTeam----@SvnTeam----@SvnTeam----@SvnTeam----@SvnTeam----@SvnTeam----@SvnTeam----@SvnTeam",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
         "headers": {
-          "Host": "Svnteam.SvnTeam.SvnTeam.First.ir"
+          "Host": "joinshhproxybedeeeeee.ir"
         },
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -142,6 +156,31 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +2 § 1",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "d41d2efc-ded9-4ff7-bdd5-de620c04051f",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +3 § 2",
       "server": "172.66.46.224",
       "server_port": 8443,
       "uuid": "1a1eff5f-97b8-4a4e-910d-6415441b371a",
@@ -155,7 +194,7 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/",
+        "path": "/TELEGRAM-TRICKMOBIL_TRICKMOBIL/",
         "headers": {
           "Host": "trojanyu.pages.dev"
         },
@@ -165,51 +204,57 @@
       "packet_encoding": ""
     },
     {
-      "type": "vmess",
-      "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "hms04.xmivideo.cfd",
-      "server_port": 443,
-      "uuid": "93ea486a-bada-42a4-ac38-d088b320fa1e",
-      "security": "auto",
-      "authenticated_length": true,
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +4 § 3",
+      "server": "join.v2rynng.darkping.net",
+      "server_port": 1633,
+      "uuid": "15be90f5-d4de-4a5d-85f3-e188a53b1c5f",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "xmivideo.cfd",
+        "server_name": "stackoverflow.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
+          "short_id": "9bc0a55a5379c0ed"
         }
       },
-      "transport": {
-        "type": "ws",
-        "path": "/linkws",
-        "headers": {
-          "Host": "xmivideo.cfd"
-        },
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
+      "packet_encoding": ""
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +4 § 3",
-      "server": "104.25.165.81",
-      "server_port": 2087,
-      "uuid": "1a1eff5f-97b8-4a4e-910d-6415441b371a",
-      "tls": {
-        "enabled": true,
-        "server_name": "trojanyu.pages.dev",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
+      "tag": "@Hiddify_nexttt +5 § 4",
+      "server": "NUFiLTER.fastly80-2.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "TELEGRAM-NUFiLTER",
       "transport": {
         "type": "ws",
-        "path": "/@AZARBAYJAB1@AZARBAYJAB1@AZARBAYJAB1",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
         "headers": {
-          "Host": "trojanyu.pages.dev"
+          "Host": "api.nhl186.ir"
         },
-        "max_early_data": 2560,
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +6 § 5",
+      "server": "NUFiLTER.fastly80-3.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "TELEGRAM-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "api.nhl03.ir"
+        },
+        "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -282,7 +327,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "H9DkZyiwaxG12av-"
+      "secret": "NPr2du4hwHeF2P0V"
     }
   }
 }
