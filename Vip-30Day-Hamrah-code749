@@ -34,7 +34,7 @@
     ],
     "rules": [
       {
-        "domain": "us.bailian.site",
+        "domain": "www.speedtest.net",
         "server": "dns-direct"
       },
       {
@@ -51,14 +51,14 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.99.0",
         "188.114.98.0",
-        "2a06:98c1:3122::",
+        "188.114.99.0",
         "2a06:98c1:3123::",
-        "104.17.147.22",
+        "2a06:98c1:3122::",
         "104.17.148.22",
-        "188.114.98.0",
+        "104.17.147.22",
         "188.114.99.0",
+        "188.114.98.0",
         "2a06:98c1:3122::",
         "2a06:98c1:3123::"
       ]
@@ -99,7 +99,9 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +1 § 0"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1",
+        "@Hiddify_nexttt +3 § 2"
       ],
       "default": "auto"
     },
@@ -107,21 +109,62 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +1 § 0"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1",
+        "@Hiddify_nexttt +3 § 2"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
-      "type": "hysteria2",
+      "type": "vless",
       "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "us.bailian.site",
-      "server_port": 20487,
-      "password": "9682b509-4c28-4342-bf80-19d3b936322a",
-      "tls": {
-        "enabled": true
-      }
+      "server": "Www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "3a6ea2e7-e181-4595-9812-7faccf4955f6",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray?ed=2048",
+        "headers": {
+          "Host": "www.speedtest.net.Mact.iR."
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +2 § 1",
+      "server": "151.101.3.8",
+      "server_port": 80,
+      "uuid": "d84a7372-305e-4064-bf4a-fe048801aeb4",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray",
+        "headers": {
+          "Host": "barkatc2.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +3 § 2",
+      "server": "151.101.3.8",
+      "server_port": 80,
+      "uuid": "35f02636-fd1f-4583-8890-cb7b8067dcf1",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray",
+        "headers": {
+          "Host": "barkatc3.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
     },
     {
       "type": "dns",
@@ -191,7 +234,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "ETApBAB77NRbvKjJ"
+      "secret": "VnEnX7F-BnkCt-eU"
     }
   }
 }
