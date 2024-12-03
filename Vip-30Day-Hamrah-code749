@@ -34,7 +34,13 @@
     ],
     "rules": [
       {
-        "domain": "www.speedtest.net",
+        "domain": [
+          "jp.legeth.cc",
+          "sg.legeth.cc",
+          "uk.legeth.cc",
+          "hk.legeth.cc",
+          "us.legeth.cc"
+        ],
         "server": "dns-direct"
       },
       {
@@ -53,14 +59,14 @@
       "sky.rethinkdns.com": [
         "188.114.98.0",
         "188.114.99.0",
+        "2a06:98c1:3122::",
         "2a06:98c1:3123::",
-        "2a06:98c1:3122::",
-        "104.17.148.22",
         "104.17.147.22",
-        "188.114.99.0",
+        "104.17.148.22",
         "188.114.98.0",
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::"
+        "188.114.99.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::"
       ]
     },
     "independent_cache": true
@@ -99,9 +105,26 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2"
+        "香港1",
+        "香港2",
+        "香港3",
+        "香港4",
+        "美国1",
+        "美国2",
+        "美国3",
+        "美国4",
+        "日本1",
+        "日本2",
+        "日本3",
+        "日本4",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "新加坡4",
+        "英国1",
+        "英国2",
+        "英国3",
+        "英国4"
       ],
       "default": "auto"
     },
@@ -109,62 +132,230 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2"
+        "香港1",
+        "香港2",
+        "香港3",
+        "香港4",
+        "美国1",
+        "美国2",
+        "美国3",
+        "美国4",
+        "日本1",
+        "日本2",
+        "日本3",
+        "日本4",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "新加坡4",
+        "英国1",
+        "英国2",
+        "英国3",
+        "英国4"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "Www.speedtest.net",
-      "server_port": 8080,
-      "uuid": "3a6ea2e7-e181-4595-9812-7faccf4955f6",
-      "transport": {
-        "type": "httpupgrade",
-        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray?ed=2048",
-        "headers": {
-          "Host": "www.speedtest.net.Mact.iR."
-        }
-      },
-      "packet_encoding": ""
+      "type": "hysteria2",
+      "tag": "香港1",
+      "server": "hk.legeth.cc",
+      "server_port": 20149,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
     },
     {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +2 § 1",
-      "server": "151.101.3.8",
-      "server_port": 80,
-      "uuid": "d84a7372-305e-4064-bf4a-fe048801aeb4",
-      "transport": {
-        "type": "ws",
-        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray",
-        "headers": {
-          "Host": "barkatc2.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
+      "type": "hysteria2",
+      "tag": "香港2",
+      "server": "hk.legeth.cc",
+      "server_port": 20196,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
     },
     {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "151.101.3.8",
-      "server_port": 80,
-      "uuid": "35f02636-fd1f-4583-8890-cb7b8067dcf1",
-      "transport": {
-        "type": "ws",
-        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray",
-        "headers": {
-          "Host": "barkatc3.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": ""
+      "type": "hysteria2",
+      "tag": "香港3",
+      "server": "hk.legeth.cc",
+      "server_port": 20185,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "香港4",
+      "server": "hk.legeth.cc",
+      "server_port": 20128,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "美国1",
+      "server": "us.legeth.cc",
+      "server_port": 20116,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "美国2",
+      "server": "us.legeth.cc",
+      "server_port": 20171,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "美国3",
+      "server": "us.legeth.cc",
+      "server_port": 20121,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "美国4",
+      "server": "us.legeth.cc",
+      "server_port": 20186,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "日本1",
+      "server": "jp.legeth.cc",
+      "server_port": 20194,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "日本2",
+      "server": "jp.legeth.cc",
+      "server_port": 20154,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "日本3",
+      "server": "jp.legeth.cc",
+      "server_port": 20147,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "日本4",
+      "server": "jp.legeth.cc",
+      "server_port": 20102,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "新加坡1",
+      "server": "sg.legeth.cc",
+      "server_port": 20185,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "新加坡2",
+      "server": "sg.legeth.cc",
+      "server_port": 20107,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "新加坡3",
+      "server": "sg.legeth.cc",
+      "server_port": 20161,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "新加坡4",
+      "server": "sg.legeth.cc",
+      "server_port": 20181,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "英国1",
+      "server": "uk.legeth.cc",
+      "server_port": 20169,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "英国2",
+      "server": "uk.legeth.cc",
+      "server_port": 20125,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "英国3",
+      "server": "uk.legeth.cc",
+      "server_port": 20124,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "英国4",
+      "server": "uk.legeth.cc",
+      "server_port": 20105,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
     },
     {
       "type": "dns",
@@ -234,7 +425,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "VnEnX7F-BnkCt-eU"
+      "secret": "mkK3351P7djC7Y1m"
     }
   }
 }
