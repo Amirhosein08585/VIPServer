@@ -1,1 +1,431 @@
-https://app.legeth.cc/api/v1/client/subscribe?token=62cb397724e03db398685ac3931eb39e
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "jp.legeth.cc",
+          "sg.legeth.cc",
+          "uk.legeth.cc",
+          "hk.legeth.cc",
+          "us.legeth.cc"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::",
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "香港1",
+        "香港2",
+        "香港3",
+        "香港4",
+        "美国1",
+        "美国2",
+        "美国3",
+        "美国4",
+        "日本1",
+        "日本2",
+        "日本3",
+        "日本4",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "新加坡4",
+        "英国1",
+        "英国2",
+        "英国3",
+        "英国4"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "香港1",
+        "香港2",
+        "香港3",
+        "香港4",
+        "美国1",
+        "美国2",
+        "美国3",
+        "美国4",
+        "日本1",
+        "日本2",
+        "日本3",
+        "日本4",
+        "新加坡1",
+        "新加坡2",
+        "新加坡3",
+        "新加坡4",
+        "英国1",
+        "英国2",
+        "英国3",
+        "英国4"
+      ],
+      "url": "http://cp.cloudflare.com/",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "香港1",
+      "server": "hk.legeth.cc",
+      "server_port": 20149,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "香港2",
+      "server": "hk.legeth.cc",
+      "server_port": 20196,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "香港3",
+      "server": "hk.legeth.cc",
+      "server_port": 20185,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "香港4",
+      "server": "hk.legeth.cc",
+      "server_port": 20128,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "美国1",
+      "server": "us.legeth.cc",
+      "server_port": 20116,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "美国2",
+      "server": "us.legeth.cc",
+      "server_port": 20171,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "美国3",
+      "server": "us.legeth.cc",
+      "server_port": 20121,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "美国4",
+      "server": "us.legeth.cc",
+      "server_port": 20186,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "日本1",
+      "server": "jp.legeth.cc",
+      "server_port": 20194,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "日本2",
+      "server": "jp.legeth.cc",
+      "server_port": 20154,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "日本3",
+      "server": "jp.legeth.cc",
+      "server_port": 20147,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "日本4",
+      "server": "jp.legeth.cc",
+      "server_port": 20102,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "新加坡1",
+      "server": "sg.legeth.cc",
+      "server_port": 20185,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "新加坡2",
+      "server": "sg.legeth.cc",
+      "server_port": 20107,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "新加坡3",
+      "server": "sg.legeth.cc",
+      "server_port": 20161,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "新加坡4",
+      "server": "sg.legeth.cc",
+      "server_port": 20181,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "英国1",
+      "server": "uk.legeth.cc",
+      "server_port": 20169,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "英国2",
+      "server": "uk.legeth.cc",
+      "server_port": 20125,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "英国3",
+      "server": "uk.legeth.cc",
+      "server_port": 20124,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "英国4",
+      "server": "uk.legeth.cc",
+      "server_port": 20105,
+      "password": "395fd782-fdf9-46c5-b55c-98f36a1c9380",
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
+    "rules": [
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "mkK3351P7djC7Y1m"
+    }
+  }
+}
