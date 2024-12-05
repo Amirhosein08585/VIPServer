@@ -34,7 +34,7 @@
     ],
     "rules": [
       {
-        "domain": "speedtest.net",
+        "domain": "join.v2rynng.darkping.net",
         "server": "dns-direct"
       },
       {
@@ -51,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "2a06:98c1:3123::",
         "2a06:98c1:3122::",
-        "188.114.99.0",
+        "2a06:98c1:3123::",
         "188.114.98.0",
+        "188.114.99.0",
         "104.17.148.22",
         "104.17.147.22",
         "2a06:98c1:3122::",
         "2a06:98c1:3123::",
-        "188.114.98.0",
-        "188.114.99.0"
+        "188.114.99.0",
+        "188.114.98.0"
       ]
     },
     "independent_cache": true
@@ -99,10 +99,7 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2",
-        "@Hiddify_nexttt +4 § 3"
+        "@Hiddify_nexttt § 0"
       ],
       "default": "auto"
     },
@@ -110,10 +107,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2",
-        "@Hiddify_nexttt +4 § 3"
+        "@Hiddify_nexttt § 0"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -121,56 +115,22 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "sPeEdtEsT.nEt",
-      "server_port": 80,
-      "uuid": "20adac87-6faf-522d-85ed-3f1e34aadf70",
-      "transport": {
-        "type": "ws",
-        "headers": {
-          "Host": "MO-SI-MOSIV2.COM"
-        }
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +2 § 1",
-      "server": "sPeEdtEsT.nEt",
-      "server_port": 80,
-      "uuid": "1dc37235-84ae-5772-b0e1-d02d2c039268",
-      "transport": {
-        "type": "ws",
-        "headers": {
-          "Host": "PABLOO-MOSTAFA.COM"
-        }
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "sPeEdtEsT.nEt",
-      "server_port": 80,
-      "uuid": "1dc37235-84ae-5772-b0e1-d02d2c039268",
-      "transport": {
-        "type": "ws",
-        "headers": {
-          "Host": "PABLOO-MOSTAFA.COM"
-        }
-      },
-      "packet_encoding": ""
-    },
-    {
-      "type": "vless",
-      "tag": "@Hiddify_nexttt +4 § 3",
-      "server": "sPeEdtEsT.nEt",
-      "server_port": 80,
-      "uuid": "20adac87-6faf-522d-85ed-3f1e34aadf70",
-      "transport": {
-        "type": "ws",
-        "headers": {
-          "Host": "MO-SI-MOSIV2.COM"
+      "tag": "@Hiddify_nexttt § 0",
+      "server": "join.v2rynng.darkping.net",
+      "server_port": 1633,
+      "uuid": "be708710-c1e3-407a-acda-5a356ede29c9",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "stackoverflow.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
+          "short_id": "9bc0a55a5379c0ed"
         }
       },
       "packet_encoding": ""
@@ -243,7 +203,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "_jtiR8heNPUDEBzy"
+      "secret": "LCrj77Ko-Ymdd3V1"
     }
   }
 }
