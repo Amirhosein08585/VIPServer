@@ -34,7 +34,7 @@
     ],
     "rules": [
       {
-        "domain": "hajlab.ucdavis.edu",
+        "domain": "speedtest.net",
         "server": "dns-direct"
       },
       {
@@ -51,14 +51,14 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
         "188.114.99.0",
         "188.114.98.0",
         "104.17.148.22",
         "104.17.147.22",
-        "2a06:98c1:3123::",
         "2a06:98c1:3122::",
+        "2a06:98c1:3123::",
         "188.114.98.0",
         "188.114.99.0"
       ]
@@ -122,84 +122,56 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "151.101.3.8",
+      "server": "sPeEdtEsT.nEt",
       "server_port": 80,
-      "uuid": "1cc424e8-66ba-4ede-ab9b-407245e78cba",
+      "uuid": "20adac87-6faf-522d-85ed-3f1e34aadf70",
       "transport": {
         "type": "ws",
-        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray",
         "headers": {
-          "Host": "barkatc1.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
+          "Host": "MO-SI-MOSIV2.COM"
+        }
       },
       "packet_encoding": ""
     },
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +2 § 1",
-      "server": "151.101.3.8",
+      "server": "sPeEdtEsT.nEt",
       "server_port": 80,
-      "uuid": "1cc424e8-66ba-4ede-ab9b-407245e78cba",
+      "uuid": "1dc37235-84ae-5772-b0e1-d02d2c039268",
       "transport": {
         "type": "ws",
-        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray",
         "headers": {
-          "Host": "barkatc1.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
+          "Host": "PABLOO-MOSTAFA.COM"
+        }
       },
       "packet_encoding": ""
     },
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "hajlab.ucdavis.edu",
-      "server_port": 443,
-      "uuid": "1fb34b27-552f-467f-a386-68f2632703ce",
-      "tls": {
-        "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
+      "server": "sPeEdtEsT.nEt",
+      "server_port": 80,
+      "uuid": "1dc37235-84ae-5772-b0e1-d02d2c039268",
       "transport": {
         "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
         "headers": {
-          "Host": "joinshhproxybedeeeeeee.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
+          "Host": "PABLOO-MOSTAFA.COM"
+        }
       },
       "packet_encoding": ""
     },
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +4 § 3",
-      "server": "hajlab.ucdavis.edu",
-      "server_port": 443,
-      "uuid": "cc4c43a7-b599-4d15-8f29-150dea82a2ba",
-      "tls": {
-        "enabled": true,
-        "server_name": "hajlab.ucdavis.edu",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
+      "server": "sPeEdtEsT.nEt",
+      "server_port": 80,
+      "uuid": "20adac87-6faf-522d-85ed-3f1e34aadf70",
       "transport": {
         "type": "ws",
-        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
         "headers": {
-          "Host": "joinshhproxybedeeeee.ir"
-        },
-        "max_early_data": 2048,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
+          "Host": "MO-SI-MOSIV2.COM"
+        }
       },
       "packet_encoding": ""
     },
@@ -271,7 +243,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "VBSHwBAHtSDgvvYf"
+      "secret": "_jtiR8heNPUDEBzy"
     }
   }
 }
