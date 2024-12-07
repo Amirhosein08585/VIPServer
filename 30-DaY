@@ -34,6 +34,14 @@
     ],
     "rules": [
       {
+        "domain": [
+          "zmaoz.faculty.ucdavis.edu",
+          "connectcarolina.sites.unc.edu",
+          "live.skornorth.com"
+        ],
+        "server": "dns-direct"
+      },
+      {
         "domain_suffix": ".ir",
         "geosite": "ir",
         "server": "dns-direct"
@@ -47,16 +55,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::",
-        "188.114.99.0",
         "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
         "104.17.148.22",
         "104.17.147.22",
-        "2a06:98c1:3123::",
-        "2a06:98c1:3122::",
         "188.114.98.0",
-        "188.114.99.0"
+        "188.114.99.0",
+        "2a06:98c1:3122::",
+        "2a06:98c1:3123::"
       ]
     },
     "independent_cache": true
@@ -95,9 +103,12 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +1  § 0",
+        "@Hiddify_nexttt +1 § 0",
         "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2"
+        "@Hiddify_nexttt +3 § 2",
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5"
       ],
       "default": "auto"
     },
@@ -105,49 +116,166 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +1  § 0",
+        "@Hiddify_nexttt +1 § 0",
         "@Hiddify_nexttt +2 § 1",
-        "@Hiddify_nexttt +3 § 2"
+        "@Hiddify_nexttt +3 § 2",
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
       "idle_timeout": "1h40m0s"
     },
     {
-      "type": "hysteria2",
-      "tag": "@Hiddify_nexttt +1  § 0",
-      "server": "193.123.76.141",
-      "server_port": 30102,
-      "password": "7d417084-d308-4b35-96c8-99dfb2547ec2",
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +1 § 0",
+      "server": "zmaoz.faculty.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "Joinn--ZEDMODEON",
       "tls": {
         "enabled": true,
-        "server_name": "joinBede.ELiV2ray.net",
-        "insecure": true
-      }
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON",
+        "headers": {
+          "Host": "gooshishop.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
     },
     {
-      "type": "hysteria2",
+      "type": "vless",
       "tag": "@Hiddify_nexttt +2 § 1",
-      "server": "46.17.40.42",
-      "server_port": 30102,
-      "password": "7d417084-d308-4b35-96c8-99dfb2547ec2",
+      "server": "connectcarolina.sites.unc.edu",
+      "server_port": 443,
+      "uuid": "tel--ZEDMODEON",
       "tls": {
         "enabled": true,
-        "server_name": "elena.ru",
-        "insecure": true
-      }
+        "server_name": "connectcarolina.sites.unc.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "porsline.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
     },
     {
-      "type": "hysteria2",
+      "type": "vless",
       "tag": "@Hiddify_nexttt +3 § 2",
-      "server": "2001:41d0:a:2a7a:a:b:df4e:2408",
-      "server_port": 35051,
-      "password": "c72ee44c",
+      "server": "zmaoz.faculty.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "Joinn--ZEDMODEON",
       "tls": {
         "enabled": true,
-        "server_name": "elena.fr",
-        "insecure": true
-      }
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "mahex.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +4 § 3",
+      "server": "connectcarolina.sites.unc.edu",
+      "server_port": 443,
+      "uuid": "Joinin--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "connectcarolina.sites.unc.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "mitrarank.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +5 § 4",
+      "server": "live.skornorth.com",
+      "server_port": 443,
+      "uuid": "tel--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "live.skornorth.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "nabzebourse.com"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +6 § 5",
+      "server": "zmaoz.faculty.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "Bia--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "zmaoz.faculty.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON-ZEDMODEON-TEL-ZEDMODEON-ZEDMODEON-ZEDMODEON-@ZEDMODEON",
+        "headers": {
+          "Host": "snapp.express"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
     },
     {
       "type": "dns",
@@ -217,7 +345,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "nEtv_Zz9yIhDr3XS"
+      "secret": "M-TDRUCPEWuXTkkG"
     }
   }
 }
