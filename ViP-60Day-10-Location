@@ -51,16 +51,16 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.98.0",
-        "188.114.99.0",
-        "2a06:98c1:3123::",
-        "2a06:98c1:3122::",
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
         "104.17.147.22",
         "104.17.148.22",
-        "188.114.98.0",
-        "188.114.99.0",
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::"
+        "172.67.214.246",
+        "104.21.83.62",
+        "2606:4700:3030::6815:533e",
+        "2606:4700:3030::ac43:d6f6"
       ]
     },
     "independent_cache": true
@@ -99,7 +99,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt 🇨🇭 تلگرام § 0"
+        "@Hiddify_nexttt +1 🇨🇭 کانال تلگرام § 0",
+        "@Hiddify_nexttt +2 🇨🇭 کانال تلگرام § 1"
       ],
       "default": "auto"
     },
@@ -107,7 +108,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt 🇨🇭 تلگرام § 0"
+        "@Hiddify_nexttt +1 🇨🇭 کانال تلگرام § 0",
+        "@Hiddify_nexttt +2 🇨🇭 کانال تلگرام § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -115,7 +117,24 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt 🇨🇭 تلگرام § 0",
+      "tag": "@Hiddify_nexttt +1 🇨🇭 کانال تلگرام § 0",
+      "server": "NUFiLTER.fastly80-2.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "TELEGRAM-NUFiLTER-join",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "Shashokhi40ee.net"
+        },
+        "max_early_data": 80,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +2 🇨🇭 کانال تلگرام § 1",
       "server": "NUFiLTER.fastly80-2.hosting-ip.com",
       "server_port": 80,
       "uuid": "TELEGRAM-NUFiLTER-join",
@@ -198,7 +217,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "8VLjoxzVTjNLf0xk"
+      "secret": "zGuVhn8nDrS9ykCn"
     }
   }
 }
