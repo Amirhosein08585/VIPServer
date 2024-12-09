@@ -34,59 +34,48 @@
     ],
     "rules": [
       {
-        "domain_suffix": ".ir",
-        "geosite": "ir",
+        "domain": "connectivitycheck.gstatic.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
         "server": "dns-direct"
       },
       {
-        "domain": "cp.cloudflare.com",
-        "server": "dns-remote",
-        "rewrite_ttl": 3000
+        "domain_suffix": ".ir",
+        "server": "dns-direct"
       }
     ],
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.99.0",
-        "188.114.98.0",
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::",
         "104.17.147.22",
         "104.17.148.22",
-        "188.114.98.0",
-        "188.114.99.0",
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::"
+        "188.114.97.2",
+        "188.114.96.2"
       ]
     },
     "independent_cache": true
   },
   "inbounds": [
     {
-      "type": "tun",
-      "tag": "tun-in",
-      "mtu": 9000,
-      "inet4_address": "172.19.0.1/28",
-      "auto_route": true,
-      "strict_route": true,
-      "endpoint_independent_nat": true,
-      "stack": "mixed",
-      "sniff": true,
-      "sniff_override_destination": true
-    },
-    {
       "type": "mixed",
       "tag": "mixed-in",
       "listen": "127.0.0.1",
-      "listen_port": 2334,
+      "listen_port": 12334,
       "sniff": true,
-      "sniff_override_destination": true
+      "sniff_override_destination": true,
+      "set_system_proxy": true
     },
     {
       "type": "direct",
       "tag": "dns-in",
       "listen": "127.0.0.1",
-      "listen_port": 6450
+      "listen_port": 16450
     }
   ],
   "outbounds": [
@@ -95,38 +84,272 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt § 0"
-      ],
+        "🍋101@Hiddify-Nexttt  § 51",
+        "🍋60@Hiddify-Nexttt  § 59",
+        "🍋109@Hiddify-Nexttt  § 1",
+        "🍋8@Hiddify-Nexttt  § 43",
+        "🍋100@Hiddify-Nexttt  § 0",
+        "🍋41@Hiddify-Nexttt  § 40",
+        "@Hiddify-Nexttt  § 20",
+        "@Hiddify-Nexttt  § 18",
+        "@Hiddify-Nexttt  § 71",
+        "@Hiddify-Nexttt  § 72",
+         "@Hiddify-Nexttt  § 68"
+
+         ],
       "default": "auto"
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt § 0"
+        "🍋101@Hiddify-Nexttt  § 51",
+        "🍋60@Hiddify-Nexttt  § 59",
+        "🍋109@Hiddify-Nexttt  § 1",
+        "🍋8@Hiddify-Nexttt  § 43",
+        "🍋100@Hiddify-Nexttt  § 0",
+        "🍋41@Hiddify-Nexttt  § 40",
+        "@Hiddify-Nexttt  § 20",
+        "@Hiddify-Nexttt  § 18",
+        "@Hiddify-Nexttt  § 71",
+        "@Hiddify-Nexttt  § 72",
+        "@Hiddify-Nexttt  § 68"
       ],
-      "url": "http://cp.cloudflare.com/",
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m0s",
-      "idle_timeout": "1h40m0s"
+      "tolerance": 1,
+      "idle_timeout": "30m0s"
+    },
+     {
+      "type": "vless",
+      "tag": "🍋101@Hiddify-Nexttt  § 51",
+      "server": "172.233.182.248",
+      "server_port": 80,
+      "uuid": "ef27e62d-91bd-4676-b9ce-8743a73eda07",
+      "tls": {
+        "enabled": true,
+        "server_name": "zula.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "BVimgXtKkQ2Q6EpG8uKYTpySrNxEeIqVhdsxi5U5qRU",
+          "short_id": "94aa1bdc"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+ {
+      "type": "vless",
+      "tag": "🍋60@Hiddify-Nexttt  § 59",
+      "server": "188.245.69.146",
+      "server_port": 443,
+      "uuid": "856e3bf8-d896-4fed-b655-210c37bc8f3f",
+      "tls": {
+        "enabled": true,
+        "server_name": "wordpress.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "9XHuXqw9ITZtFJMN_mZoi9DgTKBTqCzpcOtAGuJbZH4",
+          "short_id": "5803fa4b"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": "xudp"
+    },
+{
+      "type": "vless",
+      "tag": "🍋109@Hiddify-Nexttt  § 1",
+      "server": "172.233.181.10",
+      "server_port": 80,
+      "uuid": "ef27e62d-91bd-4676-b9ce-8743a73eda07",
+      "tls": {
+        "enabled": true,
+        "server_name": "zula.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "BVimgXtKkQ2Q6EpG8uKYTpySrNxEeIqVhdsxi5U5qRU",
+          "short_id": "94aa1bdc"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+ {
+      "type": "vless",
+      "tag": "🍋8@Hiddify-Nexttt  § 43",
+      "server": "162.159.153.2",
+      "server_port": 80,
+      "uuid": "dfc1a9ab-6241-4b73-92f7-b299fc6b7751",
+      "transport": {
+        "type": "ws",
+        "path": "/xmlrpc.php?id=dfc1a9ab-6241-4b73-92f7-b299fc6b7751",
+        "headers": {
+          "Host": "csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch."
+        },
+        "max_early_data": 1080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+{
+      "type": "vless",
+      "tag": "🍋100@Hiddify-Nexttt  § 0",
+      "server": "172.233.174.160",
+      "server_port": 80,
+      "uuid": "ef27e62d-91bd-4676-b9ce-8743a73eda07",
+      "tls": {
+        "enabled": true,
+        "server_name": "zula.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "BVimgXtKkQ2Q6EpG8uKYTpySrNxEeIqVhdsxi5U5qRU",
+          "short_id": "94aa1bdc"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+{
+      "type": "hysteria2",
+      "tag": "🍋41@Hiddify-Nexttt  § 40",
+      "server": "192.124.176.87",
+      "server_port": 9781,
+      "obfs": {
+        "type": "salamander",
+        "password": "ZTg1ZWVjNjAxZmRlNGI5MA=="
+      },
+      "password": "a5fa5f80-a383-46aa-b589-86ef68b5820c",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+{
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt  § 20",
+      "server": "Rr.fastly80-3.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "TELEGRAM-NUFiLTER-id",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "6.fidsxss6x.ir"
+        },
+        "max_early_data": 80,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+ {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt  § 18",
+      "server": "A13.fastly80-3.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "My-TELEGRAM-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "6.fidsxss6x.ir"
+        },
+        "max_early_data": 80,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
+    },
+ {
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt  § 71",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "c4495c52-4d37-4bc8-900b-f685699fb920",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeeeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
     },
     {
-      "type": "wireguard",
-      "tag": "@Hiddify_nexttt § 0",
-      "local_address": [
-        "172.16.0.2/24",
-        "2606:4700:110:8edd:5668:1b79:3ef3:598d/128"
-      ],
-      "private_key": "6Ama0Zsqy6BmWQnyP99xGSmpPH5qDaw89+qaOWO3vXk=",
-      "server": "188.114.97.78",
-      "server_port": 945,
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": "AAAA",
-      "mtu": 1280,
-      "fake_packets": "5-10",
-      "fake_packets_size": "40-100",
-      "fake_packets_delay": "20-250"
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt  § 72",
+      "server": "hajlab.ucdavis.edu",
+      "server_port": 443,
+      "uuid": "d55b664b-c0e3-439e-a895-c7ed151bac06",
+      "tls": {
+        "enabled": true,
+        "server_name": "hajlab.ucdavis.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy",
+        "headers": {
+          "Host": "joinshhproxybedeeeee.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": "xudp"
     },
-    {
+{
+      "type": "vless",
+      "tag": "@Hiddify-Nexttt  § 68",
+      "server": "join.v2rynng.darkping.net",
+      "server_port": 1633,
+      "uuid": "b384ea2e-20b8-4b7a-8c0f-f3881b324bd7",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "stackoverflow.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
+          "short_id": "9bc0a55a5379c0ed"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+
+       {
       "type": "dns",
       "tag": "dns-out"
     },
@@ -139,8 +362,8 @@
       "tag": "direct-fragment",
       "tls_fragment": {
         "enabled": true,
-        "size": "1-500",
-        "sleep": "0-500"
+        "size": "10-30",
+        "sleep": "2-8"
       }
     },
     {
@@ -153,13 +376,18 @@
     }
   ],
   "route": {
-    "geoip": {
-      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
-    },
-    "geosite": {
-      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
-    },
     "rules": [
+      {
+        "domain": ".ir",
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
       {
         "inbound": "dns-in",
         "outbound": "dns-out"
@@ -175,12 +403,22 @@
       {
         "clash_mode": "Global",
         "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
       },
       {
-        "domain_suffix": ".ir",
-        "geosite": "ir",
-        "geoip": "ir",
-        "outbound": "bypass"
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
       }
     ],
     "final": "select",
@@ -193,8 +431,8 @@
       "path": "clash.db"
     },
     "clash_api": {
-      "external_controller": "127.0.0.1:6756",
-      "secret": "kcXarZnEdz9zVO9O"
+      "external_controller": "127.0.0.1:16756",
+      "secret": "0tMxfwnA-ELN2vCd"
     }
   }
 }
