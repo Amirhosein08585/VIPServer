@@ -34,52 +34,59 @@
     ],
     "rules": [
       {
-        "domain": "join.v2rynng.darkping.net",
+        "domain_suffix": ".ir",
+        "geosite": "ir",
         "server": "dns-direct"
       },
       {
-        "domain": "connectivitycheck.gstatic.com",
+        "domain": "cp.cloudflare.com",
         "server": "dns-remote",
         "rewrite_ttl": 3000
-      },
-      {
-        "rule_set": [
-          "geoip-ir",
-          "geosite-ir"
-        ],
-        "server": "dns-direct"
-      },
-      {
-        "domain_suffix": ".ir",
-        "server": "dns-direct"
       }
     ],
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "104.17.147.22",
+        "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::",
         "104.17.148.22",
-        "188.114.97.3",
-        "188.114.96.3"
+        "104.17.147.22",
+        "188.114.98.0",
+        "188.114.99.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::"
       ]
     },
     "independent_cache": true
   },
   "inbounds": [
     {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
       "type": "mixed",
       "tag": "mixed-in",
       "listen": "127.0.0.1",
-      "listen_port": 12334,
+      "listen_port": 2334,
       "sniff": true,
-      "sniff_override_destination": true,
-      "set_system_proxy": true
+      "sniff_override_destination": true
     },
     {
       "type": "direct",
       "tag": "dns-in",
       "listen": "127.0.0.1",
-      "listen_port": 16450
+      "listen_port": 6450
     }
   ],
   "outbounds": [
@@ -88,10 +95,55 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🍋60@Hiddify-Nexttt  § 59",
-        "🍋8@Hiddify-Nexttt  § 43",
-        "🍋41@Hiddify-Nexttt  § 40",
-        "@Hiddify-Nexttt  § 68"
+        "剩余流量：712.1 GB",
+        "距离下次重置剩余：21 天",
+        "套餐到期：2025-01-03",
+        "俄罗斯-喀山-008",
+        "俄罗斯-喀山-HY-008",
+        "俄罗斯-喀山-009",
+        "俄罗斯-喀山-HY-009",
+        "俄罗斯-喀山-010",
+        "俄罗斯-喀山-HY-010",
+        "俄罗斯-喀山-003",
+        "俄罗斯-喀山-HY-003",
+        "俄罗斯-喀山-004",
+        "俄罗斯-喀山-HY-004",
+        "俄罗斯-喀山-005",
+        "俄罗斯-喀山-HY-005",
+        "俄罗斯-喀山-006",
+        "俄罗斯-喀山-HY-006",
+        "俄罗斯-喀山-007",
+        "俄罗斯-喀山-HY-007",
+        "俄罗斯-喀山-001",
+        "俄罗斯-喀山-HY-001",
+        "俄罗斯-喀山-002",
+        "俄罗斯-喀山-HY-002",
+        "俄罗斯-圣彼得堡-001",
+        "俄罗斯-圣彼得堡-HY-001",
+        "俄罗斯-圣彼得堡-003",
+        "俄罗斯-圣彼得堡-HY-003",
+        "俄罗斯-圣彼得堡-004",
+        "俄罗斯-圣彼得堡-HY-004",
+        "俄罗斯-圣彼得堡-005",
+        "俄罗斯-圣彼得堡-HY-005",
+        "俄罗斯-莫斯科-003",
+        "俄罗斯-莫斯科-HY-003",
+        "中国-香港-004",
+        "中国-香港-003",
+        "中国-香港-002",
+        "中国-香港-HY-002",
+        "新加坡-002",
+        "新加坡-HY-002",
+        "俄罗斯-莫斯科-001",
+        "俄罗斯-莫斯科-HY-001",
+        "俄罗斯-莫斯科-HY-002",
+        "俄罗斯-圣彼得堡-002",
+        "俄罗斯-圣彼得堡-HY-002",
+        "德国-法兰克福-001",
+        "德国-法兰克福-HY-001",
+        "英国-伦敦-001",
+        "英国-伦敦-HY-001",
+        "美国-纽约-001"
       ],
       "default": "auto"
     },
@@ -99,70 +151,478 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🍋60@Hiddify-Nexttt  § 59",
-        "🍋8@Hiddify-Nexttt  § 43",
-        "🍋41@Hiddify-Nexttt  § 40",
-        "@Hiddify-Nexttt  § 68"
+        "剩余流量：712.1 GB",
+        "距离下次重置剩余：21 天",
+        "套餐到期：2025-01-03",
+        "俄罗斯-喀山-008",
+        "俄罗斯-喀山-HY-008",
+        "俄罗斯-喀山-009",
+        "俄罗斯-喀山-HY-009",
+        "俄罗斯-喀山-010",
+        "俄罗斯-喀山-HY-010",
+        "俄罗斯-喀山-003",
+        "俄罗斯-喀山-HY-003",
+        "俄罗斯-喀山-004",
+        "俄罗斯-喀山-HY-004",
+        "俄罗斯-喀山-005",
+        "俄罗斯-喀山-HY-005",
+        "俄罗斯-喀山-006",
+        "俄罗斯-喀山-HY-006",
+        "俄罗斯-喀山-007",
+        "俄罗斯-喀山-HY-007",
+        "俄罗斯-喀山-001",
+        "俄罗斯-喀山-HY-001",
+        "俄罗斯-喀山-002",
+        "俄罗斯-喀山-HY-002",
+        "俄罗斯-圣彼得堡-001",
+        "俄罗斯-圣彼得堡-HY-001",
+        "俄罗斯-圣彼得堡-003",
+        "俄罗斯-圣彼得堡-HY-003",
+        "俄罗斯-圣彼得堡-004",
+        "俄罗斯-圣彼得堡-HY-004",
+        "俄罗斯-圣彼得堡-005",
+        "俄罗斯-圣彼得堡-HY-005",
+        "俄罗斯-莫斯科-003",
+        "俄罗斯-莫斯科-HY-003",
+        "中国-香港-004",
+        "中国-香港-003",
+        "中国-香港-002",
+        "中国-香港-HY-002",
+        "新加坡-002",
+        "新加坡-HY-002",
+        "俄罗斯-莫斯科-001",
+        "俄罗斯-莫斯科-HY-001",
+        "俄罗斯-莫斯科-HY-002",
+        "俄罗斯-圣彼得堡-002",
+        "俄罗斯-圣彼得堡-HY-002",
+        "德国-法兰克福-001",
+        "德国-法兰克福-HY-001",
+        "英国-伦敦-001",
+        "英国-伦敦-HY-001",
+        "美国-纽约-001"
       ],
-      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
-      "tolerance": 1,
-      "idle_timeout": "30m0s"
+      "idle_timeout": "1h40m0s"
     },
     {
-      "type": "vless",
-      "tag": "🍋60@Hiddify-Nexttt  § 59",
-      "server": "188.245.69.146",
-      "server_port": 443,
-      "uuid": "856e3bf8-d896-4fed-b655-210c37bc8f3f",
-      "tls": {
-        "enabled": true,
-        "server_name": "wordpress.org",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "9XHuXqw9ITZtFJMN_mZoi9DgTKBTqCzpcOtAGuJbZH4",
-          "short_id": "5803fa4b"
-        }
-      },
+      "type": "vmess",
+      "tag": "剩余流量：712.1 GB",
+      "server": "176.32.33.73",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
       "transport": {
-        "type": "grpc",
-        "service_name": "vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl-vpnowl",
-        "idle_timeout": "15s",
-        "ping_timeout": "15s"
-      },
-      "packet_encoding": "xudp"
+        "type": "ws"
+      }
     },
     {
-      "type": "vless",
-      "tag": "🍋8@Hiddify-Nexttt  § 43",
-      "server": "162.159.153.2",
-      "server_port": 80,
-      "uuid": "dfc1a9ab-6241-4b73-92f7-b299fc6b7751",
+      "type": "vmess",
+      "tag": "距离下次重置剩余：21 天",
+      "server": "176.32.33.73",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
       "transport": {
-        "type": "ws",
-        "path": "/xmlrpc.php?id=dfc1a9ab-6241-4b73-92f7-b299fc6b7751",
-        "headers": {
-          "Host": "csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor.rubika.cloudns.ch."
-        },
-        "max_early_data": 1080,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "packet_encoding": "xudp"
+        "type": "ws"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "套餐到期：2025-01-03",
+      "server": "176.32.33.73",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-喀山-008",
+      "server": "176.32.33.73",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
     },
     {
       "type": "hysteria2",
-      "tag": "🍋41@Hiddify-Nexttt  § 40",
-      "server": "192.124.176.87",
-      "server_port": 9781,
+      "tag": "俄罗斯-喀山-HY-008",
+      "server": "176.32.33.73",
+      "server_port": 1200,
       "obfs": {
         "type": "salamander",
-        "password": "ZTg1ZWVjNjAxZmRlNGI5MA=="
+        "password": "NDhhNmY5YTY0MGYzOTgxYQ=="
       },
-      "password": "a5fa5f80-a383-46aa-b589-86ef68b5820c",
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-喀山-009",
+      "server": "46.29.161.224",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-喀山-HY-009",
+      "server": "46.29.161.224",
+      "server_port": 1200,
+      "obfs": {
+        "type": "salamander",
+        "password": "NDhhNmY5YTY0MGYzOTgxYQ=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-喀山-010",
+      "server": "176.32.33.100",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-喀山-HY-010",
+      "server": "176.32.33.100",
+      "server_port": 1200,
+      "obfs": {
+        "type": "salamander",
+        "password": "NDhhNmY5YTY0MGYzOTgxYQ=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-喀山-003",
+      "server": "46.29.161.109",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-喀山-HY-003",
+      "server": "46.29.161.109",
+      "server_port": 1200,
+      "obfs": {
+        "type": "salamander",
+        "password": "NDhhNmY5YTY0MGYzOTgxYQ=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-喀山-004",
+      "server": "46.29.161.228",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-喀山-HY-004",
+      "server": "46.29.161.228",
+      "server_port": 1200,
+      "obfs": {
+        "type": "salamander",
+        "password": "NDhhNmY5YTY0MGYzOTgxYQ=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-喀山-005",
+      "server": "176.32.33.124",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-喀山-HY-005",
+      "server": "176.32.33.124",
+      "server_port": 2453,
+      "obfs": {
+        "type": "salamander",
+        "password": "NWFiMGE5MDNlNmI5YWY1MA=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-喀山-006",
+      "server": "46.29.161.15",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-喀山-HY-006",
+      "server": "46.29.161.15",
+      "server_port": 2453,
+      "obfs": {
+        "type": "salamander",
+        "password": "NWFiMGE5MDNlNmI5YWY1MA=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-喀山-007",
+      "server": "176.32.32.68",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-喀山-HY-007",
+      "server": "176.32.32.68",
+      "server_port": 2453,
+      "obfs": {
+        "type": "salamander",
+        "password": "NWFiMGE5MDNlNmI5YWY1MA=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-喀山-001",
+      "server": "176.32.33.158",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-喀山-HY-001",
+      "server": "176.32.33.158",
+      "server_port": 1200,
+      "obfs": {
+        "type": "salamander",
+        "password": "NDhhNmY5YTY0MGYzOTgxYQ=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-喀山-002",
+      "server": "46.29.161.159",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-喀山-HY-002",
+      "server": "46.29.161.159",
+      "server_port": 1200,
+      "obfs": {
+        "type": "salamander",
+        "password": "NDhhNmY5YTY0MGYzOTgxYQ=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-圣彼得堡-001",
+      "server": "176.32.39.160",
+      "server_port": 9187,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-圣彼得堡-HY-001",
+      "server": "176.32.39.160",
+      "server_port": 7660,
+      "obfs": {
+        "type": "salamander",
+        "password": "MzliZDM5MDFhYmFlNTAyMA=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-圣彼得堡-003",
+      "server": "195.58.48.220",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-圣彼得堡-HY-003",
+      "server": "195.58.48.220",
+      "server_port": 7660,
+      "obfs": {
+        "type": "salamander",
+        "password": "MzliZDM5MDFhYmFlNTAyMA=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-圣彼得堡-004",
+      "server": "194.87.69.42",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-圣彼得堡-HY-004",
+      "server": "194.87.69.42",
+      "server_port": 7660,
+      "obfs": {
+        "type": "salamander",
+        "password": "MzliZDM5MDFhYmFlNTAyMA=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-圣彼得堡-005",
+      "server": "195.58.49.173",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-圣彼得堡-HY-005",
+      "server": "195.58.49.173",
+      "server_port": 7660,
+      "obfs": {
+        "type": "salamander",
+        "password": "MzliZDM5MDFhYmFlNTAyMA=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-莫斯科-003",
+      "server": "176.32.35.198",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-莫斯科-HY-003",
+      "server": "176.32.35.198",
+      "server_port": 8307,
+      "obfs": {
+        "type": "salamander",
+        "password": "NDQyMDdkMTEzNDRmMDAxYg=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
       "tls": {
         "enabled": true,
         "insecure": true
@@ -170,23 +630,205 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify-Nexttt  § 68",
-      "server": "join.v2rynng.darkping.net",
-      "server_port": 1633,
-      "uuid": "b384ea2e-20b8-4b7a-8c0f-f3881b324bd7",
-      "flow": "xtls-rprx-vision",
+      "tag": "中国-香港-004",
+      "server": "212.192.13.51",
+      "server_port": 8307,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "transport": {
+        "type": "ws"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "中国-香港-003",
+      "server": "212.192.13.179",
+      "server_port": 9187,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "transport": {
+        "type": "ws"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "vless",
+      "tag": "中国-香港-002",
+      "server": "212.192.15.239",
+      "server_port": 8080,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "transport": {
+        "type": "ws"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "中国-香港-HY-002",
+      "server": "212.192.15.239",
+      "server_port": 1327,
+      "obfs": {
+        "type": "salamander",
+        "password": "Y2JhZTU3ZjE4ZTI0MzRmMQ=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
       "tls": {
         "enabled": true,
-        "server_name": "stackoverflow.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
-          "short_id": "9bc0a55a5379c0ed"
-        }
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "新加坡-002",
+      "server": "192.124.176.87",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "新加坡-HY-002",
+      "server": "192.124.176.87",
+      "server_port": 9781,
+      "obfs": {
+        "type": "salamander",
+        "password": "ZTg1ZWVjNjAxZmRlNGI5MA=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "俄罗斯-莫斯科-001",
+      "server": "176.32.35.194",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "transport": {
+        "type": "ws"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-莫斯科-HY-001",
+      "server": "176.32.35.194",
+      "server_port": 3323,
+      "obfs": {
+        "type": "salamander",
+        "password": "MGJiYThkMjgwNDE1Y2FkMg=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-莫斯科-HY-002",
+      "server": "46.17.44.62",
+      "server_port": 9668,
+      "obfs": {
+        "type": "salamander",
+        "password": "NDY2MDRjODQ5MjhkM2ZkNw=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "俄罗斯-圣彼得堡-002",
+      "server": "195.58.49.12",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "俄罗斯-圣彼得堡-HY-002",
+      "server": "195.58.49.12",
+      "server_port": 3454,
+      "obfs": {
+        "type": "salamander",
+        "password": "MzliZDM5MDFhYmFlNTAyMA=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "德国-法兰克福-001",
+      "server": "5.39.252.182",
+      "server_port": 8863,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "security": "auto",
+      "transport": {
+        "type": "ws"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "德国-法兰克福-HY-001",
+      "server": "5.39.252.182",
+      "server_port": 3898,
+      "obfs": {
+        "type": "salamander",
+        "password": "M2UyNTc5OWUwYjkyM2Q2OQ=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "英国-伦敦-001",
+      "server": "5.39.254.34",
+      "server_port": 6090,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "transport": {
+        "type": "ws"
+      },
+      "packet_encoding": "xudp"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "英国-伦敦-HY-001",
+      "server": "5.39.254.34",
+      "server_port": 5128,
+      "obfs": {
+        "type": "salamander",
+        "password": "ZTg1ZWVjNjAxZmRlNGI5MA=="
+      },
+      "password": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "美国-纽约-001",
+      "server": "207.90.237.199",
+      "server_port": 80,
+      "uuid": "3c7ee26d-a194-48e6-a6ae-2378a6eeea56",
+      "transport": {
+        "type": "ws"
       },
       "packet_encoding": "xudp"
     },
@@ -203,8 +845,8 @@
       "tag": "direct-fragment",
       "tls_fragment": {
         "enabled": true,
-        "size": "10-30",
-        "sleep": "2-8"
+        "size": "1-500",
+        "sleep": "0-500"
       }
     },
     {
@@ -217,18 +859,13 @@
     }
   ],
   "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
     "rules": [
-      {
-        "domain": ".ir",
-        "outbound": "direct"
-      },
-      {
-        "rule_set": [
-          "geoip-ir",
-          "geosite-ir"
-        ],
-        "outbound": "direct"
-      },
       {
         "inbound": "dns-in",
         "outbound": "dns-out"
@@ -244,22 +881,12 @@
       {
         "clash_mode": "Global",
         "outbound": "select"
-      }
-    ],
-    "rule_set": [
-      {
-        "type": "remote",
-        "tag": "geoip-ir",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
-        "update_interval": "120h0m0s"
       },
       {
-        "type": "remote",
-        "tag": "geosite-ir",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
-        "update_interval": "120h0m0s"
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
       }
     ],
     "final": "select",
@@ -272,8 +899,8 @@
       "path": "clash.db"
     },
     "clash_api": {
-      "external_controller": "127.0.0.1:16756",
-      "secret": "pie5DWbStlljTHqf"
+      "external_controller": "127.0.0.1:6756",
+      "secret": "29Yyr1JDUTG74ECA"
     }
   }
 }
