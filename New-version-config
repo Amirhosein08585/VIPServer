@@ -35,8 +35,8 @@
     "rules": [
       {
         "domain": [
-          "unlimiteddev.fastly80-3.hosting-ip.com",
-          "join.unlimiteddev-vpn.net"
+          "speedtest.net",
+          "join.v2rynng.darkping.net"
         ],
         "server": "dns-direct"
       },
@@ -60,8 +60,8 @@
         "2a06:98c1:3123::",
         "104.17.148.22",
         "104.17.147.22",
-        "188.114.99.0",
         "188.114.98.0",
+        "188.114.99.0",
         "2a06:98c1:3123::",
         "2a06:98c1:3122::"
       ]
@@ -102,8 +102,10 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1"
+        "🇸🇰@Hiddify_nexttt § 0",
+        "@Hiddify_nexttt  § 1",
+        "@Hiddify_nexttt  § 2",
+        "@Hiddify_nexttt § 3"
       ],
       "default": "auto"
     },
@@ -111,8 +113,10 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt +1 § 0",
-        "@Hiddify_nexttt +2 § 1"
+        "🇸🇰@Hiddify_nexttt § 0",
+        "@Hiddify_nexttt  § 1",
+        "@Hiddify_nexttt  § 2",
+        "@Hiddify_nexttt § 3"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -120,34 +124,70 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +1 § 0",
-      "server": "unlimiteddev.fastly80-3.hosting-ip.com",
+      "tag": "🇸🇰@Hiddify_nexttt § 0",
+      "server": "sPeEdtEsT.nEt",
       "server_port": 80,
-      "uuid": "ded015bd-ba4d-4dfb-c3a6-25c572761f39",
+      "uuid": "4eae9397-f431-537d-8f2f-ffccfec8d141",
       "transport": {
         "type": "ws",
-        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
         "headers": {
-          "Host": "UNLIMITEDDEV.channel-telegram-1.ir"
+          "Host": "E-L-I-V-2-R-A-Y-0.COM"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt  § 1",
+      "server": "join.v2rynng.darkping.net",
+      "server_port": 1633,
+      "uuid": "5ac8ad17-2176-49c4-9ec6-790be5e774f5",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "stackoverflow.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         },
-        "max_early_data": 2480,
+        "reality": {
+          "enabled": true,
+          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
+          "short_id": "9bc0a55a5379c0ed"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt  § 2",
+      "server": "151.101.3.8",
+      "server_port": 80,
+      "uuid": "12d1f136-0997-4f80-9ff2-2223d0da1bf0",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray",
+        "headers": {
+          "Host": "Tehranc2.Org"
+        },
+        "max_early_data": 443,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt +2 § 1",
-      "server": "Join.unlimiteddev-vpn.net",
+      "tag": "@Hiddify_nexttt § 3",
+      "server": "151.101.3.8",
       "server_port": 80,
-      "uuid": "ded015bd-ba4d-4dfb-c3a6-25c572761f39",
+      "uuid": "6b9e7cb7-dc07-42b8-b501-19ba63642e39",
       "transport": {
         "type": "ws",
-        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
+        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray",
         "headers": {
-          "Host": "csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor7.rubika.cloudns.unlimiteddev-vpn.com."
+          "Host": "Tehranc3.Org"
         },
-        "max_early_data": 2480,
+        "max_early_data": 443,
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
@@ -220,7 +260,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "6jiv6-GLN1UfyjTJ"
+      "secret": "8sYha29qUPtg9YLq"
     }
   }
 }
