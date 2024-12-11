@@ -34,7 +34,10 @@
     ],
     "rules": [
       {
-        "domain": "join.v2rynng.darkping.net",
+        "domain": [
+          "unlimiteddev.fastly80-3.hosting-ip.com",
+          "join.unlimiteddev-vpn.net"
+        ],
         "server": "dns-direct"
       },
       {
@@ -53,14 +56,14 @@
       "sky.rethinkdns.com": [
         "188.114.98.0",
         "188.114.99.0",
+        "2a06:98c1:3122::",
         "2a06:98c1:3123::",
-        "2a06:98c1:3122::",
-        "104.17.147.22",
         "104.17.148.22",
-        "188.114.99.0",
+        "104.17.147.22",
         "188.114.98.0",
-        "2a06:98c1:3122::",
-        "2a06:98c1:3123::"
+        "188.114.99.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::"
       ]
     },
     "independent_cache": true
@@ -99,7 +102,8 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt § 0"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1"
       ],
       "default": "auto"
     },
@@ -107,7 +111,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt § 0"
+        "@Hiddify_nexttt +1 § 0",
+        "@Hiddify_nexttt +2 § 1"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -115,23 +120,35 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt § 0",
-      "server": "join.v2rynng.darkping.net",
-      "server_port": 1633,
-      "uuid": "a36ce852-8594-428f-a76f-055e505ae577",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "stackoverflow.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
+      "tag": "@Hiddify_nexttt +1 § 0",
+      "server": "unlimiteddev.fastly80-3.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "2d1fd678-8bdc-4307-94bc-6e46427e3665",
+      "transport": {
+        "type": "ws",
+        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
+        "headers": {
+          "Host": "UNLIMITEDDEV.channel-telegram-1.ir"
         },
-        "reality": {
-          "enabled": true,
-          "public_key": "ANlgAsYC8HmKfJnc5SFvru822urkxG1PzW1Zw4Vbm0Q",
-          "short_id": "9bc0a55a5379c0ed"
-        }
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +2 § 1",
+      "server": "Join.unlimiteddev-vpn.net",
+      "server_port": 80,
+      "uuid": "2d1fd678-8bdc-4307-94bc-6e46427e3665",
+      "transport": {
+        "type": "ws",
+        "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
+        "headers": {
+          "Host": "csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor6.rubika.cloudns.unlimiteddev-vpn.com."
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
     },
@@ -203,7 +220,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "QtvRF1qwm7bHCOPS"
+      "secret": "nhtr0Xn6EE7UT3c2"
     }
   }
 }
