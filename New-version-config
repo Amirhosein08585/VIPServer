@@ -54,14 +54,14 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.98.0",
         "188.114.99.0",
+        "188.114.98.0",
         "2a06:98c1:3122::",
         "2a06:98c1:3123::",
         "104.17.148.22",
         "104.17.147.22",
-        "188.114.98.0",
         "188.114.99.0",
+        "188.114.98.0",
         "2a06:98c1:3123::",
         "2a06:98c1:3122::"
       ]
@@ -123,7 +123,7 @@
       "tag": "@Hiddify_nexttt +1 § 0",
       "server": "unlimiteddev.fastly80-3.hosting-ip.com",
       "server_port": 80,
-      "uuid": "2d1fd678-8bdc-4307-94bc-6e46427e3665",
+      "uuid": "ded015bd-ba4d-4dfb-c3a6-25c572761f39",
       "transport": {
         "type": "ws",
         "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
@@ -140,12 +140,12 @@
       "tag": "@Hiddify_nexttt +2 § 1",
       "server": "Join.unlimiteddev-vpn.net",
       "server_port": 80,
-      "uuid": "2d1fd678-8bdc-4307-94bc-6e46427e3665",
+      "uuid": "ded015bd-ba4d-4dfb-c3a6-25c572761f39",
       "transport": {
         "type": "ws",
         "path": "/@UnlimitedDev----@UnlimitedDev-----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev----@UnlimitedDev",
         "headers": {
-          "Host": "csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor6.rubika.cloudns.unlimiteddev-vpn.com."
+          "Host": "csgo.mozilla.5.0.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.127.0.0.1.offlinespeedtest.netdown.user.xn--2b5baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.0.2.1.xn--j9h1028mqmaoytii00aha21hfjrd.xn--m39h.tor7.rubika.cloudns.unlimiteddev-vpn.com."
         },
         "max_early_data": 2480,
         "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -220,7 +220,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "nhtr0Xn6EE7UT3c2"
+      "secret": "6jiv6-GLN1UfyjTJ"
     }
   }
 }
