@@ -36,8 +36,7 @@
       {
         "domain": [
           "join.v2rynng.darkping.net",
-          "hajlab.ucdavis.edu",
-          "speedtest.net"
+          "hajlab.ucdavis.edu"
         ],
         "server": "dns-direct"
       },
@@ -55,14 +54,14 @@
     "final": "dns-remote",
     "static_ips": {
       "sky.rethinkdns.com": [
-        "188.114.99.0",
         "188.114.98.0",
+        "188.114.99.0",
         "2a06:98c1:3123::",
         "2a06:98c1:3122::",
         "104.17.148.22",
         "104.17.147.22",
-        "188.114.98.0",
         "188.114.99.0",
+        "188.114.98.0",
         "2a06:98c1:3122::",
         "2a06:98c1:3123::"
       ]
@@ -106,7 +105,9 @@
         "@Hiddify_nexttt +1 § 0",
         "@Hiddify_nexttt +2 § 1",
         "@Hiddify_nexttt +3 § 2",
-        "@Hiddify_nexttt +4 § 3"
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5"
       ],
       "default": "auto"
     },
@@ -117,7 +118,9 @@
         "@Hiddify_nexttt +1 § 0",
         "@Hiddify_nexttt +2 § 1",
         "@Hiddify_nexttt +3 § 2",
-        "@Hiddify_nexttt +4 § 3"
+        "@Hiddify_nexttt +4 § 3",
+        "@Hiddify_nexttt +5 § 4",
+        "@Hiddify_nexttt +6 § 5"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -128,7 +131,7 @@
       "tag": "@Hiddify_nexttt +1 § 0",
       "server": "join.v2rynng.darkping.net",
       "server_port": 1633,
-      "uuid": "237c1b51-97e6-4415-8b0f-21390c68965d",
+      "uuid": "cac29e75-6568-4037-94e0-f1a1df679bc2",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -150,7 +153,7 @@
       "tag": "@Hiddify_nexttt +2 § 1",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "436bc91e-c384-4bec-80c4-e729b69ad57b",
+      "uuid": "61f58710-6aa9-4945-9708-58c75141db2e",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -175,7 +178,7 @@
       "tag": "@Hiddify_nexttt +3 § 2",
       "server": "hajlab.ucdavis.edu",
       "server_port": 443,
-      "uuid": "e236170c-04ec-457f-8ea3-f11240e974a6",
+      "uuid": "51b73dc1-a711-49ea-8d9c-9ddf428b7cd2",
       "tls": {
         "enabled": true,
         "server_name": "hajlab.ucdavis.edu",
@@ -198,14 +201,51 @@
     {
       "type": "vless",
       "tag": "@Hiddify_nexttt +4 § 3",
-      "server": "sPeEdtEsT.nEt",
+      "server": "151.101.3.8",
       "server_port": 80,
-      "uuid": "df30d28c-79d4-5e89-a0fb-8f10e251350c",
+      "uuid": "c22e74d5-578d-4578-8daf-14e10961f83a",
       "transport": {
         "type": "ws",
+        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray",
         "headers": {
-          "Host": "ELI-V2-RAY.COM"
-        }
+          "Host": "c1.tehran.org"
+        },
+        "max_early_data": 443,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +5 § 4",
+      "server": "151.101.3.8",
+      "server_port": 80,
+      "uuid": "3db9e150-3ce2-46e0-9075-3adc1fa06a18",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray",
+        "headers": {
+          "Host": "c2.tehran.org"
+        },
+        "max_early_data": 443,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt +6 § 5",
+      "server": "151.101.3.8",
+      "server_port": 80,
+      "uuid": "1dd834f8-326f-48e6-96ce-113e816ad69d",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray",
+        "headers": {
+          "Host": "c3.tehran.org"
+        },
+        "max_early_data": 443,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "packet_encoding": ""
     },
@@ -277,7 +317,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "6S4A0O9edCZNP84K"
+      "secret": "aavuQgTs4H8ZkGRH"
     }
   }
 }
