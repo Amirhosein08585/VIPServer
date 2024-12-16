@@ -34,7 +34,7 @@
     ],
     "rules": [
       {
-        "domain": "join.v2rynng.darkping.net",
+        "domain": "liferobot.darkping.net",
         "server": "dns-direct"
       },
       {
@@ -53,14 +53,14 @@
       "sky.rethinkdns.com": [
         "188.114.99.0",
         "188.114.98.0",
-        "2a06:98c1:3120::3",
-        "2a06:98c1:3121::3",
-        "104.17.148.22",
-        "104.17.147.22",
-        "188.114.98.0",
-        "188.114.99.0",
         "2a06:98c1:3122::",
-        "2a06:98c1:3123::"
+        "2a06:98c1:3123::",
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.99.0",
+        "188.114.98.0",
+        "2a06:98c1:3123::",
+        "2a06:98c1:3122::"
       ]
     },
     "independent_cache": true
@@ -99,7 +99,7 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "@Hiddify_nexttt § 0"
+        "@Hiddify_nexttt  § 0"
       ],
       "default": "auto"
     },
@@ -107,7 +107,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "@Hiddify_nexttt § 0"
+        "@Hiddify_nexttt  § 0"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "10m0s",
@@ -115,10 +115,10 @@
     },
     {
       "type": "vless",
-      "tag": "@Hiddify_nexttt § 0",
-      "server": "join.v2rynng.darkping.net",
+      "tag": "@Hiddify_nexttt  § 0",
+      "server": "liferobot.darkping.net",
       "server_port": 1633,
-      "uuid": "6416f6e7-d71a-4b5f-be6d-4777f0cf288e",
+      "uuid": "6f068b49-eea7-4c40-ab0f-627dbb87e26d",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -203,7 +203,7 @@
     },
     "clash_api": {
       "external_controller": "127.0.0.1:6756",
-      "secret": "CEQcalCV3jqoUyef"
+      "secret": "PLxXCDdUt6KTVuqh"
     }
   }
 }
